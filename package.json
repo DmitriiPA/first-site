@@ -1,0 +1,20 @@
+{
+  "name": "first-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style":"sass styles/index.scss styles/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriiPA/first-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriiPA/first-site/issues"
+  },
+  "homepage": "https://github.com/DmitriiPA/first-site#readme"
+}
