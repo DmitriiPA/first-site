@@ -72,9 +72,9 @@ tl.to(
 )
 .from(
   '.kye-box', {
-    rotate: 10,
+    rotate: 15,
     duration: 1,
-    ease: "bounce.out"
+    ease: "bounce.out",
   },
-  2.8
+  2.9
 )
