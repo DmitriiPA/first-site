@@ -1,0 +1,32 @@
+.nav_bar {
+  position: relative;
+  width: 504px;
+  top: 14px;
+  color: $color_text;
+}
+
+.nav_li {
+  position: relative;
+  cursor: pointer;
+  padding: 12px 0;
+  list-style-type: none;
+  
+}
+
+.nav_li:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 504px;
+  height: 2px;
+  bottom: 0;
+  background-color: $color_white;
+  transition: .3s;
+}
+
+.nav_li:hover:after {
+  width: 524px;
+}
+.nav_li:hover {
+  font-size: 19px;
+}
