@@ -8,21 +8,24 @@
 
 .nav_wrapper {
   position: relative;
+  display: flex;
+  align-items: flex-start;
   left: 36px;
 }
 
 .title {
-  width: 502px;
+  width: 520px;
 }
-.title h1 {
+.title h1, .title h2 {
   margin-top: 88px;
-  text-align: justify;
   color: #E9E9E9;
   font-family: "Yanone Kaffeesatz";
   font-size: 80px;
   line-height: 79px;
   text-transform: uppercase;
-  letter-spacing: -1px;
+}
+.title h2 {
+  margin-top: 0;
 }
 .title h3 {
   margin-top: 20px;
@@ -31,6 +34,112 @@
   font-weight: 400;
   font-size: 28px;
   line-height: 37px;
+}
+
+.header-right-blok, .heder-img, .heder-stars-box {
+  position: relative;
+}
+
+.kye-box, .moon, .women, .field, .stars {
+  position: absolute;
+}
+
+.kye-box {
+  transform-origin: center top;
+  width: 95px;
+  left: 95px;
+}
+
+.moon {
+  top: 24px;
+  left: 172px;
+}
+
+.women {
+  top: 334px;
+  left: 401px;
+}
+
+.field {
+  top: 460px;
+  left: 81px;
+}
+
+.stars, .moon {
+  transition: 0.3s;
+}
+
+.stars:hover {
+  scale: 1.2;
+}
+
+.heder-stars-box {
+  opacity: 0;
+}
+
+.stars-0 {
+  top: 140px;
+  left: 568px;
+}
+
+.stars-1 {
+  top: 200px;
+  left: 641px;
+}
+
+.stars-2 {
+  top: 152px;
+  left: 742px;
+}
+
+.stars-3 {
+  top: 184px;
+  left: 750px;
+}
+
+.stars-4 {
+  top: 32px;
+  left: 773px;
+}
+
+.stars-5 {
+  top: 130px;
+  left: 714px;
+}
+
+.stars-6 {
+  top: 56px;
+  left: 768px;
+}
+
+.stars-7 {
+  top: 62px;
+  left: 732px;
+}
+
+.stars-8 {
+  top: 67px;
+  left: 626px;
+}
+
+.stars-9 {
+  top: 100px;
+  left: 748px;
+}
+
+.stars-10 {
+  top: 232px;
+  left: 567px;
+}
+
+.stars-11 {
+  top: 166px;
+  left: 696px;
+}
+
+.stars-12 {
+  top: 248px;
+  left: 736px;
 }
 
 .nav_bar {
@@ -92,4 +201,8 @@ body {
 .wrapper {
   width: 1320px;
   margin: auto;
+}
+
+.main {
+  height: 4000px;
 }/*# sourceMappingURL=index.css.map */
