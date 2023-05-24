@@ -32,4 +32,54 @@ body {
 
 .main {
   height: 4000px;
+  width: 1440px;
+}
+
+.section-1 {
+  height: 700px;
+  background-color: $color_white;
+}
+
+.who-what {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 73px;
+  padding-top: 120px;
+}
+
+.who-what-top {
+  display: flex;
+  gap: 52px;  
+}
+
+.who-what-top-left, .who-what-top-right, .who-what-bottom {
+    h2 {
+      font-family: 'Yanone Kaffeesatz';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 60px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      width: 624px;
+      margin-top: 16px;
+      font-family: 'Roboto Slab';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 29px;
+    }
+}
+
+.who-what-top-right {
+  margin-left: 20px;
+}
+
+.who-what-bottom {
+  text-align: center;
+  width: 624px;
+  margin-top: 87px;
 }

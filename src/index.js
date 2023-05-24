@@ -2,12 +2,9 @@ var tl = gsap.timeline();
 tl.to(
   '.heder-stars-box',  {
     duration: 0.8,
-    // scale: 0.5, 
     opacity: 1, 
     delay: 0.7, 
     stagger: 0.2,
-    // ease: "elastic", 
-    // force3D: true
   }
 )
 .from(
@@ -78,3 +75,7 @@ tl.to(
   },
   2.9
 )
+
+// gsap.to(''
+
+// )
