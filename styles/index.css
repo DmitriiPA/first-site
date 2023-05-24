@@ -3,7 +3,7 @@
 .header {
   width: 1440px;
   height: 700px;
-  background-image: url(../../images/background_1\ 1.png);
+  background-image: url(../../images/background_1.png);
 }
 
 .nav_wrapper {
@@ -205,4 +205,51 @@ body {
 
 .main {
   height: 4000px;
+  width: 1440px;
+}
+
+.section-1 {
+  height: 700px;
+  background-color: #E9E9E9;
+}
+
+.who-what {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 73px;
+  padding-top: 120px;
+}
+
+.who-what-top {
+  display: flex;
+  gap: 52px;
+}
+
+.who-what-top-left h2, .who-what-top-right h2, .who-what-bottom h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+.who-what-top-left h4, .who-what-top-right h4, .who-what-bottom h4 {
+  width: 624px;
+  margin-top: 16px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+}
+
+.who-what-top-right {
+  margin-left: 20px;
+}
+
+.who-what-bottom {
+  text-align: center;
+  width: 624px;
+  margin-top: 87px;
 }/*# sourceMappingURL=index.css.map */
