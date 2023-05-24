@@ -1,15 +1,15 @@
 var tl = gsap.timeline();
 tl.to(
-  '.heder-stars-box',  {
+  '.heder-stars-box img',  {
     opacity: 1, 
     delay: 0.7, 
-    stagger: 0.2,
+    stagger: 0.04,
   }
 )
 .from(
   '.title',
   {
-    y: -260,
+    y: -220,
     x: 400,
     duration: 0.8
   },
@@ -27,12 +27,21 @@ tl.to(
   1.2
 )
 .from(
-  '.women', {
-    rotate: 20,
-    ease: "bounce.out",
-    duration: 1
+  '.moon',
+  {
+    width: 0,
+    height:0,
+    duration: 1.2,
   },
-  1.6
+  1.5
+  )
+.from(
+  '.women', {
+    rotate: 15,
+    duration: 1.3,
+    ease: "bounce.out",
+  },
+  1.7
 )
 .from(
   '.subtitle',
@@ -41,24 +50,12 @@ tl.to(
   },
   1.8
 )
-.from(
-  '.moon',
-  {
-    // scale: 1
-    width: 0,
-    height:0,
-    duration: 1.8,
-    // ease: "bounce.out", 
-  },
-  1.5
-  )
   .from(
     '.kye-box', {
       y: -600,
       duration: 1.4,
       rotate: 20,
       duration: 1.2,
-      // ease: "bounce.out",
     },
     2
   )
@@ -73,4 +70,3 @@ tl.to(
     stagger: 0.1
   })
 
-  
