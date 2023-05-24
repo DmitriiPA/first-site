@@ -19,30 +19,30 @@ tl.to(
   '.subtitle',
   {
     opacity: 0
-  },
+  }
 )
-.fromTo(
+.from(
   '.moon',
   {
     width: 0,
     height:0,
-  },
-  {
-    width: 350 ,
-    height: 340
-  },
+    duration: 1.2,
+    // ease: "bounce.out",
+  }
 )
 .from(
   '.women', {
     y: -900,
-  }
+  },
+  3
 )
 .from(
   '.women', {
     rotate: 20,
     ease: "bounce.out",
     duration: 1
-  }
+  },
+  3.1
 )
 .from(
   '.field', {
@@ -76,12 +76,7 @@ tl.to(
   },
   2.9
 )
-.to(
-'.who-what', {
-  duration: 0.5,
-  opacity: 1, 
-}
-)
+
 
 // gsap.to(''
 
