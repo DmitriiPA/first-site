@@ -47,6 +47,7 @@ tl.to(
 .from(
   '.field', {
     y: 400,
+    opacity: 0,
   },
   3
 )
@@ -74,6 +75,12 @@ tl.to(
     ease: "bounce.out",
   },
   2.9
+)
+.to(
+'.who-what', {
+  duration: 0.5,
+  opacity: 1, 
+}
 )
 
 // gsap.to(''
