@@ -4,6 +4,7 @@
   width: 1440px;
   height: 700px;
   background-image: url(../../images/background_1.png);
+  overflow: hidden;
 }
 
 .nav_wrapper {
