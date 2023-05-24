@@ -1,7 +1,6 @@
 var tl = gsap.timeline();
 tl.to(
   '.heder-stars-box',  {
-    duration: 0.8,
     opacity: 1, 
     delay: 0.7, 
     stagger: 0.2,
@@ -10,31 +9,22 @@ tl.to(
 .from(
   '.title',
   {
-    x: 400,
     y: -260,
-    // delay: 0.5
+    x: 400,
+    duration: 0.8
   },
+1
 )
 .from(
-  '.subtitle',
-  {
-    opacity: 0
-  }
+  '.women', {y: -900},
+  1.2
 )
 .from(
-  '.moon',
-  {
-    width: 0,
-    height:0,
-    duration: 1.2,
-    // ease: "bounce.out",
-  }
-)
-.from(
-  '.women', {
-    y: -900,
+  '.field', {
+    y: 400,
+    opacity: 0,
   },
-  3
+  1.2
 )
 .from(
   '.women', {
@@ -42,42 +32,45 @@ tl.to(
     ease: "bounce.out",
     duration: 1
   },
-  3.1
+  1.6
 )
 .from(
-  '.field', {
-    y: 400,
-    opacity: 0,
+  '.subtitle',
+  {
+    opacity: 0
   },
-  3
-)
-.fromTo(
-'.nav_ul li', {
-  x: -600,
-},
-{
-  x: 0,
-  duration: 0.5,
-  stagger: 0.1
-},
-2.7
+  1.8
 )
 .from(
-  '.kye-box', {
-    y: -600,
+  '.moon',
+  {
+    // scale: 1
+    width: 0,
+    height:0,
+    duration: 1.8,
+    // ease: "bounce.out", 
   },
-  2.7
-)
-.from(
-  '.kye-box', {
-    rotate: 15,
-    duration: 1,
-    ease: "bounce.out",
-  },
-  2.9
-)
+  1.5
+  )
+  .from(
+    '.kye-box', {
+      y: -600,
+      duration: 1.4,
+      rotate: 20,
+      duration: 1.2,
+      // ease: "bounce.out",
+    },
+    2
+  )
+  .from(
+    '.kye-box', {
+    },
+    2.1
+  )
+  .from(
+  '.nav_ul li', {
+    x: -600,
+    stagger: 0.1
+  })
 
-
-// gsap.to(''
-
-// )
+  
