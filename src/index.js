@@ -13,7 +13,7 @@ tl.to(
     x: 400,
     duration: 0.8
   },
-1
+  1
 )
 .from(
   '.women', {y: -900},
@@ -27,14 +27,12 @@ tl.to(
   1.2
 )
 .from(
-  '.moon',
-  {
-    width: 0,
-    height:0,
-    duration: 1.2,
-  },
+  '.moon', {
+    scale: 0,
+    duration: 2,
+   },
   1.5
-  )
+)
 .from(
   '.women', {
     rotate: 15,
@@ -50,23 +48,49 @@ tl.to(
   },
   1.8
 )
-  .from(
-    '.kye-box', {
-      y: -600,
-      duration: 1.4,
-      rotate: 20,
-      duration: 1.2,
-    },
-    2
-  )
-  .from(
-    '.kye-box', {
-    },
-    2.1
-  )
-  .from(
+.from(
+  '.kye-box', {
+    y: -600,
+    duration: 1.4,
+  },
+  2
+)
+.from(
+  '.kye-box', {
+    rotate: 20,
+    duration: 2.6,
+    ease: Elastic.easeOut,
+  },
+  2
+)
+.from(
   '.nav_ul li', {
     x: -600,
     stagger: 0.1
-  })
+  }, 
+  '-=1'
+)
 
+
+const who = gsap.timeline()
+
+who.from ('.who-what-second-text', {
+  scrollTrigger: {
+    trigger: '.section-1',
+    start: '+=30',
+    end: '+=200',
+    scrub: true,
+  },
+  y: 270,
+})
+.from ('.back-dlue', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.section-1',
+    start: '+=30',
+    end: '+=400',
+    scrub: true,
+  },
+  scale: 0
+}
+)

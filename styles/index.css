@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Yanone+Kaffeesatz:wght@700&display=swap");
 .header {
+  position: relative;
   width: 1440px;
   height: 700px;
   background-image: url("../images/background-header.png");
@@ -46,6 +47,7 @@
 }
 
 .kye-box {
+  z-index: 2;
   transform-origin: center top;
   width: 95px;
   left: 95px;
@@ -54,6 +56,7 @@
 .moon {
   top: 24px;
   left: 172px;
+  transform-origin: top left;
 }
 
 .women {
@@ -66,7 +69,7 @@
   left: 81px;
 }
 
-.stars, .moon {
+.stars {
   transition: 0.3s;
 }
 
@@ -187,6 +190,11 @@
   box-sizing: border-box;
 }
 
+.z10 {
+  position: relative;
+  z-index: 10;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -209,12 +217,13 @@ body {
   width: 1440px;
 }
 
-.section-1 {
-  height: 700px;
+.main {
+  overflow: hidden;
   background-color: #E9E9E9;
 }
 
-.who-what {
+.who-what-first {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,12 +231,12 @@ body {
   padding-top: 120px;
 }
 
-.who-what-top {
+.who-what-first-top {
   display: flex;
   gap: 52px;
 }
 
-.who-what-top-left h2, .who-what-top-right h2, .who-what-bottom h2 {
+.who-what-first-top-left h2, .who-what-first-top-right h2, .who-what-second-bottom h2 {
   font-family: "Yanone Kaffeesatz";
   font-style: normal;
   font-weight: 700;
@@ -235,7 +244,7 @@ body {
   line-height: 60px;
   text-transform: uppercase;
 }
-.who-what-top-left h4, .who-what-top-right h4, .who-what-bottom h4 {
+.who-what-first-top-left h4, .who-what-first-top-right h4, .who-what-second-bottom h4 {
   width: 624px;
   margin-top: 16px;
   font-family: "Roboto Slab";
@@ -245,12 +254,38 @@ body {
   line-height: 29px;
 }
 
-.who-what-top-right {
+.who-what-first-top-right {
   margin-left: 20px;
 }
 
-.who-what-bottom {
+.who-what-second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 73px;
+  padding-top: 400px;
+}
+
+.who-what-second-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  width: 624px;
-  margin-top: 87px;
+}
+
+.back-dlue, .back-yellow {
+  position: relative;
+  z-index: 2;
+  width: 2000px;
+  height: 2000px;
+  bottom: 1000px;
+  border-radius: 100%;
+}
+
+.back-dlue {
+  background-color: #98E9FF;
+}
+
+.back-yellow {
+  background-color: #ffcd18;
 }/*# sourceMappingURL=index.css.map */
