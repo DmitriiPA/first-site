@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Yanone+Kaffeesatz:wght@700&display=swap");
 .header {
   position: relative;
-  width: 1440px;
   height: 700px;
   background-image: url("../images/background-header.png");
   overflow: hidden;
@@ -214,7 +213,6 @@ body {
 
 .main {
   height: 4000px;
-  width: 1440px;
 }
 
 .main {
@@ -292,5 +290,9 @@ body {
 }
 
 .back-yellow {
+  background-color: #FFCE7D;
+}
+
+.section-if-you-want {
   background-color: #FFCE7D;
 }/*# sourceMappingURL=index.css.map */
