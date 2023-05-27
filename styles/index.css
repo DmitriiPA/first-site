@@ -259,6 +259,7 @@ body {
 }
 
 .who-what-second {
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,6 +272,10 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.who-what-three {
+  padding-top: 300px;
 }
 
 .back-dlue, .back-yellow {
@@ -287,5 +292,5 @@ body {
 }
 
 .back-yellow {
-  background-color: #ffcd18;
+  background-color: #FFCE7D;
 }/*# sourceMappingURL=index.css.map */
