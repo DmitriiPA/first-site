@@ -1,17 +1,16 @@
 .header {
-  position: relative;
-  // width: 1440px;
   height: 700px;
   background-image: url("../images/background-header.png");
-  overflow:hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.nav_wrapper {
-  position: relative;
+.wrapper__navbar {
   display: flex;
   align-items:flex-start;
-  left: 36px;
-
 }
 
 .title {
@@ -40,110 +39,125 @@
   }
 }
 
-.header-right-blok, .heder-img, .heder-stars-box  {
+.header__right__blok, .heder__img, .heder-stars-box, .stars  {
   position: relative;
 }
 
-.kye-box, .moon, .women, .field, .stars {
-  position: absolute;
+.header__right__blok {
+  display: flex;
+  overflow: hidden;
+  height: 700px;
 }
 
-
-.kye-box {
-  z-index: 2;
-  transform-origin: center top;
+.kye__box {
   width: 95px;
   left: 95px;
+  transform-origin: center top;
+  z-index: 2;
 }
 
 .moon {
+  width: 351px;
+  height: 340px;
   top: 24px;
-  left: 172px;
+  left: 78px;
   transform-origin: top left;
 }
 
 .women {
+  width: 358px;
+  height: 327px;
   top: 334px;
-  left: 401px;
+  right: 117px;
 }
 
 .field {
-  top: 460px;
-  left: 81px;
+  width: auto;
+  height: 240px;
+  bottom: 240px;
+  float: right; 
 }
 
 .stars {
-transition: .3s;}
+  transition: .3s;
+}
 
 .stars:hover {
   scale: 1.2;
 }
 
+.heder__stars__box {
+  width: 226px;
+  height: 249px;
+  top: 34px;
+  left: 568px;
+}
+  
 .stars {
   opacity: 0;
 }   
 
-.stars-0 {
+.stars_0 {
+  left: 122px;
   top: 140px;
-  left: 568px;
 }
 
-.stars-1 {
-  top: 200px;
-  left: 641px;
+.stars_1 {
+  left: 194px;
+  top: 151px;
 }
 
-.stars-2 {
-  top: 152px;
-  left: 742px;
+.stars_2 {
+  left: 253px;
+  top: 83px;
 }
 
-.stars-3 {
-  top: 184px;
-  left: 750px;
+.stars_3 {
+  left: 303px;
+  top: 91px;
 }
 
-.stars-4 {
-  top: 32px;
-  left: 773px;
+.stars_4 {
+  left: 305px;
+  top: -68px;
 }
 
-.stars-5 {
-  top: 130px;
-  left: 714px;
+.stars_5 {
+  left: 223px;
+  top: 35px;
 }
 
-.stars-6 {
-  top: 56px;
-  left: 768px;
+.stars_6 {
+  left: 321px;
+  top: -69px;
 }
 
-.stars-7 {
-  top: 62px;
-  left: 732px;
+.stars_7 {
+  left: 270px;
+  top: -65px;
 }
 
-.stars-8 {
-  top: 67px;
-  left: 626px;
+.stars_8 {
+  left: 179px;
+  top: -77px;
 }
 
-.stars-9 {
-  top: 100px;
-  left: 748px;
+.stars_9 {
+  left: 302px;
+  top: -151px;
 }
 
-.stars-10 {
-  top: 232px;
-  left: 567px;
+.stars_10 {
+  left: 100px;
+  top: 14px;
 }
 
-.stars-11 {
-  top: 166px;
-  left: 696px;
+.stars_11 {
+  left: 249px;
+  top: -114px;
 }
 
-.stars-12 {
-  top: 248px;
-  left: 736px;
+.stars_12 {
+  left: 264px;
+  top: -23px;
 }
