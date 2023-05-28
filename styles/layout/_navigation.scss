@@ -1,11 +1,11 @@
-.nav_bar {
+.nav__bar {
   position: relative;
   width: 504px;
   top: 14px;
   color: $color_text;
 }
 
-.nav_li {
+.nav__li {
   position: relative;
   cursor: pointer;
   padding: 12px 0;
@@ -13,7 +13,7 @@
   
 }
 
-.nav_li:not(:last-child)::after {
+.nav__li:not(:last-child)::after {
   position: absolute;
   content: "";
   display: block;
@@ -24,9 +24,9 @@
   transition: .3s;
 }
 
-.nav_li:hover:after {
+.nav__li:hover:after {
   width: 524px;
 }
-.nav_li:hover {
+.nav__li:hover {
   font-size: 19px;
 }
