@@ -1,5 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Yanone+Kaffeesatz:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px 0 96px;
+}
+
+.z10 {
+  z-index: 10;
+}
+
+h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+h4 {
+  width: 624px;
+  margin-top: 16px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+}
+
 .header {
   height: 700px;
   background-image: url("../images/background-header.png");
@@ -8,6 +60,11 @@
   background-size: cover;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.wrapper__for__field {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .wrapper__navbar {
@@ -195,42 +252,8 @@
   font-size: 19px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 21px;
-}
-
-.z10 {
-  z-index: 10;
-}
-
-body {
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 24px 0 96px;
-}
-
-.wrapper__for__field {
-  max-width: 1440px;
-  margin: 0 auto;
+.section__who__what {
+  height: 1900px;
 }
 
 .main {
@@ -244,24 +267,6 @@ body {
   position: relative;
   padding-top: 120px;
   gap: 52px;
-}
-
-.who__what__first__top__left h2, .who__what__first__top__right h2, .who__what__second__bottom h2 {
-  font-family: "Yanone Kaffeesatz";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 60px;
-  text-transform: uppercase;
-}
-.who__what__first__top__left h4, .who__what__first__top__right h4, .who__what__second__bottom h4 {
-  width: 624px;
-  margin-top: 16px;
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 29px;
 }
 
 .who__what__first__top__right {
@@ -278,7 +283,6 @@ body {
 
 .who__what__three {
   padding-top: 200px;
-  padding-bottom: 600px;
 }
 
 .back__dlue, .back__yellow {
@@ -297,5 +301,67 @@ body {
 }
 
 .section__if__you__want {
+  height: 4800px;
+  position: relative;
   background-color: #FFCE7D;
+}
+
+.if__you__want__top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.if__you__want__top h2 {
+  margin-top: 64px;
+}
+
+.if__you__want__top__vector {
+  position: relative;
+}
+
+.vector__stars, .vector__moon {
+  position: absolute;
+  opacity: 1;
+  right: 800px;
+}
+
+.vector__stars {
+  bottom: 320px;
+}
+
+.if__you__want__buttom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 151px;
+}
+.if__you__want__buttom h4 {
+  margin-top: -1px;
+}
+
+.eyes {
+  margin-top: -60px;
+}
+
+.if__you__want__buttom__two, .if__you__want__buttom__three, .if__you__want__buttom__four {
+  opacity: 0;
+}
+
+.how__we__work {
+  background-image: url("../images/background-header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.how__we__work__title {
+  height: 900px;
+  display: flex;
+  justify-content: center;
+}
+.how__we__work__title h2 {
+  margin-top: 100px;
+  color: #E9E9E9;
 }/*# sourceMappingURL=index.css.map */

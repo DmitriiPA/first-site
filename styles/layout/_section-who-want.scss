@@ -1,44 +1,6 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 21px;
-
-  // border: 1px solid #f0f;
-}
-
-.z10 {
-  z-index: 10;
-}
-  
-
-body {
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 24px 0 96px;
-}
-
-.wrapper__for__field {
-  max-width: 1440px;
-  margin: 0 auto;
-
+.section__who__what {
+  height: 1900px;
 }
 
 .main {
@@ -54,32 +16,9 @@ body {
   gap: 52px;  
 }
 
-
-.who__what__first__top__left, .who__what__first__top__right, .who__what__second__bottom {
-  h2 {
-    font-family: 'Yanone Kaffeesatz';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 60px;
-    text-transform: uppercase;
-  }
-
-  h4 {
-    width: 624px;
-    margin-top: 16px;
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 29px;
-  }
-}
-
 .who__what__first__top__right {
   margin-left: 20px;
 }
-
 
 .who__what__second__bottom {
   display: flex;
@@ -87,11 +26,11 @@ body {
   align-items: center;
   text-align: center;
   margin-top: 300px;
-  }
+}
 
 .who__what__three {
   padding-top: 200px;
-  padding-bottom: 600px;
+  // padding-bottom: 600px;
 }
 
 .back__dlue, .back__yellow {
@@ -100,6 +39,7 @@ body {
   height: 2px;
   border-radius: 100%;
 }
+
 .back__dlue {
   background-color: $color_text;
 }

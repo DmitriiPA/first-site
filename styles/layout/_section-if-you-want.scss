@@ -1,3 +1,50 @@
 .section__if__you__want {
+  height: 4800px;
+  position: relative;
   background-color: $color_yellow;
+}
+
+.if__you__want__top {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  // margin-top: 200px;
+
+  h2 {
+      margin-top: 64px;
+  }
+}
+
+.if__you__want__top__vector {
+  position: relative;
+}
+
+.vector__stars, .vector__moon {
+  position: absolute;
+  opacity: 1;
+  right: 800px;
+}
+
+.vector__stars {
+  bottom: 320px;
+}
+
+
+.if__you__want__buttom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 151px;  
+
+  h4 {
+    margin-top: -1px;
+  }
+}
+
+.eyes {
+  margin-top: -60px;
+}
+
+.if__you__want__buttom__two, .if__you__want__buttom__three, .if__you__want__buttom__four {
+  opacity: 0;
 }
