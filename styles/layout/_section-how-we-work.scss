@@ -1,0 +1,19 @@
+.how__we__work {
+  background-image: url("../images/background-header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.how__we__work__title {
+  height: 900px;
+  display: flex;
+  justify-content: center;
+
+    h2 {
+      margin-top: 100px;
+      color: $color_white;
+    }
+}
