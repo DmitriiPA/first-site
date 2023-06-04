@@ -1,5 +1,4 @@
 .section__if__you__want {
-  height: 4800px;
   position: relative;
   background-color: $color_yellow;
 }
@@ -8,7 +7,6 @@
   position: relative; 
   display: flex;
   justify-content: center;
-  // margin-top: 200px;
 
   h2 {
       margin-top: 64px;
@@ -47,4 +45,28 @@
 
 .if__you__want__buttom__two, .if__you__want__buttom__three, .if__you__want__buttom__four {
   opacity: 0;
+}
+
+.it__is__me {
+  display: flex;
+  position: relative;
+}
+
+.it__is__me__title {
+  position: absolute;
+  right : 173px;
+  top: 50%;
+}
+
+
+.it__is__me__foto {
+  margin-top: 34px;
+  transform-origin: bottom;
+  bottom: 0;
+}
+
+.it__is__me__star {
+  height:  100%;  
+  margin-left: 75px;
+  margin-bottom: 79px;
 }

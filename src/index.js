@@ -136,7 +136,7 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '1800 center',
+    start: '2000 center',
     end: '+=20',
     scrub: true,
   },
@@ -146,7 +146,7 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '1800 center',
+    start: '2000 center',
     end: '+=200',
     scrub: true,
   },
@@ -157,7 +157,7 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '2200 center',
+    start: '2500 center',
     end: '+=20',
     scrub: true,
   },
@@ -167,7 +167,7 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '2200 center',
+    start: '2400 center',
     end: '+=200',
     scrub: true,
   },
@@ -178,6 +178,27 @@ ifYouWantText
 
 
 ifYouWantImg
+.to ('.vector__stars', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '100 center',
+    end: '+=2000',
+    scrub: true,
+  },
+  x: 1100,
+})
+.to ('.vector__stars', {
+  scrollTrigger: {
+    // markers: true,  
+    trigger: '.who__what__three__text',
+    start: '250 center',
+    end: '+=500',
+    scrub: true,
+  },
+  ease: "none",
+  y: 400,
+})
 .from ('.if__you__want__buttom__one', {
   scrollTrigger: {
     // markers: true,
@@ -200,27 +221,6 @@ ifYouWantImg
 })
 .to ('.vector__stars', {
   scrollTrigger: {
-    // markers: true,  
-    trigger: '.who__what__three__text',
-    start: '250 center',
-    end: '+=500',
-    scrub: true,
-  },
-  ease: "none",
-  y: 400,
-})
-.to ('.vector__stars', {
-  scrollTrigger: {
-    // markers:true,
-    trigger: '.who__what__three__text',
-    start: '100 center',
-    end: '+=2000',
-    scrub: true,
-  },
-  x: 1100,
-})
-.to ('.vector__stars', {
-  scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
     start: '1300 center',
@@ -236,30 +236,136 @@ opacity: 0,
     start: '1400 center',
     scrub: true,
   },
-   attr: { src: './images/eyes.png' },
-  })
-
-
-
+  attr: { src: './images/eyes.png' },
+})
 .to ('.vector__moon', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
     start: '1400 center',
-    end: '+=2000',
+    end: '+=1500',
     scrub: true,
   },
   x: 1100,
 })
+.to('.eyes', {
+  scrollTrigger: {
+    // markers: true,  
+    trigger: '.who__what__three__text',
+    start: '2200 center',
+    scrub: true,
+  },
+  attr: { src: './images/eyes_left.png' },
+})
+.to ('.vector__moon', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '2300 center',
+    end: '+=300',
+    scrub: true,
+  },
+opacity: 0,
+})
+.to('.eyes', {
+  scrollTrigger: {
+    // markers: true,  
+    trigger: '.who__what__three__text',
+    start: '2800 center',
+    scrub: true,
+  },
+  attr: { src: './images/eyes.png' },
+})
+.to('.if__you__want__buttom', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '3000 center',
+    end: '+=200',
+    scrub: true,
+  },
+  opacity: 0,
+})
+.to('.if__you__want__buttom', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '3000 center',
+    end: '+=200',
+    scrub: true,
+  },
+  opacity: 0,
+})
+.from('.it__is__me__foto', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '4000 center',
+    end: '+=200',
+    scrub: true,
+  },
+  scaleY: 0
+})
+.from('.it__is__me__star', {
+  scrollTrigger: {
+    // markers:true,
+    trigger: '.who__what__three__text',
+    start: '4000 center',
+    end: '+=200',
+    scrub: true,
+  },
+  x: 900,
+  y: -300
+})
 
 
-
-
-
-let st = ScrollTrigger.create({
+ScrollTrigger.create({
     // markers: true,
     trigger: ".if__you__want__buttom",
     pin: ".if__you__want__title",
     start: '0 center',
-    end: "+=3600"
+    end: "+=2800"
 });
+
+ScrollTrigger.create({
+  // markers: true,
+  trigger: ".who__what__three__text",
+  pin: ".if__you__want__title",
+  start: '4280 center',
+  end: "+=300"
+});
+
+
+const work = gsap.timeline()
+
+work
+.to('.how__we__work__title ', {
+  scrollTrigger: {
+        // markers: true,
+    trigger: '.how__we__work',
+    start: 'bottom bottom',
+    scrub: true,
+    pin: true,
+  },
+})
+// .from('.how__we__work', {
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.how__we__work',
+//     start: '-=900 bottom',
+//     end: '+=300',
+//     scrub: true,
+//   },
+// css: {
+//   margin: '0 auto',
+// }
+// })
+.from('.how__we__work__title__not', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: '-150 0',
+    scrub: true,
+  },
+  y: 100,
+})
