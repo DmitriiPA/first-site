@@ -1,3 +1,7 @@
+.main {
+  background-color: $color_white;
+  overflow: hidden;
+}
 .how__we__work {
   height: 100vh;
   position: relative;
@@ -7,8 +11,13 @@
   background-size: cover;
   margin: 0 auto;
   overflow: hidden;
-  padding-top: 120px;
-  // margin-top: -500px;
+  // padding-top: 120px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 }
 
 .how__we__work__title {
@@ -22,15 +31,78 @@
   }
   
 .how__we__work__title__not {
-  position: relative;
+  // position: relative;
   color: $color_white;
-  margin-top: 340px;
-  margin-right: 70px;
-  scale: 1.3;
+  padding-top: 40px;
+  padding-left: 283px;
+  font-size: 80px;
 }
 
+.second {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.how__we__work__img {
+  width: calc(var(--index)*31);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  position: relative;
+  a {
+    display: inline-block;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1 / span 12;
+    position: relative;
+    color: $color_yellow;
+    border-top: solid 2px $color_yellow;
+    border-bottom: solid 2px $color_yellow;
+    padding: 20px 0;
+    margin-bottom: 90px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+  
 .train {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  width: calc(var(--index)*28);
+  position: relative;
+  left: 2vw;
+  transform-origin: bottom right;
+  grid-column: 3 / -1;
+  grid-row: 1;
+}
+
+.astronaut {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  z-index: 2;
+  // opacity: 0;
+}
+
+.stars__the__end {
+  grid-row: 1;
+  grid-column: 6 / span 8;
+  position: relative;
+  top: -41vh;
+  opacity: 0;
+}
+
+.it__is__me__text {
+  color: $color_white;
+}
+
+.text__1, .text__2, .text__3, .text__4, .text__5, .text__6 {
+  display: none;}
+  
+.blue__planet {
+  grid-row: 1;
+  grid-column: 5 / span 8;
+  position: relative;
+  top: -30vh;
+  // opacity: 0;
 }

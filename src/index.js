@@ -71,7 +71,6 @@
 //   '-=1'
 // )
 
-
 const who = gsap.timeline()
 
 who.from ('.who__what__second__text', {
@@ -86,25 +85,36 @@ who.from ('.who__what__second__text', {
 })
 .to ('.back__dlue', {
   scrollTrigger: {
+    // markers: true,
     trigger: '.section__who__what',
-    start: '+=50',
-    end: '+=500',
+    start: '0',
+    end: '+=600',
     scrub: true,
   },
-  scale: 1500
-}
-)
+  scale: 100
+})
 .to ('.back__yellow', {
   scrollTrigger: {
-    // markers:true,
+    // markers: true,
     trigger: '.back__yellow',
     start: '-=120 bottom',
-    end: '+=500',
+    end: '+=700',
     scrub: true,
   },
-  scale: 1500
-}
-)
+  scale: 100
+})
+.to ('.main', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.back__yellow',
+    start: '-=120 bottom',
+    end: '50',
+    scrub: 'true',
+  },
+  css: {
+    backgroundColor: "#FFCE7D"
+  },
+})
 
 
 const ifYouWantText = gsap.timeline()
@@ -134,7 +144,7 @@ ifYouWantText
 })
 .to ('.if__you__want__buttom__two', {
   scrollTrigger: {
-    // markers:true,
+    // markers: true,
     trigger: '.who__what__three__text',
     start: '2000 center',
     end: '+=20',
@@ -144,7 +154,7 @@ ifYouWantText
 })
 .to ('.if__you__want__buttom__three', {
   scrollTrigger: {
-    // markers:true,
+    // markers: true,
     trigger: '.who__what__three__text',
     start: '2000 center',
     end: '+=200',
@@ -252,7 +262,7 @@ opacity: 0,
   scrollTrigger: {
     // markers: true,  
     trigger: '.who__what__three__text',
-    start: '2200 center',
+    start: '1900 center',
     scrub: true,
   },
   attr: { src: './images/eyes_left.png' },
@@ -271,7 +281,7 @@ opacity: 0,
   scrollTrigger: {
     // markers: true,  
     trigger: '.who__what__three__text',
-    start: '2800 center',
+    start: '2500 center',
     scrub: true,
   },
   attr: { src: './images/eyes.png' },
@@ -298,74 +308,89 @@ opacity: 0,
 })
 .from('.it__is__me__foto', {
   scrollTrigger: {
-    // markers:true,
+    // markers: true,
     trigger: '.who__what__three__text',
     start: '4000 center',
-    end: '+=200',
+    end: '+=300',
     scrub: true,
   },
   scaleY: 0
 })
 .from('.it__is__me__star', {
   scrollTrigger: {
-    // markers:true,
+    // markers: true,
     trigger: '.who__what__three__text',
     start: '4000 center',
     end: '+=200',
     scrub: true,
   },
   x: 900,
-  y: -300
+  y: -300,
+  opacity: 0,
 })
 
 
 ScrollTrigger.create({
     // markers: true,
     trigger: ".if__you__want__buttom",
-    pin: ".if__you__want__title",
+    pin: ".section__if__you__want",
     start: '0 center',
     end: "+=2800"
 });
 
 ScrollTrigger.create({
   // markers: true,
-  trigger: ".who__what__three__text",
-  pin: ".if__you__want__title",
-  start: '4280 center',
+  trigger: ".section__if__you__want",
+  pin: ".section__if__you__want",
+  start: 'bottom bottom',
   end: "+=300"
 });
 
 
-const work = gsap.timeline()
 
-work
-.to('.how__we__work__title ', {
-  scrollTrigger: {
-        // markers: true,
-    trigger: '.how__we__work',
-    start: 'bottom bottom',
-    scrub: true,
-    pin: true,
-  },
-})
-// .from('.how__we__work', {
-//   scrollTrigger: {
-//     markers: true,
-//     trigger: '.how__we__work',
-//     start: '-=900 bottom',
-//     end: '+=300',
-//     scrub: true,
-//   },
-// css: {
-//   margin: '0 auto',
-// }
-// })
-.from('.how__we__work__title__not', {
+// Поезд и космонафт
+
+const work = gsap.timeline({
+  ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: '-150 0',
-    scrub: true,
-  },
-  y: 100,
+    start: 'top top', 
+    end: '+=3000',  
+    scrub: 0.05,
+    anticipatePin: 1,
+    pin: '.how__we__work',
+  }
 })
+.to ('.main', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: '-=120 bottom',
+    end: '50',
+    scrub: 'true',
+  },
+  css: {
+    backgroundColor: "#E9E9E9"
+  },
+})
+// .from('.train', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work',
+//     start: '200 center',
+//     end: '+=300',
+//     scrub: true,
+//   },
+//   scale: 0
+// })
+// .from('.astronaut', {
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.how__we__work',
+//     // start: '100',
+//     // end: '+=300',
+//     scrub: true,
+//   },
+//   y: 500
+// })
