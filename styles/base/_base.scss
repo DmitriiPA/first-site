@@ -4,13 +4,22 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 
-  font-family: 'Roboto Slab';
+  font-family: 'Robot-c';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
   
   // border: 1px solid #f0f;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+.main {
+  background-color: $color_white;
+  overflow: hidden;
 }
 
 body {
@@ -27,15 +36,16 @@ body {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px 0 96px;
+  padding: 0 2vw 0 6vw;
+  // padding: 0 24px 0 96px;
 }
 
 .z10 {
   z-index: 10;
 }
   
-h2 {
-  font-family: 'Yanone Kaffeesatz';
+h1, h2, h5 {
+  font-family: 'Yanoe-c';
   font-style: normal;
   font-weight: 700;
   font-size: 60px;
@@ -43,10 +53,10 @@ h2 {
   text-transform: uppercase;
 }
 
-h4 {
-  width: 624px;
-  margin-top: 16px;
-  font-family: 'Roboto Slab';
+h3, h4 {
+  // width: 624px;
+  // margin-top: 16px;
+  font-family: 'Robot-c';
   font-style: normal;
   font-weight: 400;
   font-size: 22px;

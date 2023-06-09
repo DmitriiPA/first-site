@@ -1,0 +1,55 @@
+.education {
+  height: 100vh;
+  // position: relative;
+  background-image: url("../images/background-header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // margin: 0 auto;
+  // overflow: hidden;
+  
+  h2 {
+    padding-top: calc(var(--index)*3);
+    text-align: center;
+      color: $color_white;
+    }
+}
+
+.education__content {
+  display: flex;
+  justify-content: space-between;
+  color: $color_text;
+  
+  h3 {
+    margin-top: 6vh;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.education__text {
+  margin-top: 7vh;
+}
+
+.education__foto {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: -90px;
+}
+
+.education__star {
+  height: calc(var(--index)*25);
+  grid-column: 1 / -1;
+  grid-row: 1;
+  rotate: 340deg;
+  transform: matrix(0.98, 0.21, -0.21, 0.98, 0, 0);
+}
+
+.diplom {
+  margin-top: 100px;
+  grid-column: 2 / -1;
+  grid-row: 1;
+  z-index: 2;
+}

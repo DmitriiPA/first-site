@@ -1,0 +1,40 @@
+.reviews {
+  height: 100vh;
+  background-color: $color_text;
+  overflow: hidden;
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.price__stars {
+  height: 100%;
+}
+
+.reviews__content {
+  width: 100%;
+  padding-top: calc(var(--index)*6);
+  
+  h2 {
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: calc(var(--index)*4);
+    width: 100%;
+    padding: calc(var(--index)*1) ;
+    border-top: solid 2px ;
+    border-bottom: solid 2px ;
+  }
+
+  h5 {
+    margin-top: 25px;
+    font-weight: 400;
+font-size: 22px;
+line-height: 22px;
+    text-align: right;
+    text-transform: none;
+  }
+}
