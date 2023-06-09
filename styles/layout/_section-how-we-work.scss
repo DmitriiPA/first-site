@@ -1,51 +1,65 @@
-.main {
-  background-color: $color_white;
-  overflow: hidden;
-}
+
+
 .how__we__work {
   height: 100vh;
-  position: relative;
   background-image: url("../images/background-header.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
   overflow: hidden;
-  // padding-top: 120px;
 
   .wrapper {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
-}
 
-.how__we__work__title {
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  h2 {
-      color: $color_white;
+  .how__we__work__title {
+    margin-top: 120px;
+    text-align: center;
+    color: $color_white;
     }
-  }
-  
-.how__we__work__title__not {
-  // position: relative;
-  color: $color_white;
-  padding-top: 40px;
-  padding-left: 283px;
-  font-size: 80px;
 }
 
-.second {
-  height: 100%;
+.how__we__work__content {
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  vertical-align: bottom;
+  bottom: 0;
+  height: 100%;
+
+  h4 {
+    color: $color_white;
+  }
 }
+
+.how__we__work__text {
+  width: 620px;
+  // width: calc(var(--index)*31);
+}
+
+.it__is__me__text {
+  display: none;
+  color: $color_white;
+}
+
+
+.price {
+  display: none;
+}
+
+
+.how__we__work__not {
+  position: relative;
+  text-align: center;
+  color: $color_white;
+  font-size: 80px;
+  margin-top: calc(var(--index)*8.5);
+}
+
 
 .how__we__work__img {
-  width: calc(var(--index)*31);
+  // width: calc(var(--index)*31);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   align-items: end;
@@ -81,7 +95,6 @@
   grid-row: 1;
   grid-column: 1 / span 8;
   z-index: 2;
-  // opacity: 0;
 }
 
 .stars__the__end {
@@ -89,20 +102,39 @@
   grid-column: 6 / span 8;
   position: relative;
   top: -41vh;
-  opacity: 0;
 }
 
-.it__is__me__text {
-  color: $color_white;
-}
-
-.text__1, .text__2, .text__3, .text__4, .text__5, .text__6 {
-  display: none;}
-  
 .blue__planet {
   grid-row: 1;
   grid-column: 5 / span 8;
   position: relative;
   top: -30vh;
-  // opacity: 0;
+}
+
+.call__my {
+  display: none;
+
+  opacity: 0;
+
+  h2 {
+    color: $color_yellow;
+    margin: 0;
+  }
+}
+
+.price {
+  width: 640px;
+  
+  div {
+    display: flex;
+    justify-content: space-between
+  }
+
+  h2 {
+    color: $color_text;
+  }
+  h3 {
+    color: $color_yellow;
+    width: 100%;
+  }
 }

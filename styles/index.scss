@@ -1,13 +1,15 @@
-@import 'base/base';
-
 @import 'abstracts/variables';
 
-@import 'layout/footer';
+@import 'base/base';
+
 @import 'layout/header';
 @import 'layout/navigation';
-@import 'layout/_section-who-want';
-@import 'layout/_section-if-you-want';
-@import 'layout/_section-how-we-work';
+@import 'layout/section-who-want';
+@import 'layout/section-if-you-want';
+@import 'layout/section-how-we-work';
+@import 'layout/reviews';
+@import 'layout/education';
+@import 'layout/footer';
 
 @import 'components/buttons';
 

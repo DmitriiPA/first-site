@@ -103,18 +103,6 @@ who.from ('.who__what__second__text', {
   },
   scale: 100
 })
-.to ('.main', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.back__yellow',
-    start: '-=120 bottom',
-    end: '50',
-    scrub: 'true',
-  },
-  css: {
-    backgroundColor: "#FFCE7D"
-  },
-})
 
 
 const ifYouWantText = gsap.timeline()
@@ -203,7 +191,7 @@ ifYouWantImg
     // markers: true,  
     trigger: '.who__what__three__text',
     start: '250 center',
-    end: '+=500',
+    end: '+=710',
     scrub: true,
   },
   ease: "none",
@@ -332,18 +320,18 @@ opacity: 0,
 
 ScrollTrigger.create({
     // markers: true,
-    trigger: ".if__you__want__buttom",
+    trigger: ".section__if__you__want",
     pin: ".section__if__you__want",
-    start: '0 center',
-    end: "+=2800"
+    start: 'top top',
+    end: "+=2400",
 });
 
 ScrollTrigger.create({
-  // markers: true,
+  markers: true,
   trigger: ".section__if__you__want",
   pin: ".section__if__you__want",
   start: 'bottom bottom',
-  end: "+=300"
+  end: "+=500",
 });
 
 
@@ -356,10 +344,10 @@ const work = gsap.timeline({
     // markers: true,
     trigger: '.how__we__work',
     start: 'top top', 
-    end: '+=3000',  
+    // end: '+=3000',  
     scrub: 0.05,
     anticipatePin: 1,
-    pin: '.how__we__work',
+    // pin: '.how__we__work',
   }
 })
 .to ('.main', {
