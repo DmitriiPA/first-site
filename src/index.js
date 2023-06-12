@@ -1,75 +1,76 @@
-// var tl = gsap.timeline();
-// tl.to(
-//   '.heder__stars__box img',  {
-//     opacity: 1, 
-//     delay: 0.7, 
-//     stagger: 0.04,
-//   }
-// )
-// .from(
-//   '.title',
-//   {
-//     y: -220,
-//     x: 400,
-//     duration: 0.8
-//   },
-//   1
-// )
-// .from(
-//   '.women', {y: -900},
-//   1.2
-// )
-// .from(
-//   '.field', {
-//     y: 400,
-//     opacity: 0,
-//   },
-//   1.2
-// )
-// .from(
-//   '.moon', {
-//     scale: 0,
-//     duration: 2,
-//    },
-//   1.5
-// )
-// .from(
-//   '.women', {
-//     rotate: 15,
-//     duration: 1.3,
-//     ease: "bounce.out",
-//   },
-//   1.7
-// )
-// .from(
-//   '.subtitle',
-//   {
-//     opacity: 0
-//   },
-//   1.8
-// )
-// .from(
-//   '.kye__box', {
-//     y: -600,
-//     duration: 1.4,
-//   },
-//   2
-// )
-// .from(
-//   '.kye__box', {
-//     rotate: 20,
-//     duration: 2.6,
-//     ease: Elastic.easeOut,
-//   },
-//   2
-// )
-// .from(
-//   '.nav__ul li', {
-//     x: -600,
-//     stagger: 0.1
-//   }, 
-//   '-=1'
-// )
+// ScrollTrigger.normalizeScroll(true);
+var tl = gsap.timeline();
+tl.to(
+  '.heder__stars__box img',  {
+    opacity: 1, 
+    delay: 0.7, 
+    stagger: 0.04,
+  }
+)
+.from(
+  '.title',
+  {
+    y: -220,
+    x: 400,
+    duration: 0.8
+  },
+  1
+)
+.from(
+  '.women', {y: -900},
+  1.2
+)
+.from(
+  '.field', {
+    y: 400,
+    opacity: 0,
+  },
+  1.2
+)
+.from(
+  '.moon', {
+    scale: 0,
+    duration: 2,
+   },
+  1.5
+)
+.from(
+  '.women', {
+    rotate: 15,
+    duration: 1.3,
+    ease: "bounce.out",
+  },
+  1.7
+)
+.from(
+  '.subtitle',
+  {
+    opacity: 0
+  },
+  1.8
+)
+.from(
+  '.kye__box', {
+    y: -600,
+    duration: 1.4,
+  },
+  2
+)
+.from(
+  '.kye__box', {
+    rotate: 20,
+    duration: 2.6,
+    ease: Elastic.easeOut,
+  },
+  2
+)
+.from(
+  '.nav__ul li', {
+    x: -600,
+    stagger: 0.1
+  }, 
+  '-=1'
+)
 
 const who = gsap.timeline()
 
@@ -88,7 +89,7 @@ who.from ('.who__what__second__text', {
     // markers: true,
     trigger: '.section__who__what',
     start: '0',
-    end: '+=600',
+    end: '+=900',
     scrub: true,
   },
   scale: 100
@@ -98,7 +99,7 @@ who.from ('.who__what__second__text', {
     // markers: true,
     trigger: '.back__yellow',
     start: '-=120 bottom',
-    end: '+=700',
+    end: '+=900',
     scrub: true,
   },
   scale: 100
@@ -181,7 +182,7 @@ ifYouWantImg
     // markers:true,
     trigger: '.who__what__three__text',
     start: '100 center',
-    end: '+=2000',
+    end: '+=1000',
     scrub: true,
   },
   x: 1100,
@@ -190,8 +191,8 @@ ifYouWantImg
   scrollTrigger: {
     // markers: true,  
     trigger: '.who__what__three__text',
-    start: '250 center',
-    end: '+=710',
+    start: '100 center',
+    end: '+=700',
     scrub: true,
   },
   ease: "none",
@@ -221,7 +222,7 @@ ifYouWantImg
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '1300 center',
+    start: '900 center',
     end: '+=300',
     scrub: true,
   },
@@ -250,7 +251,7 @@ opacity: 0,
   scrollTrigger: {
     // markers: true,  
     trigger: '.who__what__three__text',
-    start: '1900 center',
+    start: '2100 center',
     scrub: true,
   },
   attr: { src: './images/eyes_left.png' },
@@ -327,16 +328,16 @@ ScrollTrigger.create({
 });
 
 ScrollTrigger.create({
-  markers: true,
+  // markers: true,
   trigger: ".section__if__you__want",
   pin: ".section__if__you__want",
   start: 'bottom bottom',
-  end: "+=500",
+  end: "+=700",
 });
 
 
 
-// Поезд и космонафт
+// Поезд и космонафт и  текст
 
 const work = gsap.timeline({
   ease: 'none',
@@ -344,41 +345,271 @@ const work = gsap.timeline({
     // markers: true,
     trigger: '.how__we__work',
     start: 'top top', 
-    // end: '+=3000',  
-    scrub: 0.05,
-    anticipatePin: 1,
-    // pin: '.how__we__work',
+    end: '+=3000',  
+    scrub: 'true',
+    // anticipatePin: 1,
+    pin: '.how__we__work',
   }
 })
-.to ('.main', {
+.from('.train', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: '-=120 bottom',
-    end: '50',
-    scrub: 'true',
+    start: '300 center',
+    end: '+=300',
+    scrub: true,
   },
-  css: {
-    backgroundColor: "#E9E9E9"
-  },
+  scale: 0
 })
-// .from('.train', {
+.from('.how__we__work__title', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: 'top center',
+    end: '+=300',
+    scrub: true,
+  },
+  y: 300
+})
+.from('.how__we__work__not', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: 'top center',
+    end: '+=300',
+    scrub: true,
+  },
+  y: 700
+})
+.to('[data-speed]', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '200 top',
+    end: '+=200px ',
+    invalidateOnRefresh: true,
+    scrub: true,
+  },
+    y:  (i, el) => parseFloat(el.getAttribute("data-speed")) * -700,
+    opacity: 0,    
+})
+.from('.astronaut', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '200 top',
+    end: '+=200px ',
+    // invalidateOnRefresh: true,
+    scrub: true,
+  },
+    y:  600    
+})
+.from('.text__1', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '200 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  300,
+    opacity: 0,    
+})
+.from('.text__2', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '200 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  700,
+    opacity: 0,    
+})
+.to('.text__1', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '600 top',
+    end: '+=300px ',
+    invalidateOnRefresh: true,
+    scrub: true,
+  },
+    y:  -300,
+    opacity: 0,    
+})
+.to('.text__2', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '600 top',
+    end: '+=300px ',
+    invalidateOnRefresh: true,
+    scrub: true,
+  },
+    y:  -300,
+    opacity: 0,    
+})
+.from('.text__3', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '700 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  300,
+    opacity: 0,    
+})
+.from('.text__4', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '700 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  700,
+    opacity: 0,    
+})
+.from('.stars__the__end', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '800 top',
+    end: '+=200px ',
+    scrub: true,
+    // invalidateOnRefresh: true,
+  },
+    opacity: 0,    
+})
+.to('.text__3', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1100 top',
+    end: '+=200px ',
+    scrub: true,
+    invalidateOnRefresh: true,
+  },
+    y:  -500,
+    opacity: 0,    
+  })
+.to('.text__4', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1100 top',
+    end: '+=200px ',
+    scrub: true,
+    invalidateOnRefresh: true,
+  },
+  y:  -300,
+  opacity: 0,    
+})
+.from('.text__5', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1300 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  200,
+    opacity: 0,    
+})
+.from('.text__6', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1300 top',
+    end: '+=200px ',
+    scrub: true,
+  },
+    y:  400,
+    opacity: 0,    
+})
+.to(['.astronaut, .train'], {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1700 top',
+    end: '+=200px',
+    scrub: true,
+    invalidateOnRefresh: true,
+  },
+    x:  700,
+    opacity: 0,    
+})
+.to('.stars__the__end', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1800 top',
+    end: '+=200px ',
+    scrub: true,
+    invalidateOnRefresh: true,
+  },
+    opacity: 0,    
+})
+.from('.blue__planet', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1800 top',
+    end: '+=200px ',
+    scrub: true,
+    // invalidateOnRefresh: true,
+  },
+    opacity: 0, 
+    y: 700,   
+})
+.from('.call__my', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1800 top',
+    end: '+=200px ',
+    scrub: true,
+    // invalidateOnRefresh: true,
+  },
+    opacity: 0, 
+    x: 700,   
+})
+.from('.price', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__content',
+    start: '1800 top',
+    end: '+=200px ',
+    scrub: true,
+    // invalidateOnRefresh: true,
+  },
+    opacity: 0, 
+    y: 500,   
+})
+
+// .to('.text__5', {
 //   scrollTrigger: {
 //     // markers: true,
-//     trigger: '.how__we__work',
-//     start: '200 center',
-//     end: '+=300',
+//     trigger: '.how__we__work__content',
+//     start: '1800 top',
+//     end: '+=200px',
 //     scrub: true,
+//     invalidateOnRefresh: true,
 //   },
-//   scale: 0
+//     y:  -700,
+//     opacity: 0,    
 // })
-// .from('.astronaut', {
+// .to('.text__6', {
 //   scrollTrigger: {
-//     markers: true,
-//     trigger: '.how__we__work',
-//     // start: '100',
-//     // end: '+=300',
+//     // markers: true,
+//     trigger: '.how__we__work__content',
+//     start: '1800 top',
+//     end: '+=200px',
 //     scrub: true,
+//     invalidateOnRefresh: true,
 //   },
-//   y: 500
+//     y:  -700,
+//     opacity: 0,    
 // })
