@@ -1,5 +1,3 @@
-
-
 .how__we__work {
   height: 100vh;
   background-image: url("../images/background-header.png");
@@ -18,7 +16,7 @@
     margin-top: 120px;
     text-align: center;
     color: $color_white;
-    }
+  }
 }
 
 .how__we__work__content {
@@ -34,58 +32,45 @@
 }
 
 .how__we__work__text {
-  width: 620px;
-  // width: calc(var(--index)*31);
-}
-
-.it__is__me__text {
-  display: none;
-  color: $color_white;
+  margin-top: calc(var(--index)*(-3));
+  display: grid;
+  width: 640px;
+  height: calc(var(--index)*24) ;
 }
 
 
-.price {
-  display: none;
+.text_grid_row {
+  grid-row: 1;
+  grid-column: 1;
 }
-
 
 .how__we__work__not {
+  grid-row: 1;
+  grid-column: 1;
   position: relative;
   text-align: center;
   color: $color_white;
   font-size: 80px;
-  margin-top: calc(var(--index)*8.5);
+  margin-top: calc(var(--index)*10.5);
 }
 
 
+.text_margin {
+  margin-top: 64px;
+}
+
 .how__we__work__img {
-  // width: calc(var(--index)*31);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   align-items: end;
   position: relative;
-  a {
-    display: inline-block;
-    width: 100%;
-    grid-row: 1;
-    grid-column: 1 / span 12;
-    position: relative;
-    color: $color_yellow;
-    border-top: solid 2px $color_yellow;
-    border-bottom: solid 2px $color_yellow;
-    padding: 20px 0;
-    margin-bottom: 90px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
 }
 
   
 .train {
   width: calc(var(--index)*28);
   position: relative;
-  left: 2vw;
+  left: calc(var(--index)*1.5);
   transform-origin: bottom right;
   grid-column: 3 / -1;
   grid-row: 1;
@@ -112,9 +97,18 @@
 }
 
 .call__my {
-  display: none;
-
-  opacity: 0;
+  display: inline-block;
+  grid-row: 1;
+  grid-column: 3 / span 12;
+  position: relative;
+  color: $color_yellow;
+  border-top: solid 2px $color_yellow;
+  border-bottom: solid 2px $color_yellow;
+  padding: 20px 0;
+  margin-bottom: 90px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 
   h2 {
     color: $color_yellow;
@@ -124,7 +118,8 @@
 
 .price {
   width: 640px;
-  
+  margin-top: calc(var(--index)*22);
+
   div {
     display: flex;
     justify-content: space-between
