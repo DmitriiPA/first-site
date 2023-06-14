@@ -1,9 +1,27 @@
+@font-face {
+  font-family: "Yanone Kaffeesatz ExtraLight";
+  src: url("../../fonts/Yanone Kaffeesatz ExtraLight.eot");
+  src: url("../../fonts/Yanone Kaffeesatz ExtraLight.eot?#iefix") format("embedded-opentype"), url("../../fonts/Yanone Kaffeesatz ExtraLight.woff2") format("woff2"), url("../../fonts/Yanone Kaffeesatz ExtraLight.woff") format("woff"), url("../../fonts/Yanone Kaffeesatz ExtraLight.ttf") format("truetype"), url("../../fonts/Yanone Kaffeesatz ExtraLight.svg#Yanone Kaffeesatz ExtraLight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../../fonts/Roboto Slab Regular.eot");
+  src: url("../../fonts/Roboto Slab Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto Slab Regular.woff2") format("woff2"), url("../../fonts/Roboto Slab Regular.woff") format("woff"), url("../../fonts/Roboto Slab Regular.ttf") format("truetype"), url("../../fonts/Roboto Slab Regular.svg#Roboto Slab Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2044;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Robot-c";
+  font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -41,7 +59,7 @@ body {
 }
 
 h1, h2, h5 {
-  font-family: "Yanoe-c";
+  font-family: "Yanone Kaffeesatz ExtraLight";
   font-style: normal;
   font-weight: 700;
   font-size: 60px;
@@ -50,7 +68,7 @@ h1, h2, h5 {
 }
 
 h3, h4 {
-  font-family: "Robot-c";
+  font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -625,13 +643,4 @@ h3, h4 {
 
 .footer__left, .footer__right {
   min-width: calc(var(--index) * 23);
-}
-
-@font-face {
-  font-family: Robot-c;
-  src: url(../../fonts/RobotoSlab-VariableFont_wght.ttf);
-}
-@font-face {
-  font-family: Yanoe-c;
-  src: url(../../fonts/YanoneKaffeesatz-VariableFont_wght.ttf);
 }/*# sourceMappingURL=index.css.map */
