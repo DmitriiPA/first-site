@@ -1,7 +1,7 @@
 .education {
   height: 100vh;
   // position: relative;
-  background-image: url("../images/background-header.png");
+  background-image: url('../images/background-header.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,6 +37,7 @@
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
   margin-top: -90px;
+  transition: .5s;
 }
 
 .education__star {
@@ -48,10 +49,15 @@
 }
 
 .diplom {
+  position: absolute;
+  max-width: 45vw;
+  max-height: 60vh;
   margin-top: 100px;
   grid-column: 2 / -1;
   grid-row: 1;
-  z-index: 2;
+  z-index: 3;
+  right: 4vw;
+  cursor: pointer;
 }
 
 .teacher_education,
@@ -60,4 +66,35 @@
 .thinking {
   color: $color_yellow;
   cursor: pointer;
+}
+
+.off {
+  transition: 0.5s;
+  display: none;
+}
+
+
+.right_0 {
+  right: 1vw;
+}
+
+.diplom.visit {
+  max-height: none;
+  max-width: none;
+  height: 100vh;
+  width: auto;
+  top: 0;
+  margin-top: 0;
+}
+
+.black__bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 2;
+  transition: .5s;
 }
