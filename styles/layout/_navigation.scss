@@ -15,7 +15,7 @@
 
 .nav__li:not(:last-child)::after {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   width: 504px;
   height: 2px;

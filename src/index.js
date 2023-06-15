@@ -37,7 +37,7 @@ tl.to(
   '.women', {
     rotate: 15,
     duration: 1.3,
-    ease: "bounce.out",
+    ease: 'bounce.out',
   },
   1.7
 )
@@ -194,7 +194,7 @@ ifYouWantImg
     end: '+=700',
     scrub: true,
   },
-  ease: "none",
+  ease: 'none',
   y: 400,
 })
 .from ('.if__you__want__buttom__one', {
@@ -320,18 +320,18 @@ opacity: 0,
 
 ScrollTrigger.create({
     // markers: true,
-    trigger: ".section__if__you__want",
-    pin: ".section__if__you__want",
+    trigger: '.section__if__you__want',
+    pin: '.section__if__you__want',
     start: 'top top',
-    end: "+=2400",
+    end: '+=2400',
 });
 
 ScrollTrigger.create({
   // markers: true,
-  trigger: ".section__if__you__want",
-  pin: ".section__if__you__want",
+  trigger: '.section__if__you__want',
+  pin: '.section__if__you__want',
   start: 'bottom bottom',
-  end: "+=700",
+  end: '+=700',
 });
 
 
@@ -356,7 +356,7 @@ const work = gsap.timeline({
     end: '+=300',
     scrub: 2.5,
   },
-  ease: "power3.out",
+  ease: 'power3.out',
   scale: 0
 })
 .from('.how__we__work__title', {
@@ -388,7 +388,7 @@ const work = gsap.timeline({
     invalidateOnRefresh: true,
     scrub: 2.5,
   },
-    y:  (i, el) => parseFloat(el.getAttribute("data-speed")) * -700,
+    y:  (i, el) => parseFloat(el.getAttribute('data-speed')) * -700,
     opacity: 0,    
 })
 .from('.astronaut', {
@@ -620,15 +620,70 @@ const reviewsSection = gsap.timeline({
 
 
 
-// const educationSection = gsap.timeline({
-//   // ease: 'none',
-//   scrollTrigger: {
-//     // markers: true,
-//     trigger: '.education',
-//     start: 'top top', 
-//     end: '+=3000',  
-//     scrub: 'true',
-//     pin: '.education',
-//   },
-// })
-// .to('.')
+const educationSection = gsap.timeline({
+  // ease: 'none',
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.education',
+    start: 'top top', 
+    end: '+=300',  
+    scrub: 'true',
+    pin: '.education',
+  },
+});
+
+
+var body = document.querySelector('.body');
+
+var diplom = document.querySelectorAll('.diplom');
+var blackBG = document.querySelector('.black__bg');
+
+var diplomBel = document.querySelector('.diplom__belorus');
+var diplomCoach = document.querySelector('.diplom__coach');
+var diplomClinic = document.querySelector('.diplom__clinic');
+var diplomKurp = document.querySelector('.diplom__kurpatov');
+var teacherEducation = document.querySelector('.teacher_education');
+var retraining = document.querySelector('.retraining');
+var retrainingCourse = document.querySelector('.retraining_course');
+var thinking = document.querySelector('.thinking');
+
+
+function letDiplom1 () {
+  diplomBel.classList.toggle('off');
+  diplomCoach.classList.add('off')
+  diplomClinic.classList.add('off')
+  diplomKurp.classList.add('off')
+};
+function letDiplom2 () {
+  diplomBel.classList.add('off');
+  diplomCoach.classList.toggle('off')
+  diplomClinic.classList.add('off')
+  diplomKurp.classList.add('off')
+};
+function letDiplom3 () {
+  diplomBel.classList.add('off');
+  diplomCoach.classList.add('off')
+  diplomClinic.classList.toggle('off')
+  diplomKurp.classList.add('off')
+};
+function letDiplom4 () {
+  diplomBel.classList.add('off');
+  diplomCoach.classList.add('off')
+  diplomClinic.classList.add('off')
+  diplomKurp.classList.toggle('off')
+};
+
+teacherEducation.addEventListener('click',  letDiplom1);
+retraining.addEventListener('click',  letDiplom2);
+retrainingCourse.addEventListener('click',  letDiplom3);
+thinking.addEventListener('click',  letDiplom4);
+
+function lookAt(event) {
+    event.currentTarget.classList.toggle('visit');
+    blackBG.classList.toggle('off');
+  }
+
+diplomBel.addEventListener('click',  lookAt)
+diplomCoach.addEventListener('click',  lookAt)
+diplomClinic.addEventListener('click',  lookAt)
+diplomKurp.addEventListener('click',  lookAt)
