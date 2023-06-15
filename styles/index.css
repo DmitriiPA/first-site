@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Roboto-Slab";
+  src: url("../fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Yanone-Kaffeesatz-ExtraLight";
+  src: url("../fonts/YanoneKaffeesatz-VariableFont_wght.ttf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -62,14 +70,6 @@ h3, h4 {
   overflow: hidden;
 }
 
-@font-face {
-  font-family: "Roboto-Slab";
-  src: url(../../fonts/RobotoSlab-VariableFont_wght.ttf);
-}
-@font-face {
-  font-family: "Yanone-Kaffeesatz-ExtraLight";
-  src: url(../../fonts/YanoneKaffeesatz-VariableFont_wght.ttf);
-}
 .header {
   height: 700px;
   background-image: url("../images/background-header.png");
@@ -243,10 +243,15 @@ h3, h4 {
 }
 
 .nav__li {
+  height: 45px;
   position: relative;
   cursor: pointer;
   padding: 12px 0;
   list-style-type: none;
+}
+.nav__li a {
+  text-decoration: none;
+  color: #98E9FF;
 }
 
 .nav__li:not(:last-child)::after {
@@ -264,7 +269,8 @@ h3, h4 {
   width: 524px;
 }
 
-.nav__li:hover {
+.nav__li:hover a {
+  transition: 0.5s;
   font-size: 19px;
 }
 
@@ -645,9 +651,9 @@ h3, h4 {
 .diplom.visit {
   max-height: none;
   max-width: none;
-  height: 100vh;
+  height: 95vh;
   width: auto;
-  top: 0;
+  top: 2vh;
   margin-top: 0;
 }
 

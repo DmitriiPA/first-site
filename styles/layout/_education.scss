@@ -1,11 +1,9 @@
 .education {
   height: 100vh;
-  // position: relative;
   background-image: url('../images/background-header.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // margin: 0 auto;
   // overflow: hidden;
   
   h2 {
@@ -81,9 +79,9 @@
 .diplom.visit {
   max-height: none;
   max-width: none;
-  height: 100vh;
+  height: 95vh;
   width: auto;
-  top: 0;
+  top: 2vh;
   margin-top: 0;
 }
 
