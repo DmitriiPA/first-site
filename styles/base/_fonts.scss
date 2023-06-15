@@ -1,27 +1,9 @@
+@font-face {
+  font-family: "Roboto-Slab";
+  src: url(../../fonts/RobotoSlab-VariableFont_wght.ttf);
+}
 
 @font-face {
-  font-family:'Yanone Kaffeesatz ExtraLight';
-  src: url('../../fonts/Yanone Kaffeesatz ExtraLight.eot');
-  src: url('../../fonts/Yanone Kaffeesatz ExtraLight.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/Yanone Kaffeesatz ExtraLight.woff2') format('woff2'),
-  url('../../fonts/Yanone Kaffeesatz ExtraLight.woff') format('woff'),
-  url('../../fonts/Yanone Kaffeesatz ExtraLight.ttf') format('truetype'),
-  url('../../fonts/Yanone Kaffeesatz ExtraLight.svg#Yanone Kaffeesatz ExtraLight') format('svg');
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-2212;
-}
-@font-face {
-  font-family:'Roboto Slab';
-  src: url('../../fonts/Roboto Slab Regular.eot');
-  src: url('../../fonts/Roboto Slab Regular.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/Roboto Slab Regular.woff2') format('woff2'),
-  url('../../fonts/Roboto Slab Regular.woff') format('woff'),
-  url('../../fonts/Roboto Slab Regular.ttf') format('truetype'),
-  url('../../fonts/Roboto Slab Regular.svg#Roboto Slab Regular') format('svg');
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-2044;
+  font-family: "Yanone-Kaffeesatz-ExtraLight";
+  src: url(../../fonts/YanoneKaffeesatz-VariableFont_wght.ttf);
 }

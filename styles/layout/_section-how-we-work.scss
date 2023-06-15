@@ -109,10 +109,18 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-
+  
   h2 {
     color: $color_yellow;
     margin: 0;
+  }
+}
+
+/* Есть возможность навести указатель на элемент */
+@media (any-hover: hover) {
+  .call__my :hover {
+    transition: .5s;
+    scale: 1.1;
   }
 }
 

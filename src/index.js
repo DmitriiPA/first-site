@@ -65,7 +65,7 @@ tl.to(
 )
 .from(
   '.nav__ul li', {
-    x: -600,
+    x: '-100vw',
     stagger: 0.1
   }, 
   '-=1'
@@ -407,7 +407,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '200 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  300,
     opacity: 0,    
@@ -418,7 +418,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '200 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  700,
     opacity: 0,    
@@ -430,7 +430,7 @@ const work = gsap.timeline({
     start: '600 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  -300,
     opacity: 0,    
@@ -442,7 +442,7 @@ const work = gsap.timeline({
     start: '600 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  -300,
     opacity: 0,    
@@ -453,7 +453,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '700 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  300,
     opacity: 0,    
@@ -464,7 +464,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '700 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  700,
     opacity: 0,    
@@ -475,7 +475,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '800 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     opacity: 0,    
 })
@@ -485,7 +485,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1100 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
     invalidateOnRefresh: true,
   },
     y:  -500,
@@ -497,7 +497,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1100 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
     invalidateOnRefresh: true,
   },
   y:  -300,
@@ -509,7 +509,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1300 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  200,
     opacity: 0,    
@@ -520,7 +520,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1300 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     y:  400,
     opacity: 0,    
@@ -531,10 +531,10 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1700 top',
     end: '+=400px',
-    scrub: 2.5,
+    scrub: 2,
     invalidateOnRefresh: true,
   },
-    x:  700,
+    x: '100vw',
     opacity: 0,    
 })
 .to('.stars__the__end', {
@@ -543,7 +543,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1800 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
     invalidateOnRefresh: true,
   },
     opacity: 0,    
@@ -554,7 +554,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1800 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     opacity: 0, 
     y: 700,   
@@ -565,7 +565,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1800 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
   },
     opacity: 0, 
     x: 700,   
@@ -576,34 +576,59 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1800 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: 2,
     // invalidateOnRefresh: true,
   },
     opacity: 0, 
     y: 500,   
+});
+
+
+const reviewsSection = gsap.timeline({
+  // ease: 'none',
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.reviews',
+    start: 'top top', 
+    end: '+=1000',  
+    scrub: 'true',
+    pin: '.reviews',
+  },
+})
+.from('.price__stars', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.reviews',
+    start: 'top top',
+    end: '+=400px ',
+    scrub: 2,
+  },
+    opacity: 0, 
+})
+.from('.line', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.reviews',
+    start: 'top top',
+    end: '+=100px ',
+    scrub: 2,
+  },
+  x: '-100vw',
 })
 
-// .to('.text__5', {
+
+
+
+
+// const educationSection = gsap.timeline({
+//   // ease: 'none',
 //   scrollTrigger: {
 //     // markers: true,
-//     trigger: '.how__we__work__content',
-//     start: '1800 top',
-//     end: '+=200px',
-//     scrub: 2.5,
-//     invalidateOnRefresh: true,
+//     trigger: '.education',
+//     start: 'top top', 
+//     end: '+=3000',  
+//     scrub: 'true',
+//     pin: '.education',
 //   },
-//     y:  -700,
-//     opacity: 0,    
 // })
-// .to('.text__6', {
-//   scrollTrigger: {
-//     // markers: true,
-//     trigger: '.how__we__work__content',
-//     start: '1800 top',
-//     end: '+=200px',
-//     scrub: 2.5,
-//     invalidateOnRefresh: true,
-//   },
-//     y:  -700,
-//     opacity: 0,    
-// })
+// .to('.')
