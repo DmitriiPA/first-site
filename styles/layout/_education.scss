@@ -53,3 +53,11 @@
   grid-row: 1;
   z-index: 2;
 }
+
+.teacher_education,
+.retraining_course,
+.retraining,
+.thinking {
+  color: $color_yellow;
+  cursor: pointer;
+}

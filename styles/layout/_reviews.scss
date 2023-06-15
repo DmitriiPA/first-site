@@ -22,19 +22,28 @@
   }
 
   h4 {
-    margin-top: calc(var(--index)*4);
     width: 100%;
-    padding: calc(var(--index)*1) ;
-    border-top: solid 2px ;
-    border-bottom: solid 2px ;
   }
 
   h5 {
     margin-top: 25px;
     font-weight: 400;
-font-size: 22px;
-line-height: 22px;
+    font-size: 22px;
+    line-height: 22px;
     text-align: right;
     text-transform: none;
   }
+}
+
+
+.line {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: black; 
+  margin: 24px 0;
+}
+
+.reviews__text_blok {
+  margin-top: calc(var(--index)*4);
 }
