@@ -39,7 +39,7 @@ tl.to(
     duration: 1.3,
     ease: 'bounce.out',
   },
-  1.7
+  1.6
 )
 .from(
   '.subtitle',
@@ -58,7 +58,7 @@ tl.to(
 .from(
   '.kye__box', {
     rotate: 20,
-    duration: 2.6,
+    duration: 2.8,
     ease: Elastic.easeOut,
   },
   2
@@ -630,13 +630,37 @@ const educationSection = gsap.timeline({
     scrub: 'true',
     pin: '.education',
   },
-});
+})
+.from('.education__title', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.education',
+    start: 'top top',
+    end: '+=100px ',
+    scrub: 2,
+  },
+  y: '10vw',
+  opacity: 0,
+})
+.from('.education__text', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.education',
+    start: 'top top',
+    end: '+=100px ',
+    scrub: 2,
+  },
+  y: '20vw',
+  opacity: 0,
+})
+
 
 
 var body = document.querySelector('.body');
 
 var diplom = document.querySelectorAll('.diplom');
 var blackBG = document.querySelector('.black__bg');
+var kye = document.querySelector('.kye__box');
 
 var diplomBel = document.querySelector('.diplom__belorus');
 var diplomCoach = document.querySelector('.diplom__coach');
@@ -687,3 +711,17 @@ diplomBel.addEventListener('click',  lookAt)
 diplomCoach.addEventListener('click',  lookAt)
 diplomClinic.addEventListener('click',  lookAt)
 diplomKurp.addEventListener('click',  lookAt)
+
+
+
+kye.addEventListener('click',  kyeGo);
+
+function kyeGo () {
+  gsap.to(
+    '.kye__box', {
+      rotate: 40,
+      duration: 2,
+      ease: CustomEase.create("custom",  "M0,0 C0.004,0.067 0,0.278 0.04,0.278 0.128,0.278 0.209,-0.131 0.292,-0.131 0.324,-0.131 0.383,0.012 0.383,0.012 0.383,0.012 0.426,0.088 0.48,0.088 0.48,0.088 0.48,0.088 0.48,0.088 0.518,0.088 0.608,-0.046 0.632,-0.046 0.69,-0.046 0.702,0.034 0.752,0.034 0.788,0.034 0.807,-0.021 0.858,-0.022 0.88,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
+    },
+  )
+}

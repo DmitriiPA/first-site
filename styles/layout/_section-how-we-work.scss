@@ -32,9 +32,10 @@
 }
 
 .how__we__work__text {
-  margin-top: calc(var(--index)*(-3));
+  margin-top: calc(var(--index)*(-5));
   display: grid;
-  width: 640px;
+  max-width: 640px;
+  width: auto;
   height: calc(var(--index)*24) ;
 }
 
@@ -42,6 +43,25 @@
 .text_grid_row {
   grid-row: 1;
   grid-column: 1;
+}
+
+.price {
+  position: relative;
+  width: 640px;
+  margin-top: 10vh;
+
+  div {
+    display: flex;
+    justify-content: space-between
+  }
+
+  h2 {
+    color: $color_text;
+  }
+  h3 {
+    color: $color_yellow;
+    width: 100%;
+  }
 }
 
 .how__we__work__not {
@@ -121,23 +141,5 @@
   .call__my :hover {
     transition: .5s;
     scale: 1.1;
-  }
-}
-
-.price {
-  width: 640px;
-  margin-top: calc(var(--index)*22);
-
-  div {
-    display: flex;
-    justify-content: space-between
-  }
-
-  h2 {
-    color: $color_text;
-  }
-  h3 {
-    color: $color_yellow;
-    width: 100%;
   }
 }
