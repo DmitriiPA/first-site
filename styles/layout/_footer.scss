@@ -36,6 +36,14 @@
 .footer__media {
   display: flex;
   gap: calc(var(--index)*1.3);
+  
+  a {
+    transition: all .3s;
+  }
+
+  a:hover {
+    scale: 1.2;
+  }
 }
 
 .footer__left, .footer__right {
