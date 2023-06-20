@@ -1,3 +1,6 @@
+var h = window.innerHeight/2;
+var w = window.innerWidth/2
+
 var tl = gsap.timeline();
 tl.to(
   '.heder__stars__box img',  {
@@ -9,8 +12,8 @@ tl.to(
 .from(
   '.title',
   {
-    y: -220,
-    x: 400,
+    x: h,
+    y: -h/2,
     duration: 0.8
   },
   1
@@ -55,11 +58,12 @@ tl.to(
   },
   2
 )
-.from(
+.to(
   '.kye__box', {
     rotate: 20,
     duration: 2.8,
-    ease: Elastic.easeOut,
+    ease: CustomEase.create("custom", "M0,0 C0.004,0.06 0.17,0.234 0.244,0.234 0.356,0.234 0.344,-0.13 0.434,-0.13 0.508,-0.13 0.492,0.076 0.566,0.076 0.608,0.076 0.617,-0.046 0.66,-0.046 0.699,-0.046 0.721,0.034 0.77,0.034 0.806,0.034 0.817,-0.021 0.868,-0.022 0.89,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
+    // ease: Elastic.easeOut,
   },
   2
 )
@@ -86,22 +90,22 @@ who.from ('.who__what__second__text', {
 .to ('.back__dlue', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.section__who__what',
-    start: '0',
-    end: '+=900',
-    scrub: 2,
+    trigger: '.back__dlue',
+    start: 'centet bottom',
+    end: '+=1200',
+    scrub: 1,
   },
-  scale: 100
+  scale: 150
 })
 .to ('.back__yellow', {
   scrollTrigger: {
     // markers: true,
     trigger: '.back__yellow',
-    start: '-=120 bottom',
-    end: '+=900',
-    scrub: 2,
+    start: 'centet bottom',
+    end: '+=1000',
+    scrub: 1,
   },
-  scale: 100
+  scale: 150
 })
 
 
@@ -299,8 +303,8 @@ opacity: 0,
     // markers: true,
     trigger: '.who__what__three__text',
     start: '4000 center',
-    end: '+=300',
-    scrub: 2.5,
+    end: '+=200',
+    scrub: 1.5,
   },
   scaleY: 0
 })
@@ -559,7 +563,7 @@ const work = gsap.timeline({
     opacity: 0, 
     y: 700,   
 })
-.from('.call__my', {
+.from('.call__my__box', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
@@ -567,8 +571,8 @@ const work = gsap.timeline({
     end: '+=200px ',
     scrub: 2,
   },
-    opacity: 0, 
-    x: 700,   
+  x: '50vw',
+  opacity: 0, 
 })
 .from('.price', {
   scrollTrigger: {
@@ -577,11 +581,17 @@ const work = gsap.timeline({
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
-    // invalidateOnRefresh: true,
   },
     opacity: 0, 
     y: 500,   
 });
+
+gsap.utils.toArray(".call__my__box").forEach(h1 => {
+  let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
+  h1.addEventListener("mouseenter", () => hover.play());
+  h1.addEventListener("mouseleave", () => hover.reverse());
+});
+
 
 
 const reviewsSection = gsap.timeline({
@@ -702,16 +712,43 @@ retraining.addEventListener('click',  letDiplom2);
 retrainingCourse.addEventListener('click',  letDiplom3);
 thinking.addEventListener('click',  letDiplom4);
 
-function lookAt(event) {
-    event.currentTarget.classList.toggle('visit');
-    blackBG.classList.toggle('off');
-  }
 
-diplomBel.addEventListener('click',  lookAt)
-diplomCoach.addEventListener('click',  lookAt)
-diplomClinic.addEventListener('click',  lookAt)
-diplomKurp.addEventListener('click',  lookAt)
+diplom.forEach(function (item, idx) {
+  item.addEventListener('mouseenter', function () {
+      blackBG.classList.remove('off')
+  });
+  item.addEventListener('mouseleave', function () {
+      blackBG.classList.add('off')
+  });
+});
 
+
+gsap.utils.toArray(".diplom.right_0").forEach(img => {
+  let hover = gsap
+  .to(img, {
+    x: -w/4,
+    y: -h/4,
+    scale: 1.5,
+    duration: .5, 
+    paused: true, 
+    ease: "sine",
+  });
+  img.addEventListener("mouseenter", () => hover.play());
+  img.addEventListener("mouseleave", () => hover.reverse());
+});
+
+gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
+  let hover = gsap
+  .to(img, {
+    y: -h/4,
+    scale: 1.5,
+    duration: .5, 
+    paused: true, 
+    ease: "sine" 
+  });
+  img.addEventListener("mouseenter", () => hover.play());
+  img.addEventListener("mouseleave", () => hover.reverse());
+});
 
 
 kye.addEventListener('click',  kyeGo);
@@ -719,9 +756,9 @@ kye.addEventListener('click',  kyeGo);
 function kyeGo () {
   gsap.to(
     '.kye__box', {
-      rotate: 40,
+      rotate: 30,
       duration: 2,
-      ease: CustomEase.create("custom",  "M0,0 C0.004,0.067 0,0.278 0.04,0.278 0.128,0.278 0.209,-0.131 0.292,-0.131 0.324,-0.131 0.383,0.012 0.383,0.012 0.383,0.012 0.426,0.088 0.48,0.088 0.48,0.088 0.48,0.088 0.48,0.088 0.518,0.088 0.608,-0.046 0.632,-0.046 0.69,-0.046 0.702,0.034 0.752,0.034 0.788,0.034 0.807,-0.021 0.858,-0.022 0.88,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
+      ease: CustomEase.create("custom", "M0,0 C0.004,0.06 0.124,0.234 0.198,0.234 0.3,0.234 0.331,-0.13 0.412,-0.13 0.486,-0.13 0.492,0.076 0.566,0.076 0.608,0.076 0.617,-0.046 0.66,-0.046 0.699,-0.046 0.721,0.034 0.77,0.034 0.806,0.034 0.817,-0.021 0.868,-0.022 0.89,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
     },
   )
 }

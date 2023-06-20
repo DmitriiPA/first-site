@@ -4,7 +4,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // overflow: hidden;
   
   h2 {
     padding-top: calc(var(--index)*3);
@@ -34,7 +33,6 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
-  margin-top: -90px;
   transition: .5s;
 }
 
@@ -48,14 +46,14 @@
 
 .diplom {
   position: absolute;
-  max-width: 45vw;
   max-height: 60vh;
-  margin-top: 100px;
+  max-width: 50vw;
   grid-column: 2 / -1;
   grid-row: 1;
   z-index: 3;
-  right: 12vw;
+  right: 13vw;
   cursor: pointer;
+  transition: .5s;
 }
 
 .teacher_education,
@@ -67,23 +65,16 @@
 }
 
 .off {
-  transition: 0.5s;
   display: none;
+  transition: 0.5s;
 }
 
 
 .right_0 {
-  right: 1vw;
+  max-height: 54vh;
+  right: 2vw;
 }
 
-.diplom.visit {
-  max-height: none;
-  max-width: none;
-  height: 95vh;
-  width: auto;
-  top: 2vh;
-  margin-top: 0;
-}
 
 .black__bg {
   position: absolute;
