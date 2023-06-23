@@ -75,6 +75,35 @@ tl.to(
   '-=1'
 )
 
+
+//BUrger
+
+const menuBtn = document.querySelector('.menu__btn');
+const menu = document.querySelector('#burger__menu');
+const menuArr = document.querySelector('#menu');
+
+
+const openBurger = () => {
+  menuBtn.classList.toggle('active');
+	menu.classList.toggle('active');
+}
+
+menuBtn.addEventListener('click', openBurger)
+
+// массив с сыками
+const links = Array.from(menuArr.children);
+// при клике  на любую ссылку вызываем функцию
+links.forEach((link) => {
+  link.addEventListener("click", openBurger);
+});
+
+
+
+
+
+
+
+
 const who = gsap.timeline()
 
 who.from ('.who__what__second__text', {
@@ -342,7 +371,6 @@ ScrollTrigger.create({
 // Поезд и космонафт и  текст
 
 const work = gsap.timeline({
-  // ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
@@ -369,7 +397,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work',
     start: 'top center',
     end: '+=300',
-    scrub: 2.5,
+    scrub: 1.5,
   },
   y: 300
 })
@@ -379,7 +407,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work',
     start: 'top center',
     end: '+=300',
-    scrub: 2.5,
+    scrub: 1.5,
   },
   y: 700
 })
@@ -411,7 +439,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '200 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  300,
     opacity: 0,    
@@ -422,7 +450,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '200 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  700,
     opacity: 0,    
@@ -434,7 +462,7 @@ const work = gsap.timeline({
     start: '600 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
-    scrub: 2,
+    scrub: 1,
   },
     y:  -300,
     opacity: 0,    
@@ -446,7 +474,7 @@ const work = gsap.timeline({
     start: '600 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
-    scrub: 2,
+    scrub: 1,
   },
     y:  -300,
     opacity: 0,    
@@ -457,7 +485,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '700 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  300,
     opacity: 0,    
@@ -468,7 +496,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '700 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  700,
     opacity: 0,    
@@ -489,7 +517,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1100 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
     invalidateOnRefresh: true,
   },
     y:  -500,
@@ -501,7 +529,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1100 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
     invalidateOnRefresh: true,
   },
   y:  -300,
@@ -513,7 +541,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1300 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  200,
     opacity: 0,    
@@ -524,7 +552,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '1300 top',
     end: '+=200px ',
-    scrub: 2,
+    scrub: 1,
   },
     y:  400,
     opacity: 0,    
@@ -536,7 +564,7 @@ const work = gsap.timeline({
     start: '1700 top',
     end: '+=400px',
     scrub: 2,
-    invalidateOnRefresh: true,
+    // invalidateOnRefresh: true,
   },
     x: '100vw',
     opacity: 0,    
@@ -548,7 +576,7 @@ const work = gsap.timeline({
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
-    invalidateOnRefresh: true,
+    // invalidateOnRefresh: true,
   },
     opacity: 0,    
 })
@@ -762,3 +790,35 @@ function kyeGo () {
     },
   )
 }
+
+gsap.to('.left__panel__burger', {
+  scrollTrigger: {
+    markers: true,
+    trigger: '.left__panel__burger',
+    start: '-34 top',
+    endTrigger: ".education",
+    end: 'top',
+    pin: '.left__panel__burger',
+    scrub: true,
+  },
+})
+// gsap.to('.left__panel__burger',{
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.education',
+//     start: 'top top', 
+//     end: 'max',
+//     pin: '.left__panel__burger',
+//     invalidateOnRefresh: true,
+//     scrub: true,
+//   },
+// })
+  
+
+// let scrollHeight = Math.max(
+//   document.body.scrollHeight, document.documentElement.scrollHeight,
+//   document.body.offsetHeight, document.documentElement.offsetHeight,
+//   document.body.clientHeight, document.documentElement.clientHeight
+// );
+
+// console.log(scrollHeight);
