@@ -5,7 +5,7 @@
   color: $color_text;
 }
 
-.nav__li {
+.nav__li, .nav__li_burger {
   height: 45px;
   position: relative;
   cursor: pointer;
@@ -18,7 +18,8 @@
   }
 }
 
-.nav__li:not(:last-child)::after {
+.nav__li:not(:last-child)::after,
+.nav__li_burger:not(:last-child)::after {
   position: absolute;
   content: "";
   display: block;
@@ -29,11 +30,19 @@
   transition: .3s;
 }
 
+.nav__li_burger:not(:last-child)::after {
+  width: 250px;
+}
+
 .nav__li:hover:after {
   width: 524px;
 }
 
-.nav__li:hover {
+.nav__li_burger:hover:after {
+  width: 260px;
+}
+
+.nav__li:hover, .nav__li_burger:hover {
   a {
     transition: .5s;
     font-size: 19px;

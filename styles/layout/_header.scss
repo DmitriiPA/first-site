@@ -8,11 +8,6 @@
   overflow: hidden;
 }
 
-.wrapper__for__img {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .wrapper__navbar {
   display: flex;
   align-items:flex-start;
@@ -92,13 +87,11 @@
 }
 
 .heder__stars__box {
-  width: 226px;
-  height: 249px;
-  top: 34px;
-  left: 568px;
+  position: relative;
+  // width: 226px;
+  // height: 249px;
+  right: 12px;
 }
-  
-
 
 .stars {
   opacity: 0;
