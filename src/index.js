@@ -848,7 +848,7 @@ gsap.timeline({
 })
 .to('.cell__me__left',{
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: '.blue__planet',
     start: 'top bottom', 
     scrub: true,
