@@ -791,34 +791,89 @@ function kyeGo () {
   )
 }
 
-gsap.to('.left__panel__burger', {
+var education = document.querySelector('.education')
+
+gsap.timeline({
   scrollTrigger: {
-    markers: true,
+    // markers: true,
     trigger: '.left__panel__burger',
     start: '-34 top',
     endTrigger: ".education",
-    end: 'top',
+    end: 'top -300',
     pin: '.left__panel__burger',
     scrub: true,
   },
 })
-// gsap.to('.left__panel__burger',{
-//   scrollTrigger: {
-//     markers: true,
-//     trigger: '.education',
-//     start: 'top top', 
-//     end: 'max',
-//     pin: '.left__panel__burger',
-//     invalidateOnRefresh: true,
-//     scrub: true,
-//   },
-// })
-  
+.to('.cell__me__left',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.section__who__what',
+    start: 'top top', 
+    scrub: true,
+  },
+  y: '50vh'
+})
+.to('.left__panel__burger',{
+  scrollTrigger: {
+    trigger: '.how__we__work',
+    // markers: true,
+    start:'-60',
+    end: '+=3914',
+    onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+    onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+    onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+    onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+  },
+})
+.to('.cell__me__left a',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: 'top 90%', 
+    end: '+=20',
+    scrub: true,
+  },
+  color:'white',
+})
+.to('.cell__me__left span',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: 'top 90%',  
+    end: '+=20',
+    scrub: true,
+  },
+  backgroundColor: 'white',
+  color:'white',
+})
+.to('.cell__me__left',{
+  scrollTrigger: {
+    markers: true,
+    trigger: '.blue__planet',
+    start: 'top bottom', 
+    scrub: true,
+    invalidateOnRefresh: true,
+  },
+  y: '100vh',
+})
+.to('.cell__me__left',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.education',
+    start: 'top top', 
+    scrub: true,
+  },
+  x: '-20vw'
+})
+.to('.left__panel__burger',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.education',
+    start:'-60',
+    onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+    onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+    onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+    onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+  },
+})
 
-// let scrollHeight = Math.max(
-//   document.body.scrollHeight, document.documentElement.scrollHeight,
-//   document.body.offsetHeight, document.documentElement.offsetHeight,
-//   document.body.clientHeight, document.documentElement.clientHeight
-// );
-
-// console.log(scrollHeight);
