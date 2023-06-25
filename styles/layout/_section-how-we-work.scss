@@ -93,7 +93,7 @@
 .train {
   width: calc(var(--index)*28);
   position: relative;
-  left: calc(var(--index)*1.5);
+  left: calc(var(--index)*3);
   transform-origin: bottom right;
   grid-column: 3 / -1;
   grid-row: 1;
@@ -117,6 +117,7 @@
   grid-column: 5 / span 8;
   position: relative;
   top: -30vh;
+  left: calc(var(--index)* -1);
 }
 
 .call__my__box {

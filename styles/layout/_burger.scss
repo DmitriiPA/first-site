@@ -20,15 +20,12 @@
   bottom: 100px;
   left: -65px;
   transition: 0.3s;
-
+  
   h3 {
     margin: 10px;
     font-size: 28px;
     line-height: 37px;
-  }
-
-  &:hover {
-    scale: 1.1;
+    transition: 0.3s;
   }
 
   span {
@@ -43,8 +40,12 @@
     &:nth-of-type(1) {
       bottom: 0;
     }
-    }
   }
+
+}
+.cell__me__left :hover {
+  scale: 1.02;
+}
 
 
 .menu__btn {
@@ -94,6 +95,7 @@
 .menu__btn.active span:nth-of-type(1) {
   transform: translate(0, 4px) rotate(45deg);
 }
+
 .menu__btn.active span:nth-of-type(2) {
   transform: translate(0, -4px) rotate(-45deg);
 }

@@ -16,6 +16,8 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
+  text-decoration: none;
+  color: currentColor;
 }
 
 :root {
@@ -487,7 +489,7 @@ h3, h4 {
 .train {
   width: calc(var(--index) * 28);
   position: relative;
-  left: calc(var(--index) * 1.5);
+  left: calc(var(--index) * 3);
   transform-origin: bottom right;
   grid-column: 3/-1;
   grid-row: 1;
@@ -511,6 +513,7 @@ h3, h4 {
   grid-column: 5/span 8;
   position: relative;
   top: -30vh;
+  left: calc(var(--index) * -1);
 }
 
 .call__my__box {
@@ -760,9 +763,7 @@ h3, h4 {
   margin: 10px;
   font-size: 28px;
   line-height: 37px;
-}
-.cell__me__left:hover {
-  scale: 1.1;
+  transition: 0.3s;
 }
 .cell__me__left span {
   position: absolute;
@@ -775,6 +776,10 @@ h3, h4 {
 }
 .cell__me__left span:nth-of-type(1) {
   bottom: 0;
+}
+
+.cell__me__left :hover {
+  scale: 1.02;
 }
 
 .menu__btn {
