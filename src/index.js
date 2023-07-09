@@ -76,6 +76,16 @@ tl.to(
 )
 
 
+
+let viewHeight = Math.min(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+// console.log(viewHeight);
+
+
 //BUrger
 
 const menuBtn = document.querySelector('.menu__btn');
@@ -336,6 +346,16 @@ opacity: 0,
     scrub: 1.5,
   },
   scaleY: 0
+})
+.from('.it__is__me__title', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.who__what__three__text',
+    start: '4000 center',
+    end: '+=200',
+    scrub: 1.5,
+  },
+  opacity: 0
 })
 .from('.it__is__me__star', {
   scrollTrigger: {
@@ -623,7 +643,6 @@ gsap.utils.toArray(".call__my__box").forEach(h1 => {
 
 
 const reviewsSection = gsap.timeline({
-  // ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.reviews',
@@ -659,7 +678,6 @@ const reviewsSection = gsap.timeline({
 
 
 const educationSection = gsap.timeline({
-  // ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.education',
@@ -741,6 +759,7 @@ retrainingCourse.addEventListener('click',  letDiplom3);
 thinking.addEventListener('click',  letDiplom4);
 
 
+// затемнение BG
 diplom.forEach(function (item, idx) {
   item.addEventListener('mouseenter', function () {
       blackBG.classList.remove('off')
@@ -811,7 +830,7 @@ gsap.timeline({
     start: 'top top', 
     scrub: true,
   },
-  y: '50vh'
+  y: `${viewHeight-350}`
 })
 .to('.left__panel__burger',{
   scrollTrigger: {
@@ -855,7 +874,8 @@ gsap.timeline({
     invalidateOnRefresh: true,
   },
   y: '100vh',
-})
+  // display: 'none',
+  })
 .to('.cell__me__left',{
   scrollTrigger: {
     // markers: true,
@@ -863,7 +883,16 @@ gsap.timeline({
     start: 'top top', 
     scrub: true,
   },
-  x: '-20vw'
+  x: '-20vw',
+})
+.to('.left__panel__burger',{
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.section__who__what',
+    start: 'top top', 
+    scrub: true,
+  },
+    zIndex: 20,
 })
 .to('.left__panel__burger',{
   scrollTrigger: {
@@ -876,4 +905,48 @@ gsap.timeline({
     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
   },
 })
+
+// ScrollTrigger.create({
+//     trigger: '.how__we__work',
+//     markers: true,
+//     // scrub: true,
+//     start:'top top',
+//     endTrigger: ".reviews",
+//     end:'bottom botom',
+//     onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+//     onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+//     onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+//     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+// });
+
+// .to('.left__panel__burger',{
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.reviews',
+//     start: 'top top', 
+//     endTrigger: ".education",
+//     end: 'bottom',
+//     scrub: true,
+//   },
+//   color: 'black',
+// })
+// .to(['.menu__btn span, .cell__me__left span'],{
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.reviews',
+//     start: 'top top', 
+//     // end: '+=900',
+//     scrub: true,
+//   },
+//   backgroundColor: 'black',
+// })
+// .toArray(".call__my__box").forEach(h1 => {
+//   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
+//   h1.addEventListener("mouseenter", () => hover.play());
+//   h1.addEventListener("mouseleave", () => hover.reverse());
+// });
+
+
+
+  
 

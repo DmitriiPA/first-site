@@ -1,12 +1,13 @@
 .left__panel__burger {
   display: flex;
   flex-direction: column;
-  gap: 220px;
+  // gap: 220px;
+  gap: 133px;
   position: absolute;
   left: 0;
   top: 734px;
-  z-index: 12;
-  height: 100vh;
+  // z-index: 11;
+  // height: 100vh;
 }
 
 .cell__me__left {
@@ -17,10 +18,8 @@
   left: 0;
   text-transform: uppercase;
   transform: rotate(-90deg);
-  bottom: 100px;
   left: -65px;
   transition: 0.3s;
-  
   h3 {
     margin: 10px;
     font-size: 28px;
@@ -42,7 +41,11 @@
     }
   }
 
+  @include media-content  {
+    left: -78px;
+  }
 }
+
 .cell__me__left :hover {
   scale: 1.02;
 }
@@ -63,7 +66,12 @@
 	  position: relative;
 	  background-color: #222222;
 	  transition: all 0.5s;
-}}
+}
+
+@include media-content {
+  margin-left: 24px;
+}
+}
 
 .menu__btn span:nth-of-type(1) {
   top: calc(50% - 3px);

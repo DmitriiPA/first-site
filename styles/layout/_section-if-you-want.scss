@@ -29,6 +29,10 @@
 
 .vector__moon {
   margin-top: 86px;
+
+  @include min-content-width {
+    width: 280px;
+  }
 }
 
 .if__you__want__buttom {
@@ -36,18 +40,50 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 151px;  
+  gap: 72px;
 
-  h4 {
-    margin-top: -1px;
+  @include media-content {
+    gap: 56px;
+  }
+  @include min-content-width {
+    margin-top: 100px;
   }
 }
 
 .eyes {
   margin-top: -60px;
+  
+  @include media-content {
+    width: 562px;
+  }
+  
+  @include min-content-width {
+    width: 462px;
+    margin-top: 0;
+  }
 }
 
 .if__you__want__buttom__two, .if__you__want__buttom__three, .if__you__want__buttom__four {
+  position: relative;
   opacity: 0;
+}
+
+.if__you__want__buttom__two {
+  @include min-content-width {
+    bottom: 25px;
+  }
+}
+
+.if__you__want__buttom__three {
+  @include min-content-width {
+    bottom: 55px;
+  }
+}
+
+.if__you__want__buttom__four {
+  @include min-content-width {
+    bottom: 75px;
+  }
 }
 
 .it__is__me {
@@ -59,6 +95,13 @@
   position: absolute;
   right : 173px;
   top: 50%;
+  
+  @include media-content {
+    right : 95px;
+  }
+  @include min-content-width {
+    right: 29px;
+  }
 }
 
 
@@ -66,10 +109,28 @@
   margin-top: 34px;
   transform-origin: bottom;
   bottom: 0;
+  
+  @include media-content {
+    transform-origin: left bottom;
+    scale: 0.9;
+  }
+
+  @include min-content-width {
+scale: 0.8;
+  }
 }
 
 .it__is__me__star {
-  height:  100%;  
+  position: relative;
   margin-left: 75px;
   margin-bottom: 79px;
+  
+  @include media-content {
+    transform-origin: left bottom;
+    scale: 0.9;
+    margin-left: 0;
+  }
+  @include min-content-width {
+  right: 18vw;
+  }
 }

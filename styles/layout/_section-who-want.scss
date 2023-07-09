@@ -7,12 +7,29 @@
   display: flex;
   align-items: flex-start;
   position: relative;
-  padding-top: 120px;
   gap: 52px;  
+  padding-top: 120px;
+  
+  @include media-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 56px;
+    padding-top: 107px;
+
+    h2 {
+      font-size: 52px;
+    }
+
+    h4 {
+    margin-top: 17px;
+    font-size: 21px;
+    }
+  }
 }
 
 .who__what__first__top__right {
-  margin-left: 20px;
+  // margin-left: 20px;
   width: 100%;
 }
 .who__what__first__top__left {

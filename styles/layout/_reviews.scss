@@ -12,6 +12,13 @@
 .price__stars {
   height: 100%;
   margin-top: calc(var(--index)*2);
+
+  @include media-content {
+    transform-origin: top;
+    // scale: 0.8;
+    width: 23%;
+    right: 10px;
+  }
 }
 
 .price__stars_top {
@@ -21,16 +28,24 @@
 
 .reviews__content {
   position: relative; 
-  width: 100%;
+  width: 50%;
   padding-top: calc(var(--index)*6);
   left: 20px;
   
   h2 {
     text-align: center;
-  }
 
+    @include media-content {
+      font-size: 55px;
+    }
+  }
+  
   h4 {
     width: 100%;
+
+    @include media-content {
+      line-height: 27px;
+    }
   }
 
   h5 {
@@ -41,6 +56,10 @@
     text-align: right;
     text-transform: none;
   }
+
+  @include min-content-width {
+    padding-top: calc(var(--index)*4);
+  }
 }
 
 
@@ -50,13 +69,25 @@
   height: 2px;
   background-color: black; 
   margin: 24px 0;
+
+  @include min-content-width {
+    margin: 15px 0;
+  }
 }
 
 .reviews__text_blok {
   margin-top: calc(var(--index)*4);
+  
+  @include min-content-width {
+    margin-top: calc(var(--index)*3);
+  }
 }
 
 .reviews__text {
   margin: 0 30px;
+  
+  @include media-content {
+    margin: 0 10px;
+  }
 }
 

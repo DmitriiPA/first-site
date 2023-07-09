@@ -16,6 +16,10 @@
     font-size: 16px;
     line-height: 21px;
   }
+
+  @include media-content {
+    padding: 56px 0;
+  }
 }
 
 .footer__left {
@@ -29,7 +33,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -48,4 +52,9 @@
 
 .footer__left, .footer__right {
   min-width: calc(var(--index)*23);
+}
+
+.footer__logo {
+  // max-width: 330px;
+  max-height: 100px;
 }

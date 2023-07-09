@@ -8,7 +8,7 @@
   h2 {
     padding-top: calc(var(--index)*3);
     text-align: center;
-      color: $color_white;
+    color: $color_white;
     }
 }
 
@@ -16,6 +16,8 @@
   display: flex;
   justify-content: space-between;
   color: $color_text;
+  position: relative;
+  // z-index: 12;
   
   h3 {
     margin-top: 6vh;
@@ -26,7 +28,19 @@
 }
 
 .education__text {
+  position: relative;
   margin-top: 7vh;
+  width: 50vw;
+  max-width: 624px;
+  
+  h3 {
+    position: relative;
+    // z-index: 15;
+  }
+
+  @include media-content {
+    max-width: 568px;
+  }
 }
 
 .education__foto {
@@ -37,20 +51,18 @@
 }
 
 .education__star {
+  position: relative;
+  bottom: 40px;
   height: calc(var(--index)*25);
   grid-column: 1 / -1;
   grid-row: 1;
-  rotate: 340deg;
-  transform: matrix(0.98, 0.21, -0.21, 0.98, 0, 0);
 }
 
 .diplom {
   position: absolute;
   max-height: 60vh;
   max-width: 50vw;
-  grid-column: 2 / -1;
-  grid-row: 1;
-  z-index: 3;
+  z-index: 15;
   right: 13vw;
   cursor: pointer;
   transition: .5s;
@@ -73,6 +85,10 @@
 .right_0 {
   max-height: 54vh;
   right: 2vw;
+  
+  // @include min-content-width {
+  //   max-height: 40vh;
+  // }
 }
 
 
@@ -84,6 +100,6 @@
   top: 0;
   background-color: black;
   opacity: 0.5;
-  z-index: 2;
+  z-index: 11;
   transition: .5s;
 }
