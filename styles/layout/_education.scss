@@ -86,9 +86,10 @@
   max-height: 54vh;
   right: 2vw;
   
-  // @include min-content-width {
-  //   max-height: 40vh;
-  // }
+  @include min-content-width {
+   right: 0;
+    max-height: 40vh;
+  }
 }
 
 

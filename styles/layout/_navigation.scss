@@ -1,6 +1,5 @@
 .nav__bar {
   position: relative;
-  width: 504px;
   top: 14px;
   color: $color_text;
 }
@@ -16,6 +15,10 @@
     text-decoration: none;
     color: $color_text;
   }
+
+  @include mobile-width {
+    height: 41px;
+  }
 }
 
 .nav__li:not(:last-child)::after,
@@ -28,6 +31,10 @@
   bottom: 0;
   background-color: $color_white;
   transition: .3s;
+
+  @include media-tablet {
+    width: 290px;
+  }
 }
 
 .nav__li_burger:not(:last-child)::after {
@@ -36,6 +43,10 @@
 
 .nav__li:hover:after {
   width: 524px;
+
+  @include media-tablet {
+    width: 310px;
+  }
 }
 
 .nav__li_burger:hover:after {

@@ -17,8 +17,8 @@
     line-height: 21px;
   }
 
-  @include media-content {
-    padding: 56px 0;
+  @include min-content-width {
+    gap: calc(var(--index)*3);
   }
 }
 

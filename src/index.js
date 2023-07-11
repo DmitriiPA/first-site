@@ -1,9 +1,29 @@
+const windowInnerWidth = window.innerWidth
+const windowInnerHeight = window.innerHeight
 var h = window.innerHeight/2;
 var w = window.innerWidth/2
 
+
+let scaleProsent
+let xProsentTitle
+let yProsent
+
+if (windowInnerWidth > 1200) {
+  scaleProsent = 1.5
+  yProsent = 6
+  xProsentTitle = 2
+} else {
+  scaleProsent = 2
+  yProsent = 8
+  xProsentTitle = 3
+}
+
+console.log(windowInnerWidth);
+
+
 var tl = gsap.timeline();
 tl.to(
-  '.heder__stars__box img',  {
+  '.stars',  {
     opacity: 1, 
     delay: 0.7, 
     stagger: 0.04,
@@ -12,8 +32,8 @@ tl.to(
 .from(
   '.title',
   {
-    x: h,
-    y: -h/2,
+    x: windowInnerHeight/xProsentTitle,
+    y: -windowInnerHeight/4,
     duration: 0.8
   },
   1
@@ -53,7 +73,7 @@ tl.to(
 )
 .from(
   '.kye__box', {
-    y: -600,
+    y: '-100vh',
     duration: 1.4,
   },
   2
@@ -769,13 +789,14 @@ diplom.forEach(function (item, idx) {
   });
 });
 
-
 gsap.utils.toArray(".diplom.right_0").forEach(img => {
+  
+   
   let hover = gsap
   .to(img, {
-    x: -w/4,
-    y: -h/4,
-    scale: 1.5,
+    x: -windowInnerWidth/4,
+    y: -windowInnerHeight/8,
+    scale: scaleProsent,
     duration: .5, 
     paused: true, 
     ease: "sine",
@@ -787,7 +808,8 @@ gsap.utils.toArray(".diplom.right_0").forEach(img => {
 gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
   let hover = gsap
   .to(img, {
-    y: -h/4,
+    x: -windowInnerWidth/5,
+    y: -windowInnerHeight/yProsent,
     scale: 1.5,
     duration: .5, 
     paused: true, 
@@ -821,8 +843,9 @@ gsap.timeline({
     end: 'top -300',
     pin: '.left__panel__burger',
     scrub: true,
-  },
+  }
 })
+.to(".left__panel__burger", {zIndex: 100})
 .to('.cell__me__left',{
   scrollTrigger: {
     // markers: true,
@@ -884,15 +907,6 @@ gsap.timeline({
     scrub: true,
   },
   x: '-20vw',
-})
-.to('.left__panel__burger',{
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.section__who__what',
-    start: 'top top', 
-    scrub: true,
-  },
-    zIndex: 20,
 })
 .to('.left__panel__burger',{
   scrollTrigger: {

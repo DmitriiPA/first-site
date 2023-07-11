@@ -115,6 +115,11 @@ h3, h4 {
   margin: 0 auto;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .header {
+    height: 860px;
+  }
+}
 
 .wrapper__navbar {
   display: flex;
@@ -122,7 +127,7 @@ h3, h4 {
 }
 
 .header__left__blok {
-  z-index: 2;
+  z-index: 6;
 }
 
 .title {
@@ -134,11 +139,24 @@ h3, h4 {
     margin-top: 56px;
   }
 }
+@media (max-width: 768px) {
+  .title {
+    width: 292px;
+    position: relative;
+    top: 266px;
+  }
+}
 .title h1, .title h2 {
   color: #E9E9E9;
   font-size: 80px;
   line-height: 79px;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .title h1, .title h2 {
+    font-size: 46px;
+    line-height: 46px;
+  }
 }
 .title h2 {
   margin-top: 0;
@@ -153,6 +171,12 @@ h3, h4 {
 @media (max-width: 1280px) {
   .title h3 {
     margin-top: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .title h3 {
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 
@@ -170,21 +194,29 @@ h3, h4 {
   position: relative;
   left: 95px;
   transform-origin: center top;
-  z-index: 2;
   cursor: pointer;
+  z-index: 3;
 }
 @media (max-width: 1280px) {
+  .kye__box {
+    left: 25px;
+    scale: 0.9;
+  }
+}
+@media (max-width: 1200px) {
   .kye__box {
     left: 32px;
   }
 }
-@media (max-width: 1280px) {
-  .kye__box .kye__img {
-    height: 495px;
+@media (max-width: 760px) {
+  .kye__box {
+    left: 20px;
+    top: 140px;
   }
 }
 
 .moon {
+  position: relative;
   width: 25vw;
   max-width: 351px;
   height: -moz-fit-content;
@@ -192,7 +224,7 @@ h3, h4 {
   top: 24px;
   left: 78px;
   transform-origin: top left;
-  z-index: 1;
+  z-index: 2;
 }
 @media (max-width: 1280px) {
   .moon {
@@ -205,6 +237,20 @@ h3, h4 {
     width: 30vw;
     left: auto;
     right: 142px;
+  }
+}
+@media (max-width: 768px) {
+  .moon {
+    top: -39px;
+    right: 0;
+    width: 516px;
+    max-width: none;
+    z-index: 4;
+  }
+}
+@media (max-width: 760px) {
+  .moon {
+    right: 149px;
   }
 }
 
@@ -225,13 +271,30 @@ h3, h4 {
 }
 @media (max-width: 1200px) {
   .women {
-    right: 0;
     width: 280px;
-    top: 379px;
+    right: 0;
+    top: 381px;
+  }
+}
+@media (max-width: 768px) {
+  .women {
+    left: 108px;
+    top: 586px;
+  }
+}
+@media (max-width: 760px) {
+  .women {
+    left: 0;
+  }
+}
+@media (max-width: 760px) {
+  .women {
+    left: 20px;
   }
 }
 
 .field {
+  position: relative;
   width: auto;
   height: 240px;
   bottom: 240px;
@@ -240,6 +303,12 @@ h3, h4 {
 @media (max-width: 1200px) {
   .field {
     left: 170px;
+  }
+}
+@media (max-width: 768px) {
+  .field {
+    bottom: 0;
+    left: 100px;
   }
 }
 
@@ -251,11 +320,33 @@ h3, h4 {
   position: absolute;
   top: -10px;
   right: 17px;
+  z-index: 1;
 }
 @media (max-width: 1280px) {
   .heder__stars__box {
     scale: 0.9;
+    right: 0;
+    top: 12px;
     transform-origin: top right;
+  }
+}
+@media (max-width: 768px) {
+  .heder__stars__box {
+    display: none;
+  }
+}
+
+.heder__stars__box__table {
+  display: none;
+  transform: rotateY(180deg);
+}
+@media (max-width: 768px) {
+  .heder__stars__box__table {
+    display: block;
+    position: absolute;
+    top: 303px;
+    left: 0;
+    scale: 0.8;
   }
 }
 
@@ -331,7 +422,6 @@ h3, h4 {
 
 .nav__bar {
   position: relative;
-  width: 504px;
   top: 14px;
   color: #98E9FF;
 }
@@ -347,6 +437,11 @@ h3, h4 {
   text-decoration: none;
   color: #98E9FF;
 }
+@media (max-width: 760px) {
+  .nav__li, .nav__li_burger {
+    height: 41px;
+  }
+}
 
 .nav__li:not(:last-child)::after,
 .nav__li_burger:not(:last-child)::after {
@@ -359,6 +454,12 @@ h3, h4 {
   background-color: #E9E9E9;
   transition: 0.3s;
 }
+@media (max-width: 768px) {
+  .nav__li:not(:last-child)::after,
+  .nav__li_burger:not(:last-child)::after {
+    width: 290px;
+  }
+}
 
 .nav__li_burger:not(:last-child)::after {
   width: 250px;
@@ -366,6 +467,11 @@ h3, h4 {
 
 .nav__li:hover:after {
   width: 524px;
+}
+@media (max-width: 768px) {
+  .nav__li:hover:after {
+    width: 310px;
+  }
 }
 
 .nav__li_burger:hover:after {
@@ -971,6 +1077,12 @@ h3, h4 {
   max-height: 54vh;
   right: 2vw;
 }
+@media (max-width: 1200px) {
+  .right_0 {
+    right: 0;
+    max-height: 40vh;
+  }
+}
 
 .black__bg {
   position: absolute;
@@ -1002,9 +1114,9 @@ h3, h4 {
   font-size: 16px;
   line-height: 21px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .footer__content {
-    padding: 56px 0;
+    gap: calc(var(--index) * 3);
   }
 }
 

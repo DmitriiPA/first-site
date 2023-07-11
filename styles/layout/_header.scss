@@ -6,6 +6,10 @@
   background-size: cover;
   margin: 0 auto;
   overflow: hidden;
+
+  @include  media-tablet {
+    height: 860px;
+  }
 }
 
 .wrapper__navbar {
@@ -14,7 +18,7 @@
 }
 
 .header__left__blok {
-  z-index: 2;
+  z-index: 6;
 }
 
 .title {
@@ -25,11 +29,22 @@
     margin-top: 56px;
 }
 
+  @include media-tablet  {
+    width: 292px;
+    position: relative;
+    top: 266px
+  } 
+
   h1, h2{
     color: $color_white;
     font-size: 80px;
     line-height: 79px;
     text-transform: uppercase;
+
+    @include media-tablet  {
+      font-size: 46px;
+      line-height: 46px;
+    } 
   }
 
   h2 {
@@ -45,6 +60,15 @@
 
     @include media-content {
       margin-top: 12px;
+    }
+
+    // @include  min-content-width {
+
+    // }
+
+    @include media-tablet  {
+      font-size: 16px;
+      line-height: 21px;
     }
   }
 }
@@ -63,28 +87,33 @@
   position: relative;
   left: 95px;
   transform-origin: center top;
-  z-index: 2;
   cursor: pointer;
+  z-index: 3;
 
   @include media-content {
+    left: 25px;
+    scale: 0.9;
+  }
+  
+  @include min-content-width {
     left: 32px;
   }
   
-  .kye__img {
-    @include media-content {
-      height: 495px;
-    }
+  @include mobile-width {
+    left: 20px;
+    top: 140px;
   }
 }
 
 .moon {
+  position: relative;
   width: 25vw;
   max-width: 351px;
   height: fit-content;
   top: 24px;
   left: 78px;
   transform-origin: top left;
-  z-index: 1;
+  z-index: 2;
   
   @include media-content {
     top: 18px;
@@ -94,7 +123,17 @@
     width: 30vw;
     left: auto;
     right: 142px;
+  }
+  @include  media-tablet {
+    top: -39px;
+    right: 0;
+    width: 516px;
+    max-width: none;
+    z-index: 4;
+  }
 
+  @include mobile-width {
+    right: 149px;
   }
 }
 
@@ -112,13 +151,27 @@
   }
 
   @include min-content-width {
-    right: 0;
     width: 280px;
-    top: 379px;
+    right: 0;
+    top: 381px;
+  }
+
+  @include media-tablet {
+    left: 108px;
+    top: 586px;
+  }
+
+  @include mobile-width {
+    left: 0;
+  }
+
+  @include mobile-width {
+    left: 20px;
   }
 }
 
 .field {
+  position: relative;
   width: auto;
   height: 240px;
   bottom: 240px;
@@ -126,6 +179,11 @@
 
   @include min-content-width {
     left: 170px;
+  }
+  
+  @include media-tablet {
+    bottom: 0;
+    left: 100px;
   }
 }
 
@@ -139,12 +197,31 @@
   position: absolute;
   top: -10px;
   right: 17px;
+  z-index: 1;
 
     @include media-content {
     scale: 0.9;
+    right: 0;
+    top: 12px;
     transform-origin: top right;
   }
 
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.heder__stars__box__table {
+  display: none;
+  transform: rotateY(180deg);
+  
+  @include media-tablet  {
+    display: block;
+    position: absolute;
+    top: 303px;
+    left: 0;
+    scale: 0.8;
+  }
 }
 
 .stars_0 {
