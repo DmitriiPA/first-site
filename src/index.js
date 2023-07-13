@@ -18,7 +18,8 @@ if (windowInnerWidth > 1200) {
   xProsentTitle = 3
 }
 
-console.log(windowInnerWidth);
+// console.log(windowInnerWidth);
+// console.log(yProsent);
 
 
 var tl = gsap.timeline();
@@ -127,16 +128,10 @@ links.forEach((link) => {
   link.addEventListener("click", openBurger);
 });
 
+let backBlueYellowStart = windowInnerWidth > 768 ? 'centet' : '-=400'; 
 
-
-
-
-
-
-
-const who = gsap.timeline()
-
-who.from ('.who__what__second__text', {
+gsap.timeline()
+.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.section__who__what',
@@ -150,7 +145,7 @@ who.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.back__dlue',
-    start: 'centet bottom',
+    start: `${backBlueYellowStart} bottom`,
     end: '+=1200',
     scrub: 1,
   },
@@ -160,7 +155,7 @@ who.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.back__yellow',
-    start: 'centet bottom',
+    start: `${backBlueYellowStart} bottom`,
     end: '+=1000',
     scrub: 1,
   },
@@ -833,6 +828,9 @@ function kyeGo () {
 }
 
 var education = document.querySelector('.education')
+let cellMeWhite = windowInnerWidth > 768 ? 90 : 10;
+
+
 
 gsap.timeline({
   scrollTrigger: {
@@ -846,15 +844,6 @@ gsap.timeline({
   }
 })
 .to(".left__panel__burger", {zIndex: 100})
-.to('.cell__me__left',{
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.section__who__what',
-    start: 'top top', 
-    scrub: true,
-  },
-  y: `${viewHeight-350}`
-})
 .to('.left__panel__burger',{
   scrollTrigger: {
     trigger: '.how__we__work',
@@ -871,7 +860,7 @@ gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: 'top 90%', 
+    start: `top ${cellMeWhite}%`, 
     end: '+=20',
     scrub: true,
   },
@@ -881,24 +870,13 @@ gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: 'top 90%',  
+    start: `top ${cellMeWhite}%`,  
     end: '+=20',
     scrub: true,
   },
   backgroundColor: 'white',
   color:'white',
 })
-.to('.cell__me__left',{
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.blue__planet',
-    start: 'top bottom', 
-    scrub: true,
-    invalidateOnRefresh: true,
-  },
-  y: '100vh',
-  // display: 'none',
-  })
 .to('.cell__me__left',{
   scrollTrigger: {
     // markers: true,
@@ -920,7 +898,29 @@ gsap.timeline({
   },
 })
 
-// ScrollTrigger.create({
+
+if (windowInnerWidth > 768) {
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.section__who__what',
+      start: 'top top', 
+      scrub: true,
+    },
+    y: `${viewHeight-350}`
+  })
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.blue__planet',
+      start: 'top bottom', 
+      scrub: true,
+      invalidateOnRefresh: true,
+    },
+    y: '100vh',
+  })
+}
+  // ScrollTrigger.create({
 //     trigger: '.how__we__work',
 //     markers: true,
 //     // scrub: true,
