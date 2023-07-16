@@ -1,9 +1,32 @@
+const windowInnerWidth = window.innerWidth
+const windowInnerHeight = window.innerHeight
 var h = window.innerHeight/2;
 var w = window.innerWidth/2
 
+
+let scaleProsent
+let xProsentTitle
+let yProsent
+let topBurger
+
+if (windowInnerWidth > 1200) {
+  scaleProsent = 1.5
+  yProsent = 6
+  xProsentTitle = 2
+} else {
+  scaleProsent = 2
+  yProsent = 8
+  xProsentTitle = 3
+}
+
+topBurger = windowInnerWidth > 767 ? -34 : -7
+// console.log(windowInnerWidth);
+// console.log(yProsent);
+
+
 var tl = gsap.timeline();
 tl.to(
-  '.heder__stars__box img',  {
+  '.stars',  {
     opacity: 1, 
     delay: 0.7, 
     stagger: 0.04,
@@ -12,8 +35,8 @@ tl.to(
 .from(
   '.title',
   {
-    x: h,
-    y: -h/2,
+    x: windowInnerHeight/xProsentTitle,
+    y: -windowInnerHeight/4,
     duration: 0.8
   },
   1
@@ -53,7 +76,7 @@ tl.to(
 )
 .from(
   '.kye__box', {
-    y: -600,
+    y: '-100vh',
     duration: 1.4,
   },
   2
@@ -74,6 +97,16 @@ tl.to(
   }, 
   '-=1'
 )
+
+
+
+let viewHeight = Math.min(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+// console.log(viewHeight);
 
 
 //BUrger
@@ -97,16 +130,10 @@ links.forEach((link) => {
   link.addEventListener("click", openBurger);
 });
 
+let backBlueYellowStart = windowInnerWidth > 768 ? 'centet' : '-=400'; 
 
-
-
-
-
-
-
-const who = gsap.timeline()
-
-who.from ('.who__what__second__text', {
+gsap.timeline()
+.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.section__who__what',
@@ -120,7 +147,7 @@ who.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.back__dlue',
-    start: 'centet bottom',
+    start: `${backBlueYellowStart} bottom`,
     end: '+=1200',
     scrub: 1,
   },
@@ -130,7 +157,7 @@ who.from ('.who__what__second__text', {
   scrollTrigger: {
     // markers: true,
     trigger: '.back__yellow',
-    start: 'centet bottom',
+    start: `${backBlueYellowStart} bottom`,
     end: '+=1000',
     scrub: 1,
   },
@@ -317,48 +344,66 @@ opacity: 0,
   },
   opacity: 0,
 })
-.to('.if__you__want__buttom', {
-  scrollTrigger: {
-    // markers:true,
-    trigger: '.who__what__three__text',
-    start: '3000 center',
-    end: '+=200',
-    scrub: 2.5,
-  },
-  opacity: 0,
-})
-.from('.it__is__me__foto', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.who__what__three__text',
-    start: '4000 center',
-    end: '+=200',
-    scrub: 1.5,
-  },
-  scaleY: 0
-})
-.from('.it__is__me__star', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.who__what__three__text',
-    start: '4000 center',
-    end: '+=200',
-    scrub: 2.5,
-  },
-  x: 900,
-  y: -300,
-  opacity: 0,
-})
+
+
+if (windowInnerWidth > 767) {
+  ifYouWantImg
+  .from('.it__is__me__foto', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 1.5,
+    },
+    scaleY: 0
+  })
+  .from('.it__is__me__title', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 1.5,
+    },
+    opacity: 0
+  })
+  .from('.it__is__me__star', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 2.5,
+    },
+    x: 900,
+    y: -300,
+    opacity: 0,
+  })
+  .from('.train', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work',
+      start: '300 center',
+      end: '+=300',
+      scrub: 2.5,
+    },
+    ease: 'power3.out',
+    scale: 0
+  })
+
+} else {
+
+}
 
 
 ScrollTrigger.create({
-    // markers: true,
+    markers: true,
     trigger: '.section__if__you__want',
     pin: '.section__if__you__want',
     start: 'top top',
-    end: '+=2400',
+    end: '+=2200',
 });
-
 ScrollTrigger.create({
   // markers: true,
   trigger: '.section__if__you__want',
@@ -380,17 +425,17 @@ const work = gsap.timeline({
     pin: '.how__we__work',
   },
 })
-.from('.train', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work',
-    start: '300 center',
-    end: '+=300',
-    scrub: 2.5,
-  },
-  ease: 'power3.out',
-  scale: 0
-})
+// .from('.train', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work',
+//     start: '300 center',
+//     end: '+=300',
+//     scrub: 2.5,
+//   },
+//   ease: 'power3.out',
+//   scale: 0
+// })
 .from('.how__we__work__title', {
   scrollTrigger: {
     // markers: true,
@@ -623,7 +668,6 @@ gsap.utils.toArray(".call__my__box").forEach(h1 => {
 
 
 const reviewsSection = gsap.timeline({
-  // ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.reviews',
@@ -659,7 +703,6 @@ const reviewsSection = gsap.timeline({
 
 
 const educationSection = gsap.timeline({
-  // ease: 'none',
   scrollTrigger: {
     // markers: true,
     trigger: '.education',
@@ -741,6 +784,7 @@ retrainingCourse.addEventListener('click',  letDiplom3);
 thinking.addEventListener('click',  letDiplom4);
 
 
+// затемнение BG
 diplom.forEach(function (item, idx) {
   item.addEventListener('mouseenter', function () {
       blackBG.classList.remove('off')
@@ -751,12 +795,22 @@ diplom.forEach(function (item, idx) {
 });
 
 
+let xPercentWidth 
+
+if (windowInnerWidth > 1200) {
+  xPercentWidth  = -20
+} else {
+  xPercentWidth  = -50
+}
+
 gsap.utils.toArray(".diplom.right_0").forEach(img => {
+  
+   
   let hover = gsap
   .to(img, {
-    x: -w/4,
-    y: -h/4,
-    scale: 1.5,
+    xPercent: xPercentWidth,
+    yPercent: -20,
+    scale: scaleProsent,
     duration: .5, 
     paused: true, 
     ease: "sine",
@@ -768,7 +822,8 @@ gsap.utils.toArray(".diplom.right_0").forEach(img => {
 gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
   let hover = gsap
   .to(img, {
-    y: -h/4,
+    xPercent: xPercentWidth,
+    yPercent: -20,
     scale: 1.5,
     duration: .5, 
     paused: true, 
@@ -792,27 +847,22 @@ function kyeGo () {
 }
 
 var education = document.querySelector('.education')
+let cellMeWhite = windowInnerWidth > 768 ? 90 : 10;
+
+
 
 gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.left__panel__burger',
-    start: '-34 top',
+    start: `${topBurger} top`,
     endTrigger: ".education",
     end: 'top -300',
     pin: '.left__panel__burger',
     scrub: true,
-  },
+  }
 })
-.to('.cell__me__left',{
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.section__who__what',
-    start: 'top top', 
-    scrub: true,
-  },
-  y: '50vh'
-})
+.to(".left__panel__burger", {zIndex: 100})
 .to('.left__panel__burger',{
   scrollTrigger: {
     trigger: '.how__we__work',
@@ -829,7 +879,7 @@ gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: 'top 90%', 
+    start: `top ${cellMeWhite}%`, 
     end: '+=20',
     scrub: true,
   },
@@ -839,7 +889,7 @@ gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work',
-    start: 'top 90%',  
+    start: `top ${cellMeWhite}%`,  
     end: '+=20',
     scrub: true,
   },
@@ -849,21 +899,11 @@ gsap.timeline({
 .to('.cell__me__left',{
   scrollTrigger: {
     // markers: true,
-    trigger: '.blue__planet',
-    start: 'top bottom', 
-    scrub: true,
-    invalidateOnRefresh: true,
-  },
-  y: '100vh',
-})
-.to('.cell__me__left',{
-  scrollTrigger: {
-    // markers: true,
     trigger: '.education',
     start: 'top top', 
     scrub: true,
   },
-  x: '-20vw'
+  x: '-20vw',
 })
 .to('.left__panel__burger',{
   scrollTrigger: {
@@ -876,4 +916,81 @@ gsap.timeline({
     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
   },
 })
+
+
+if (windowInnerWidth > 768) {
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.section__who__what',
+      start: 'top top', 
+      scrub: true,
+    },
+    y: `${viewHeight-350}`
+  })
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.blue__planet',
+      start: 'top bottom', 
+      scrub: true,
+      invalidateOnRefresh: true,
+    },
+    y: '100vh',
+  })
+} else {
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.blue__planet',
+      start: 'top bottom', 
+      scrub: true,
+      invalidateOnRefresh: true,
+    },
+    opacity: 0,
+  })
+}
+  // ScrollTrigger.create({
+//     trigger: '.how__we__work',
+//     markers: true,
+//     // scrub: true,
+//     start:'top top',
+//     endTrigger: ".reviews",
+//     end:'bottom botom',
+//     onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+//     onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+//     onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+//     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+// });
+
+// .to('.left__panel__burger',{
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.reviews',
+//     start: 'top top', 
+//     endTrigger: ".education",
+//     end: 'bottom',
+//     scrub: true,
+//   },
+//   color: 'black',
+// })
+// .to(['.menu__btn span, .cell__me__left span'],{
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.reviews',
+//     start: 'top top', 
+//     // end: '+=900',
+//     scrub: true,
+//   },
+//   backgroundColor: 'black',
+// })
+// .toArray(".call__my__box").forEach(h1 => {
+//   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
+//   h1.addEventListener("mouseenter", () => hover.play());
+//   h1.addEventListener("mouseleave", () => hover.reverse());
+// });
+
+
+
+  
 

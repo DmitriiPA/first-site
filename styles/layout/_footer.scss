@@ -1,5 +1,10 @@
 .footer {
   background-color: $color_yellow;
+  
+
+  @include mobile-width {
+    display: none;
+  }
 }
 
 .footer__content {
@@ -15,6 +20,17 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
+    
+    @include min-content-width {
+      margin-top: 5vh;
+      font-size: 12px;
+      line-height: normal;
+    }
+  }
+
+  @include min-content-width {
+    gap: calc(var(--index)*3);
+    padding: 30px 0;
   }
 }
 
@@ -22,6 +38,11 @@
   h2 {
     font-size: 48px;
     line-height: 48px;
+
+    @include media-tablet {
+      font-size: 36px;
+      line-height: normal;
+    }
   }
 }
 
@@ -29,7 +50,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -48,4 +69,18 @@
 
 .footer__left, .footer__right {
   min-width: calc(var(--index)*23);
+}
+
+.footer__media__logo {
+  @include min-content-width {
+    max-height: 42px;
+  }
+}
+
+.footer__logo {
+  // max-width: 330px;
+  max-height: 100px;
+  @include min-content-width {
+    max-height: 66px;
+  }
 }
