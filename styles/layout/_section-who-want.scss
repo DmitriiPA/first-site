@@ -9,6 +9,7 @@
   position: relative;
   gap: 52px;  
   padding-top: 120px;
+  // z-index: 10;
   
   @include media-content {
     display: inline-flex;
@@ -29,25 +30,40 @@
   
   @include media-tablet {
     gap: 24px;  
+    // z-index: inherit;
 
     h2 {
       font-size: 36px;
       line-height: normal;
     }
-  
+    
     h4 {
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: normal;
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: normal;
     }
   }
+  
+  @include mobile-width {
+    flex-direction: column;
 
+    h2 {
+      font-size: 33px;
+    }
+    h4 {
+      font-size: 15px;
+    }
+  }
 }
 
 .who__what__first__top__right,
 .who__what__first__top__left {
   width: 100%;
 }
+
+// .who__what__second__text br {
+//   display: none;
+// }
 
 .who__what__first__top__left_title {
   @include min-content-width {

@@ -7,6 +7,7 @@ var w = window.innerWidth/2
 let scaleProsent
 let xProsentTitle
 let yProsent
+let topBurger
 
 if (windowInnerWidth > 1200) {
   scaleProsent = 1.5
@@ -18,6 +19,7 @@ if (windowInnerWidth > 1200) {
   xProsentTitle = 3
 }
 
+topBurger = windowInnerWidth > 767 ? -34 : -7
 // console.log(windowInnerWidth);
 // console.log(yProsent);
 
@@ -342,58 +344,66 @@ opacity: 0,
   },
   opacity: 0,
 })
-.to('.if__you__want__buttom', {
-  scrollTrigger: {
-    // markers:true,
-    trigger: '.who__what__three__text',
-    start: '3000 center',
-    end: '+=200',
-    scrub: 2.5,
-  },
-  opacity: 0,
-})
-.from('.it__is__me__foto', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.who__what__three__text',
-    start: '4000 center',
-    end: '+=200',
-    scrub: 1.5,
-  },
-  scaleY: 0
-})
-.from('.it__is__me__title', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.who__what__three__text',
-    start: '4000 center',
-    end: '+=200',
-    scrub: 1.5,
-  },
-  opacity: 0
-})
-.from('.it__is__me__star', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.who__what__three__text',
-    start: '4000 center',
-    end: '+=200',
-    scrub: 2.5,
-  },
-  x: 900,
-  y: -300,
-  opacity: 0,
-})
+
+
+if (windowInnerWidth > 767) {
+  ifYouWantImg
+  .from('.it__is__me__foto', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 1.5,
+    },
+    scaleY: 0
+  })
+  .from('.it__is__me__title', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 1.5,
+    },
+    opacity: 0
+  })
+  .from('.it__is__me__star', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.who__what__three__text',
+      start: '4000 center',
+      end: '+=200',
+      scrub: 2.5,
+    },
+    x: 900,
+    y: -300,
+    opacity: 0,
+  })
+  .from('.train', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work',
+      start: '300 center',
+      end: '+=300',
+      scrub: 2.5,
+    },
+    ease: 'power3.out',
+    scale: 0
+  })
+
+} else {
+
+}
 
 
 ScrollTrigger.create({
-    // markers: true,
+    markers: true,
     trigger: '.section__if__you__want',
     pin: '.section__if__you__want',
     start: 'top top',
-    end: '+=2400',
+    end: '+=2200',
 });
-
 ScrollTrigger.create({
   // markers: true,
   trigger: '.section__if__you__want',
@@ -415,17 +425,17 @@ const work = gsap.timeline({
     pin: '.how__we__work',
   },
 })
-.from('.train', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work',
-    start: '300 center',
-    end: '+=300',
-    scrub: 2.5,
-  },
-  ease: 'power3.out',
-  scale: 0
-})
+// .from('.train', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work',
+//     start: '300 center',
+//     end: '+=300',
+//     scrub: 2.5,
+//   },
+//   ease: 'power3.out',
+//   scale: 0
+// })
 .from('.how__we__work__title', {
   scrollTrigger: {
     // markers: true,
@@ -784,13 +794,22 @@ diplom.forEach(function (item, idx) {
   });
 });
 
+
+let xPercentWidth 
+
+if (windowInnerWidth > 1200) {
+  xPercentWidth  = -20
+} else {
+  xPercentWidth  = -50
+}
+
 gsap.utils.toArray(".diplom.right_0").forEach(img => {
   
    
   let hover = gsap
   .to(img, {
-    x: -windowInnerWidth/4,
-    y: -windowInnerHeight/8,
+    xPercent: xPercentWidth,
+    yPercent: -20,
     scale: scaleProsent,
     duration: .5, 
     paused: true, 
@@ -803,8 +822,8 @@ gsap.utils.toArray(".diplom.right_0").forEach(img => {
 gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
   let hover = gsap
   .to(img, {
-    x: -windowInnerWidth/5,
-    y: -windowInnerHeight/yProsent,
+    xPercent: xPercentWidth,
+    yPercent: -20,
     scale: 1.5,
     duration: .5, 
     paused: true, 
@@ -836,7 +855,7 @@ gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.left__panel__burger',
-    start: '-34 top',
+    start: `${topBurger} top`,
     endTrigger: ".education",
     end: 'top -300',
     pin: '.left__panel__burger',
@@ -918,6 +937,17 @@ if (windowInnerWidth > 768) {
       invalidateOnRefresh: true,
     },
     y: '100vh',
+  })
+} else {
+  gsap.to('.cell__me__left',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.blue__planet',
+      start: 'top bottom', 
+      scrub: true,
+      invalidateOnRefresh: true,
+    },
+    opacity: 0,
   })
 }
   // ScrollTrigger.create({

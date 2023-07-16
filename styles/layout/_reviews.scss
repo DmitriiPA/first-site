@@ -32,19 +32,34 @@
   padding-top: calc(var(--index)*6);
   left: 20px;
   
+  @include min-content-width {
+    padding-top: calc(var(--index)*4);
+  }
+  @include media-tablet {
+    padding-top: calc(var(--index)*8);
+    width: 100%;
+  }
+  
   h2 {
     text-align: center;
 
     @include media-content {
       font-size: 55px;
     }
+    @include media-tablet {
+      font-size: 32px;
+    }
   }
   
   h4 {
     width: 100%;
-
+    
     @include media-content {
       line-height: 27px;
+    }
+    @include media-tablet {
+      font-size: 16px;
+      line-height: normal;
     }
   }
 
@@ -57,9 +72,6 @@
     text-transform: none;
   }
 
-  @include min-content-width {
-    padding-top: calc(var(--index)*4);
-  }
 }
 
 
@@ -80,6 +92,9 @@
   
   @include min-content-width {
     margin-top: calc(var(--index)*3);
+  }
+  @include media-tablet {
+    margin-top: calc(var(--index)*7);
   }
 }
 

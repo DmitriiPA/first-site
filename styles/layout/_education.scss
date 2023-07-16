@@ -1,5 +1,6 @@
 .education {
   height: 100vh;
+
   background-image: url('../images/background-header.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -17,55 +18,67 @@
   justify-content: space-between;
   color: $color_text;
   position: relative;
-  // z-index: 12;
-  
-  h3 {
-    margin-top: 6vh;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-  }
 }
 
 .education__text {
   position: relative;
   margin-top: 7vh;
-  width: 50vw;
   max-width: 624px;
   
   h3 {
     position: relative;
-    // z-index: 15;
-  }
+    margin-top: 6vh;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
 
+    @include media-tablet {
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+  
   @include media-content {
     max-width: 568px;
+  }
+  @include min-content-width {
+    max-width: 48vw;
   }
 }
 
 .education__foto {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(5, 1fr);
+  position: relative;
   transition: .5s;
+  width: 100%;
+  top: 10vh;
 }
 
 .education__star {
-  position: relative;
-  bottom: 40px;
+  position: absolute;
   height: calc(var(--index)*25);
-  grid-column: 1 / -1;
-  grid-row: 1;
+  right: 0;
+  top: 0;
+  
+  @include min-content-width {
+    height: calc(var(--index)*22);
+  }
+  @include media-tablet {
+    height: calc(var(--index) * 36);
+    left: 60vw;
+  }
 }
+
 
 .diplom {
   position: absolute;
-  max-height: 60vh;
-  max-width: 50vw;
-  z-index: 15;
-  right: 13vw;
+  right: 10vw;
   cursor: pointer;
   transition: .5s;
+  z-index: 15;
+
+  @include min-content-width {
+    right: 7vw;
+  }
 }
 
 .teacher_education,
@@ -83,15 +96,20 @@
 
 
 .right_0 {
-  max-height: 54vh;
+  max-width: 40vw;
   right: 2vw;
-  
+  bottom: 0;
+
   @include min-content-width {
-   right: 0;
+    right: 0;
+    bottom: 25vh;
     max-height: 40vh;
   }
 }
 
+.center_diplom {
+  max-height: 60vh;
+}
 
 .black__bg {
   position: absolute;

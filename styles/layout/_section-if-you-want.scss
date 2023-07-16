@@ -1,5 +1,5 @@
 .section__if__you__want {
-  position: relative;
+  // position: relative;
   background-color: $color_yellow;
 }
 
@@ -7,9 +7,10 @@
   position: relative; 
   display: flex;
   justify-content: center;
-
-  h2 {
-      margin-top: 120px;
+  padding-top: 120px;
+  
+  @include mobile-width {
+    padding-top: 90px;
   }
 }
 
@@ -33,13 +34,17 @@
 }
 
 .vector__moon {
-  margin-top: 86px;
+  top: -65px;
 
   @include min-content-width {
     width: 280px;
   }
   @include media-tablet {
     width: 200px;
+  }
+  @include mobile-width {
+    width: 139px;
+    // margin-top: -20px;
   }
 }
 
@@ -56,6 +61,12 @@
   @include min-content-width {
     margin-top: 100px;
   }
+  @include mobile-width {
+    flex-direction: column;
+    justify-content: normal;
+    align-items: normal;
+    margin-top: 40px;  
+  }
 }
 
 .eyes {
@@ -69,7 +80,11 @@
     margin-top: 0;
   }
   @include media-tablet {
-    width: 292px;
+    max-width: 292px;
+  }
+  @include mobile-width {
+    position: absolute;
+    top: 320px;
   }
 }
 
@@ -78,18 +93,18 @@
   opacity: 0;
 }
 
-.if__you__want__buttom__two {
-  @include min-content-width {
-    bottom: 25px;
-  }
-}
+// .if__you__want__buttom__two {
+// }
 
 .if__you__want__buttom__three {
   @include min-content-width {
     bottom: 55px;
   }
   @include media-tablet {
-    bottom: 30px;
+    top: 34px;
+  }
+  @include mobile-width {
+    top: 20px;
   }
 }
 
@@ -98,7 +113,10 @@
     bottom: 75px;
   }
   @include media-tablet {
-    bottom: 30px;
+    top: 76px;
+  }
+  @include mobile-width {
+    top: 40px;
   }
 }
 
@@ -138,6 +156,12 @@
     right: 100px;
     z-index: 2;
   }
+  @include mobile-width {
+    // width: 100vw;
+    right: 0;
+    margin-top: 70vh;
+    height: 100vw;
+  }
 }
 
 .it__is__me__star {
@@ -157,5 +181,11 @@
     scale: 0.5;
     bottom: 100px;
     right: 32vw;
+  }
+  @include mobile-width {
+    height: 235px;
+    width: auto;
+    bottom: -34vh;
+    right: 61vw;
   }
 }
