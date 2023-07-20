@@ -5,8 +5,8 @@ $color_white: #E9E9E9;
 $content-width: 1280px;
 $min-content-width: 1200px;
 $tablet-width: 768px;
-$mobile-width: 760px;
-$mobile-small-width: 460px;
+$mobile-large-width: 460px;
+$mobile-width: 460px;
 
 @mixin media-content {
     @media (max-width: $content-width) { @content; }
@@ -17,9 +17,9 @@ $mobile-small-width: 460px;
 @mixin media-tablet {
     @media (max-width: $tablet-width) { @content; }
 }
+@mixin mobile-large-width {
+    @media (max-width: $mobile-large-width) { @content; }
+}
 @mixin mobile-width {
     @media (max-width: $mobile-width) { @content; }
-}
-@mixin media-mobilsmall {
-    @media (max-width: $mobile-small-width) { @content; }
 }

@@ -20,26 +20,37 @@ if (windowInnerWidth > 1200) {
 }
 
 topBurger = windowInnerWidth > 767 ? -34 : -7
-// console.log(windowInnerWidth);
-// console.log(yProsent);
-
 
 var tl = gsap.timeline();
+
+if (windowInnerWidth > 767) {
+  tl.from(
+    '.title',
+    {
+      x: windowInnerHeight/xProsentTitle,
+      y: -windowInnerHeight/4,
+      duration: 0.8
+    },
+    1
+  )
+} else {
+  tl.from(
+    '.title',
+    {
+      opacity: 0,
+      scale: 0,
+      duration: 0.8
+    },
+    1
+  )
+}
+
 tl.to(
   '.stars',  {
     opacity: 1, 
     delay: 0.7, 
     stagger: 0.04,
   }
-)
-.from(
-  '.title',
-  {
-    x: windowInnerHeight/xProsentTitle,
-    y: -windowInnerHeight/4,
-    duration: 0.8
-  },
-  1
 )
 .from(
   '.women', {y: -900},
@@ -97,6 +108,7 @@ tl.to(
   }, 
   '-=1'
 )
+
 
 
 
@@ -398,7 +410,7 @@ if (windowInnerWidth > 767) {
 
 
 ScrollTrigger.create({
-    markers: true,
+    // markers: true,
     trigger: '.section__if__you__want',
     pin: '.section__if__you__want',
     start: 'top top',
@@ -425,17 +437,6 @@ const work = gsap.timeline({
     pin: '.how__we__work',
   },
 })
-// .from('.train', {
-//   scrollTrigger: {
-//     // markers: true,
-//     trigger: '.how__we__work',
-//     start: '300 center',
-//     end: '+=300',
-//     scrub: 2.5,
-//   },
-//   ease: 'power3.out',
-//   scale: 0
-// })
 .from('.how__we__work__title', {
   scrollTrigger: {
     // markers: true,
@@ -950,47 +951,3 @@ if (windowInnerWidth > 768) {
     opacity: 0,
   })
 }
-  // ScrollTrigger.create({
-//     trigger: '.how__we__work',
-//     markers: true,
-//     // scrub: true,
-//     start:'top top',
-//     endTrigger: ".reviews",
-//     end:'bottom botom',
-//     onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
-//     onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
-//     onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
-//     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
-// });
-
-// .to('.left__panel__burger',{
-//   scrollTrigger: {
-//     markers: true,
-//     trigger: '.reviews',
-//     start: 'top top', 
-//     endTrigger: ".education",
-//     end: 'bottom',
-//     scrub: true,
-//   },
-//   color: 'black',
-// })
-// .to(['.menu__btn span, .cell__me__left span'],{
-//   scrollTrigger: {
-//     // markers: true,
-//     trigger: '.reviews',
-//     start: 'top top', 
-//     // end: '+=900',
-//     scrub: true,
-//   },
-//   backgroundColor: 'black',
-// })
-// .toArray(".call__my__box").forEach(h1 => {
-//   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
-//   h1.addEventListener("mouseenter", () => hover.play());
-//   h1.addEventListener("mouseleave", () => hover.reverse());
-// });
-
-
-
-  
-

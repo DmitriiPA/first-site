@@ -46,9 +46,12 @@
   
   @include mobile-width {
     flex-direction: column;
+    gap: 14vh;
+    padding-top: 20vh;
 
     h2 {
       font-size: 33px;
+      text-align-last: center;
     }
     h4 {
       font-size: 15px;

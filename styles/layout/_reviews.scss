@@ -21,9 +21,22 @@
   }
 }
 
+.price__stars__right{
+@include mobile-width {
+  display: none;
+}
+}
+
 .price__stars_top {
   position: relative;
   top: calc(var(--index)*1);
+
+  @include mobile-width {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    left: 0;
+  }
 }
 
 .reviews__content {
@@ -38,6 +51,11 @@
   @include media-tablet {
     padding-top: calc(var(--index)*8);
     width: 100%;
+  }
+  @include mobile-width {
+    padding-top: 26vh;
+    left: auto;
+    width: 88vw;
   }
   
   h2 {
@@ -95,6 +113,9 @@
   }
   @include media-tablet {
     margin-top: calc(var(--index)*7);
+  }
+  @include mobile-width {
+    margin-top: auto;
   }
 }
 

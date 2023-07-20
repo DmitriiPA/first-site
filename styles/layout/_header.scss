@@ -18,15 +18,32 @@
 .wrapper__navbar {
   display: flex;
   align-items:flex-start;
+
+  @include mobile-large-width {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .header__left__blok {
   z-index: 6;
 
   @include mobile-width {
+    height: 570px;
     z-index: 1;
   }
 }
+
+.header__right__blok {
+  display: flex;
+  height: 700px;
+  width: 100%;
+
+  @include mobile-width {
+    height: auto;
+  }
+}
+
 
 .title {
   margin-top: 7vh;
@@ -37,9 +54,10 @@
 }
 
   @include media-tablet  {
-    width: 292px;
     position: relative;
-    top: 266px
+    width: 292px;
+    margin-top: auto;
+    top: 65%;
   } 
 
   h1, h2{
@@ -84,11 +102,7 @@
   position: relative;
 }
 
-.header__right__blok {
-  display: flex;
-  height: 700px;
-  width: 100%;
-}
+
 
 .kye__box {
   position: relative;
@@ -101,7 +115,6 @@
     left: 25px;
     scale: 0.9;
   }
-  
   @include min-content-width {
     left: 32px;
   }
@@ -111,7 +124,9 @@
     scale: 0.8;
   }
   @include mobile-width {
-    left: -101px;
+    position: absolute;
+    left: auto;
+    right: 7vw;
     top: -159px;
     z-index: 10;
     // transform: scale(-1, 1)

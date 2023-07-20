@@ -1,6 +1,19 @@
 .section__if__you__want {
   // position: relative;
   background-color: $color_yellow;
+  overflow: hidden;
+}
+
+.wrapper__for__mobile {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  // bottom: 0;
+  top: 40px;
+}
+
+.if__you__want__title {
+  height: 100vh;
 }
 
 .if__you__want__top {
@@ -10,7 +23,7 @@
   padding-top: 120px;
   
   @include mobile-width {
-    padding-top: 90px;
+    padding-top: 14vh;
   }
 }
 
@@ -31,6 +44,9 @@
     bottom: 340px;
     width: 126px;
   }
+  @include mobile-width {
+    display: none;
+  }
 }
 
 .vector__moon {
@@ -43,8 +59,7 @@
     width: 200px;
   }
   @include mobile-width {
-    width: 139px;
-    // margin-top: -20px;
+    display: none;
   }
 }
 
@@ -62,10 +77,16 @@
     margin-top: 100px;
   }
   @include mobile-width {
+    position: relative;
     flex-direction: column;
     justify-content: normal;
-    align-items: normal;
-    margin-top: 40px;  
+    align-items: center;
+    margin-top: 10vh;
+    bottom: 0px;  
+
+    div {
+      margin-top: 10vh;
+    }
   }
 }
 
@@ -84,7 +105,10 @@
   }
   @include mobile-width {
     position: absolute;
-    top: 320px;
+    top: 35vh;
+    width: 80vw;
+    display: block;
+    opacity: 1;
   }
 }
 
@@ -183,9 +207,11 @@
     right: 32vw;
   }
   @include mobile-width {
-    height: 235px;
-    width: auto;
-    bottom: -34vh;
+    scale: 1;
+    height: 30vw;
+    // bottom: -34vh;
+    top: 50vh;
     right: 61vw;
+
   }
 }
