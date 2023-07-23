@@ -1,15 +1,21 @@
 .section__if__you__want {
-  // position: relative;
   background-color: $color_yellow;
-  overflow: hidden;
+  overflow: hidden ;
+
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 }
 
 .wrapper__for__mobile {
   position: relative;
   width: 100%;
   height: 90%;
-  // bottom: 0;
-  top: 40px;
+  top: 114px;
+
+  @include mobile-width {
+    top: auto;
+  }
 }
 
 .if__you__want__title {
@@ -76,6 +82,9 @@
   @include min-content-width {
     margin-top: 100px;
   }
+  @include media-tablet {
+    gap: 20px;
+  }
   @include mobile-width {
     position: relative;
     flex-direction: column;
@@ -83,11 +92,11 @@
     align-items: center;
     margin-top: 10vh;
     bottom: 0px;  
-
-    div {
-      margin-top: 10vh;
-    }
   }
+}
+
+.if__you__want__buttom__text {
+  max-width: 70vw;
 }
 
 .eyes {
@@ -97,7 +106,7 @@
     width: 562px;
   }
   @include min-content-width {
-    width: 462px;
+    width: 50%;
     margin-top: 0;
   }
   @include media-tablet {
@@ -108,17 +117,17 @@
     top: 35vh;
     width: 80vw;
     display: block;
-    opacity: 1;
   }
+}
+
+.eyes__off {
+  display: none;
 }
 
 .if__you__want__buttom__two, .if__you__want__buttom__three, .if__you__want__buttom__four {
   position: relative;
   opacity: 0;
 }
-
-// .if__you__want__buttom__two {
-// }
 
 .if__you__want__buttom__three {
   @include min-content-width {
@@ -128,7 +137,7 @@
     top: 34px;
   }
   @include mobile-width {
-    top: 20px;
+    top: 0;
   }
 }
 
@@ -140,25 +149,31 @@
     top: 76px;
   }
   @include mobile-width {
-    top: 40px;
+    top: 5vw;
+    bottom: auto;
   }
 }
 
 .it__is__me {
-  display: flex;
+  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 
 .it__is__me__title {
   position: absolute;
-  right : 173px;
-  top: 50%;
+  bottom: 45vh;
+  right: 10vw;
   
   @include media-content {
     right : 95px;
   }
   @include min-content-width {
-    right: 29px;
+  }
+  @include mobile-width {
+    bottom: 80vh;
+    right : 10vw;
   }
 }
 
@@ -168,50 +183,50 @@
   margin-top: 34px;
   transform-origin: bottom;
   bottom: 0;
-  
+  z-index: 1;
+  height: auto;
+
   @include media-content {
-    transform-origin: left bottom;
-    scale: 0.9;
+    width: 50vw;
   }
   @include min-content-width {
-    scale: 0.8;
+    width: 50vw;
   }
   @include media-tablet {
-    right: 100px;
     z-index: 2;
   }
   @include mobile-width {
-    // width: 100vw;
     right: 0;
-    margin-top: 70vh;
-    height: 100vw;
+    margin-top: 0;
+    width: 100vw;
   }
 }
 
 .it__is__me__star {
-  position: relative;
-  margin-left: 75px;
-  margin-bottom: 79px;
-  
+  position: absolute;
+  // margin-left: 75px;
+  // margin-bottom: 79px;
+  right: 5vw;
+  bottom: 10vh;
+
   @include media-content {
     transform-origin: left bottom;
-    scale: 0.9;
-    margin-left: 0;
+    right: -60px;
   }
   @include min-content-width {
-    right: 18vw;
+    width: 50vw;
   }
   @include media-tablet {
-    scale: 0.5;
-    bottom: 100px;
-    right: 32vw;
+    width: 15vw;
+    bottom: 300px;
+    right: 30vw;
   }
   @include mobile-width {
-    scale: 1;
-    height: 30vw;
+    // height: 30vw;
+    width: 30vw;
     // bottom: -34vh;
-    top: 50vh;
-    right: 61vw;
+    bottom: 70vh;
+    right: 21vw;
 
   }
 }

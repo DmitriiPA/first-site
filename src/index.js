@@ -1,13 +1,14 @@
 const windowInnerWidth = window.innerWidth
 const windowInnerHeight = window.innerHeight
 var h = window.innerHeight/2;
-var w = window.innerWidth/2
+var w = window.innerWidth/2;
 
 
 let scaleProsent
 let xProsentTitle
 let yProsent
 let topBurger
+let scrubSpeed
 
 if (windowInnerWidth > 1200) {
   scaleProsent = 1.5
@@ -19,11 +20,19 @@ if (windowInnerWidth > 1200) {
   xProsentTitle = 3
 }
 
-topBurger = windowInnerWidth > 767 ? -34 : -7
+if (windowInnerWidth > 868) {
+  scrubSpeed = 2.5
+} else {
+  scrubSpeed = 'none'
+}
+
+
+
+topBurger = windowInnerWidth > 868 ? -34 : 0
 
 var tl = gsap.timeline();
 
-if (windowInnerWidth > 767) {
+if (windowInnerWidth > 868) {
   tl.from(
     '.title',
     {
@@ -142,7 +151,7 @@ links.forEach((link) => {
   link.addEventListener("click", openBurger);
 });
 
-let backBlueYellowStart = windowInnerWidth > 768 ? 'centet' : '-=400'; 
+let backBlueYellowStart = windowInnerWidth > 868 ? 'centet' : '-=400'; 
 
 gsap.timeline()
 .from ('.who__what__second__text', {
@@ -151,7 +160,7 @@ gsap.timeline()
     trigger: '.section__who__what',
     start: '+=30',
     end: '+=200',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   y: 270,
 })
@@ -187,7 +196,7 @@ ifYouWantText
     trigger: '.who__what__three__text',
     start: '1400 center',
     end: '+=30',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 0,
 })
@@ -195,9 +204,9 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '1400 center',
+    start: '1500 center',
     end: '+=200',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 1,
   y: -60,
@@ -206,9 +215,9 @@ ifYouWantText
   scrollTrigger: {
     // markers: true,
     trigger: '.who__what__three__text',
-    start: '2000 center',
+    start: '2200 center',
     end: '+=20',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 0,
 })
@@ -216,9 +225,9 @@ ifYouWantText
   scrollTrigger: {
     // markers: true,
     trigger: '.who__what__three__text',
-    start: '2000 center',
+    start: '2300 center',
     end: '+=200',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 1,
   y: -145,
@@ -227,9 +236,9 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '2500 center',
+    start: '2900 center',
     end: '+=20',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 0,
 })
@@ -237,9 +246,9 @@ ifYouWantText
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '2400 center',
+    start: '3000 center',
     end: '+=200',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 1,
   y: -245,
@@ -254,7 +263,7 @@ ifYouWantImg
     trigger: '.who__what__three__text',
     start: '100 center',
     end: '+=1000',
-    scrub: 4,
+    scrub: scrubSpeed,
   },
   x: 1100,
 })
@@ -264,7 +273,7 @@ ifYouWantImg
     trigger: '.who__what__three__text',
     start: '100 center',
     end: '+=700',
-    scrub: true,
+    scrub: scrubSpeed,
   },
   ease: 'none',
   y: 400,
@@ -275,7 +284,7 @@ ifYouWantImg
     trigger: '.who__what__three__text',
     start: '400 center',
     end: '+=400',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   y: 400,
 })
@@ -285,7 +294,7 @@ ifYouWantImg
     trigger: '.who__what__three__text',
     start: '600 center',
     end: '+=100',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 0
 })
@@ -295,78 +304,78 @@ ifYouWantImg
     trigger: '.who__what__three__text',
     start: '900 center',
     end: '+=300',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
 opacity: 0,
 })
-.to('.eyes', {
-  scrollTrigger: {
-    // markers: true,  
-    trigger: '.who__what__three__text',
-    start: '1400 center',
-    scrub: 2.5,
-  },
-  attr: { src: './images/eyes.png' },
-})
+// .to('.eyes', {
+//   scrollTrigger: {
+//     // markers: true,  
+//     trigger: '.who__what__three__text',
+//     start: '1400 center',
+//     scrub: scrubSpeed,
+//   },
+//   attr: { src: './images/eyes.png' },
+// })
 .to ('.vector__moon', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
     start: '1400 center',
     end: '+=1500',
-    scrub: 3,
+    scrub: scrubSpeed,
   },
   x: 1100,
 })
-.to('.eyes', {
-  scrollTrigger: {
-    // markers: true,  
-    trigger: '.who__what__three__text',
-    start: '2100 center',
-    scrub: 2.5,
-  },
-  attr: { src: './images/eyes_left.png' },
-})
+// .to('.eyes', {
+//   scrollTrigger: {
+//     // markers: true,  
+//     trigger: '.who__what__three__text',
+//     start: '2100 center',
+//     scrub: scrubSpeed,
+//   },
+//   attr: { src: './images/eyes_left.png' },
+// })
 .to ('.vector__moon', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
     start: '2300 center',
     end: '+=300',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
 opacity: 0,
 })
-.to('.eyes', {
-  scrollTrigger: {
-    // markers: true,  
-    trigger: '.who__what__three__text',
-    start: '2500 center',
-    scrub: 2.5,
-  },
-  attr: { src: './images/eyes.png' },
-})
+// .to('.eyes', {
+//   scrollTrigger: {
+//     // markers: true,  
+//     trigger: '.who__what__three__text',
+//     start: '2500 center',
+//     scrub: scrubSpeed,
+//   },
+//   attr: { src: './images/eyes.png' },
+// })
 .to('.if__you__want__buttom', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '3000 center',
+    start: '3400 center',
     end: '+=200',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
   opacity: 0,
 })
 
 
-if (windowInnerWidth > 767) {
+if (windowInnerWidth > 868) {
   ifYouWantImg
   .from('.it__is__me__foto', {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '4000 center',
-      end: '+=200',
-      scrub: 1.5,
+      start: '3600 center',
+      end: '+=150',
+      scrub: 1,
     },
     scaleY: 0
   })
@@ -374,7 +383,7 @@ if (windowInnerWidth > 767) {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '4000 center',
+      start: '3600 center',
       end: '+=200',
       scrub: 1.5,
     },
@@ -384,9 +393,9 @@ if (windowInnerWidth > 767) {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '4000 center',
+      start: '3600 center',
       end: '+=200',
-      scrub: 2.5,
+      scrub: scrubSpeed,
     },
     x: 900,
     y: -300,
@@ -398,14 +407,11 @@ if (windowInnerWidth > 767) {
       trigger: '.how__we__work',
       start: '300 center',
       end: '+=300',
-      scrub: 2.5,
+      scrub: scrubSpeed,
     },
     ease: 'power3.out',
     scale: 0
   })
-
-} else {
-
 }
 
 
@@ -414,7 +420,7 @@ ScrollTrigger.create({
     trigger: '.section__if__you__want',
     pin: '.section__if__you__want',
     start: 'top top',
-    end: '+=2200',
+    end: '+=2800',
 });
 ScrollTrigger.create({
   // markers: true,
@@ -425,7 +431,7 @@ ScrollTrigger.create({
 });
 
 
-// Поезд и космонафт и  текст
+// Поезд, космонафт и  текст
 
 const work = gsap.timeline({
   scrollTrigger: {
@@ -464,7 +470,7 @@ const work = gsap.timeline({
     start: '200 top',
     end: '+=200px ',
     invalidateOnRefresh: true,
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
     y:  (i, el) => parseFloat(el.getAttribute('data-speed')) * -700,
     opacity: 0,    
@@ -475,7 +481,7 @@ const work = gsap.timeline({
     trigger: '.how__we__work__content',
     start: '200 top',
     end: '+=200px ',
-    scrub: 2.5,
+    scrub: scrubSpeed,
   },
     y:  600    
 })
@@ -505,31 +511,31 @@ const work = gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '600 top',
+    start: '800 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
     scrub: 1,
   },
-    y:  -300,
+    // y:  -300,
     opacity: 0,    
 })
 .to('.text__2', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '600 top',
+    start: '800 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
     scrub: 1,
   },
-    y:  -300,
+    // y:  -300,
     opacity: 0,    
 })
 .from('.text__3', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '700 top',
+    start: '900 top',
     end: '+=200px ',
     scrub: 1,
   },
@@ -540,7 +546,7 @@ const work = gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '700 top',
+    start: '900 top',
     end: '+=200px ',
     scrub: 1,
   },
@@ -551,7 +557,7 @@ const work = gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '800 top',
+    start: '900 top',
     end: '+=200px ',
     scrub: 2,
   },
@@ -561,31 +567,31 @@ const work = gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '1100 top',
+    start: '1500 top',
     end: '+=200px ',
     scrub: 1,
     invalidateOnRefresh: true,
   },
-    y:  -500,
+    // y:  -500,
     opacity: 0,    
   })
 .to('.text__4', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '1100 top',
+    start: '1500 top',
     end: '+=200px ',
     scrub: 1,
     invalidateOnRefresh: true,
   },
-  y:  -300,
+  // y:  -300,
   opacity: 0,    
 })
 .from('.text__5', {
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '1300 top',
+    start: '1600 top',
     end: '+=200px ',
     scrub: 1,
   },
@@ -596,7 +602,7 @@ const work = gsap.timeline({
   scrollTrigger: {
     // markers: true,
     trigger: '.how__we__work__content',
-    start: '1300 top',
+    start: '1600 top',
     end: '+=200px ',
     scrub: 1,
   },
@@ -753,47 +759,40 @@ var retraining = document.querySelector('.retraining');
 var retrainingCourse = document.querySelector('.retraining_course');
 var thinking = document.querySelector('.thinking');
 
-
+ 
 function letDiplom1 () {
   diplomBel.classList.toggle('off');
   diplomCoach.classList.add('off')
   diplomClinic.classList.add('off')
   diplomKurp.classList.add('off')
+  blackBG.classList.toggle('on__mobile')
 };
 function letDiplom2 () {
   diplomBel.classList.add('off');
   diplomCoach.classList.toggle('off')
   diplomClinic.classList.add('off')
   diplomKurp.classList.add('off')
+  blackBG.classList.toggle('on__mobile')
 };
 function letDiplom3 () {
   diplomBel.classList.add('off');
   diplomCoach.classList.add('off')
   diplomClinic.classList.toggle('off')
   diplomKurp.classList.add('off')
+  blackBG.classList.toggle('on__mobile')
 };
 function letDiplom4 () {
   diplomBel.classList.add('off');
   diplomCoach.classList.add('off')
   diplomClinic.classList.add('off')
   diplomKurp.classList.toggle('off')
+  blackBG.classList.toggle('on__mobile')
 };
 
 teacherEducation.addEventListener('click',  letDiplom1);
 retraining.addEventListener('click',  letDiplom2);
 retrainingCourse.addEventListener('click',  letDiplom3);
 thinking.addEventListener('click',  letDiplom4);
-
-
-// затемнение BG
-diplom.forEach(function (item, idx) {
-  item.addEventListener('mouseenter', function () {
-      blackBG.classList.remove('off')
-  });
-  item.addEventListener('mouseleave', function () {
-      blackBG.classList.add('off')
-  });
-});
 
 
 let xPercentWidth 
@@ -804,9 +803,18 @@ if (windowInnerWidth > 1200) {
   xPercentWidth  = -50
 }
 
+if (windowInnerWidth > 560) {
+  // затемнение BG
+diplom.forEach(function (item, idx) {
+  item.addEventListener('mouseenter', function () {
+      blackBG.classList.remove('off')
+  });
+  item.addEventListener('mouseleave', function () {
+      blackBG.classList.add('off')
+  });
+});
+
 gsap.utils.toArray(".diplom.right_0").forEach(img => {
-  
-   
   let hover = gsap
   .to(img, {
     xPercent: xPercentWidth,
@@ -833,7 +841,14 @@ gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
   img.addEventListener("mouseenter", () => hover.play());
   img.addEventListener("mouseleave", () => hover.reverse());
 });
-
+} else {
+  diplom.forEach(function (item, idx) {
+    item.addEventListener('click', function () {
+      item.classList.toggle('off')
+      blackBG.classList.toggle('on__mobile')
+    });
+  });
+}
 
 kye.addEventListener('click',  kyeGo);
 
@@ -848,13 +863,13 @@ function kyeGo () {
 }
 
 var education = document.querySelector('.education')
-let cellMeWhite = windowInnerWidth > 768 ? 90 : 10;
+let cellMeWhite = windowInnerWidth > 868 ? 90 : 10;
 
 
-
+if (windowInnerWidth > 460) {
 gsap.timeline({
   scrollTrigger: {
-    // markers: true,
+    // markers: true,f
     trigger: '.left__panel__burger',
     start: `${topBurger} top`,
     endTrigger: ".education",
@@ -917,9 +932,60 @@ gsap.timeline({
     onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
   },
 })
+} else {
+  gsap.timeline({
+    scrollTrigger: {
+      // markers: true,f
+      trigger: '.left__panel__burger',
+      start: `${topBurger} top`,
+      endTrigger: ".education",
+      end: 'top -300',
+      pin: '.left__panel__burger',
+      scrub: true,
+    }
+  })
+  .to(".left__panel__burger", {zIndex: 100})
+  .to('.left__panel__burger',{
+    scrollTrigger: {
+      trigger: '.main',
+      // markers: true,
+      start:'-60',
+      endTrigger: how__we__work,
+      end: '10',
+      onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'black'}), 
+      onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'white'}), 
+      onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'white'}), 
+      onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'black'}), 
+    },
+  })
+  .to('.left__panel__burger',{
+    scrollTrigger: {
+      trigger: '.how__we__work',
+      // markers: true,
+      start:'-60',
+      end: '+=3700',
+      onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+      onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+      onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+      onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+    },
+  })
+  .to('.left__panel__burger',{
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.education',
+      start:'-60',
+      onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+      onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+      onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
+      onEnterBack: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
+    },
+  })
+}
 
 
-if (windowInnerWidth > 768) {
+
+if (windowInnerWidth > 868) {
   gsap.to('.cell__me__left',{
     scrollTrigger: {
       // markers: true,
@@ -951,3 +1017,12 @@ if (windowInnerWidth > 768) {
     opacity: 0,
   })
 }
+
+
+let eyesLeft = document.querySelector('.eyes__one')
+let eyesRight = document.querySelector('.eyes__two')
+
+setInterval (function(){
+  eyesLeft.classList.toggle('eyes__off')
+  eyesRight.classList.toggle('eyes__off')
+}, 2000)

@@ -61,9 +61,9 @@ body {
     padding: 0 8px 0 24px;
 }
 
-  @include mobile-large-width {
-    padding: 0 8px 0 12px;
-}
+//   @include mobile-large-width {
+//     padding: 0 8px 0 12px;
+// }
 }
 
 .z10 {
@@ -82,7 +82,7 @@ h1, h2, h5 {
     font-size: 55px;
   }
   @include media-tablet {
-    font-size: 36px;
+    font-size: 34px;
     line-height: normal;
   }
   @include mobile-width {
@@ -102,11 +102,6 @@ h3, h4 {
     font-size: 19px;
   }
 
-  // @include media-tablet {
-  //   margin-top: 16px;
-  //   font-size: 16px;
-  //   line-height: normal;
-  // }
   @include media-tablet {
     font-size: 14px;
     line-height: normal;
@@ -118,6 +113,7 @@ h3, h4 {
 }
 
 .wrapper__for__img {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
 }

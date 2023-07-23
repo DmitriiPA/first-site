@@ -6,8 +6,7 @@
 .footer__content {
   padding: 75px 0;
   display: flex;
-  justify-content: center;
-  gap: 6vw;
+  justify-content: space-around;
   text-align: center;
 
   h3 {
@@ -22,16 +21,18 @@
       font-size: 12px;
       line-height: normal;
     }
-    @include mobile-large-width {
+    @include mobile-width {
       text-align: left;
     }
   }
 
   @include min-content-width {
-    // gap: calc(var(--index)*3);
     padding: 30px 0;
   }
-  @include mobile-large-width {
+  @include media-tablet {
+    justify-content: space-between;
+  } 
+  @include mobile-width {
     flex-direction: column;
   }
 }
@@ -50,7 +51,7 @@
     }
   }
   h3 {
-    @include mobile-large-width {
+    @include mobile-width {
       display: none;
     }
   }
@@ -58,7 +59,7 @@
 
 .fooret__for__mobile {
   display: none;
-  @include mobile-large-width {
+  @include mobile-width {
     display: block;
   }
 }
@@ -84,8 +85,11 @@
   }
 }
 
-.footer__left, .footer__right {
+.footer__left {
   min-width: calc(var(--index)*23);
+}
+.footer__right {
+  min-width: calc(var(--index)*17);
 }
 
 .footer__media__logo {

@@ -43,15 +43,15 @@
 
 .how__we__work__content {
   display: flex;
+  justify-content: space-between;
   position: relative;
   vertical-align: bottom;
   bottom: 0;
-  height: 90vh;
+  height: 85vh;
 
   @include mobile-width {
     flex-direction: column;
     justify-content: space-between;
-    bottom: 30px;
   }
 
   h4 {
@@ -74,9 +74,9 @@
   }
 
   @include media-tablet {
-    max-width: 292px;
+    // max-width: 292px;
   }
-  @include mobile-large-width {
+  @include mobile-width {
     margin-top: 2vh;
     max-width: 100%;
   }
@@ -86,6 +86,10 @@
 .text_grid_row {
   grid-row: 1;
   grid-column: 1;
+
+  @include media-4k {
+    margin-top: 20vh;
+  }
 }
 
 .price {
@@ -93,28 +97,40 @@
   bottom: 70px;
   display: flex;
   flex-direction: column;
+  min-width: 402px;
 
   @include min-content-width {
     bottom: 50px;
+    h2 {
+      font-size: 50px;
+    }
+  }
+  @include media-tablet {
+    min-width: 0;
+    h2 {
+      font-size: 40px;
+    }
   }
   @include mobile-width {
     top: 10vh;
     bottom: 0;
   }
 
-  div {
-    display: flex;
-    justify-content: space-between
-  }
-
   h2 {
     color: $color_text;
     text-transform: none;
   }
-  h3 {
-    color: $color_yellow;
-    width: 100%;
-    text-transform: none;
+}
+
+.price__sum {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+
+  @include media-tablet {
+    h2 {
+      font-size: 38px;
+    }
   }
 }
 
@@ -150,43 +166,40 @@
 }
 
 .how__we__work__img {
+  width: 45vw;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   align-items: end;
+  justify-items: center;
   position: relative;
+  left: 24px;
 
   @include mobile-width {
     justify-items: end;
     bottom: 0;
+    left: auto;
+    width: auto;
   }
 }
 
 .train {
+  position: relative;
   transform-origin: bottom right;
-  // grid-column: 2 / -1;
   grid-column: 1/1;
   grid-row: 1;
-  
+  width: 45vw;
+  max-width: 730px;
+
   @include media-content {
-    position: relative;
-    scale: 0.9;
-    right: 50px;
   }
   
   @include min-content-width {
-    // grid-column: 1 / -1;
-    grid-column: 1/1;
-    scale: 0.8;
-    right: 160px;
   }
   
   @include media-tablet {
-    scale: 0.5;
-    right: 200px;
+    // right: 200px;
   }
   @include mobile-width {
-    // grid-column: 8/-1;
-    grid-column: 1/1;
     width: 66vw;
     scale: 1;
     bottom: 0;
@@ -196,27 +209,24 @@
 }
 
 .astronaut {
+  position: relative;
   grid-row: 1;
-  // grid-column: 1 / span 8;
   grid-column: 1/1;
   z-index: 2;
+  right: 213px;
 
   @include media-content {
-    transform-origin: bottom;
-    scale: 0.9;
+    right: 13vw;
+    width: 30vw;
   }
   
   @include min-content-width {
-    scale: 0.8;
   }
 
   @include media-tablet {
-    position: relative;
-    scale: 0.7;
     right: 50px;
   }
   @include mobile-width {
-    scale: 1;
     width: 60vw;
     right: 30vw;
   }
@@ -224,76 +234,63 @@
 
 .stars__the__end {
   grid-row: 1;
-  // grid-column: 6 / span 8;
   grid-column: 1/1;
   position: relative;
   top: -41vh;
   
   @include media-content {
-    // grid-column: 4 / span 8;
-    grid-column: 1/1;
+    width: 40vw;
     transform-origin: top right;
-    scale: 0.9;
   }
   @include media-tablet {
-    scale: 0.7;
-    right: 94px;
+    // right: 94px;
     top: -191px;
   }
   @include mobile-width {
-    scale: 1;
-    // grid-column: 9/span 8;
-    grid-column: 1/1;
-    height: 200px;
     right: auto;
     left: 33px;
-    top: -88px;
+    // top: -88px;
+    bottom: 40%;
   }
 }
 
 .blue__planet {
   grid-row: 1;
-  // grid-column: 4 / span 9;
   grid-column: 1/1;
   position: relative;
   top: -30vh;
+  justify-self: center;
   
   @include min-content-width {
-    // grid-column: 3 / span 9;
-    grid-column: 1/1;
     width: auto;
-    scale: 0.9;
-    left: calc(var(--index)* -1);
   }
   @include media-tablet {
-    scale: 0.7;
+    width: 38vw;
     bottom: 115px;
     top: auto;
+    align-self: center;
   }
   @include mobile-width {
-    // grid-column: 5 / span 9;
-    grid-column: 1/1;
-    justify-self: center;
     left: auto;
+    left: 30%;
     bottom: 0;
     top: 55%;
-    scale: 1;
     width: 70vw;
   }
 }
 
 .call__my__box {
-  display: inline-block;
+  display: block;
+  width: 38vw;
+  max-width: 490px;
   grid-row: 1;
-  // grid-column: 3 / span 12;
   grid-column: 1/1;
   margin-bottom: 14vh;
   cursor: pointer;
   z-index: 150;
+
   @include mobile-width {
-    // grid-column: 2 / span 10;
     width: 300px;
-    grid-column: 1/1;
     justify-self: center;
   }
 }

@@ -2,7 +2,12 @@
   position: relative;
   top: 14px;
   color: $color_text;
+  width: 504px;
+  
 
+  @include media-content{
+  width: 50vw;
+}
   @include mobile-width {
     display: none;
   }
@@ -30,15 +35,16 @@
   position: absolute;
   content: "";
   display: block;
-  width: 504px;
+  width: 100%;
+  max-width: 524px;
   height: 2px;
   bottom: 0;
   background-color: $color_white;
   transition: .3s;
 
-  @include media-tablet {
-    width: 290px;
-  }
+  // @include media-tablet {
+  //   width: 290px;
+  // }
 }
 
 .nav__li_burger:not(:last-child)::after {
@@ -46,11 +52,7 @@
 }
 
 .nav__li:hover:after {
-  width: 524px;
-
-  @include media-tablet {
-    width: 310px;
-  }
+  width: 105%;
 }
 
 .nav__li_burger:hover:after {

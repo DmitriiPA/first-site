@@ -19,7 +19,7 @@
   display: flex;
   align-items:flex-start;
 
-  @include mobile-large-width {
+  @include mobile-width {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -47,32 +47,35 @@
 
 .title {
   margin-top: 7vh;
-  width: 520px;
+  min-width: 550px;
     
   @include media-content {
     margin-top: 56px;
+    min-width: 0;
 }
 
   @include media-tablet  {
     position: relative;
     width: 292px;
+    min-width: auto;
     margin-top: auto;
-    top: 65%;
+    top: 382px;
   } 
 
   h1, h2{
     color: $color_white;
     font-size: 80px;
-    line-height: 79px;
+    line-height: normal;
     text-transform: uppercase;
-
+    
+    @include media-content {
+      font-size: 70px;
+    }
     @include media-tablet  {
       font-size: 46px;
-      line-height: 46px;
     }
     @include mobile-width {
       font-size: 44px;
-      line-height: 44px;
     } 
   }
 
@@ -81,17 +84,23 @@
   }
 
   h3 {
+    width: 80%;
+    min-width: 500px;
     margin-top: 20px;
     color: $color_text;
     font-weight: 400;
     font-size: 28px;
     line-height: 37px;
-
+    
     @include media-content {
+      min-width: 450px;
       margin-top: 12px;
+      font-size: 20px;
+      line-height: normal;
     }
 
     @include media-tablet  {
+      min-width: 350px;
       font-size: 16px;
       line-height: 21px;
     }
@@ -105,23 +114,18 @@
 
 
 .kye__box {
-  position: relative;
-  left: 95px;
+  height: 545px;
+  position: absolute;
   transform-origin: center top;
-  cursor: pointer;
   z-index: 3;
+  cursor: pointer;
 
   @include media-content {
-    left: 25px;
-    scale: 0.9;
-  }
-  @include min-content-width {
-    left: 32px;
+    left: 0;
   }
   @include  media-tablet {
-    top: 150px;
+    top: 100px;
     left: 50px;
-    scale: 0.8;
   }
   @include mobile-width {
     position: absolute;
@@ -133,12 +137,24 @@
   }
 }
 
+
+.kye__img {
+  height: 100%;
+  @include media-content {
+    height: 90%;
+  }
+  @include min-content-width {
+  }
+  @include  media-tablet {
+  }
+}
+
 .moon {
   position: absolute;
   width: 25vw;
   max-width: 351px;
   top: 24px;
-  left: 170px;
+  left: 65px;
   transform-origin: top left;
   z-index: 2;
   
@@ -187,7 +203,7 @@
   }
 
   @include media-tablet {
-    left: 108px;
+    // left: 108px;
     top: 586px;
   }
 

@@ -2,12 +2,16 @@ $color_text: #98E9FF;
 $color_yellow: #FFCE7D;
 $color_white: #E9E9E9;
 
+
+$width-4k: 1700px;
 $content-width: 1280px;
 $min-content-width: 1200px;
-$tablet-width: 768px;
-$mobile-large-width: 460px;
-$mobile-width: 460px;
+$tablet-width: 868px;
+$mobile-width: 560px;
 
+@mixin media-4k{
+    @media (min-width: $width-4k) { @content; }
+}
 @mixin media-content {
     @media (max-width: $content-width) { @content; }
 }
@@ -16,9 +20,6 @@ $mobile-width: 460px;
 }
 @mixin media-tablet {
     @media (max-width: $tablet-width) { @content; }
-}
-@mixin mobile-large-width {
-    @media (max-width: $mobile-large-width) { @content; }
 }
 @mixin mobile-width {
     @media (max-width: $mobile-width) { @content; }
