@@ -2,8 +2,6 @@ const windowInnerWidth = window.innerWidth
 const windowInnerHeight = window.innerHeight
 var h = window.innerHeight/2;
 var w = window.innerWidth/2;
-
-
 let scaleProsent
 let xProsentTitle
 let yProsent
@@ -35,12 +33,10 @@ window.onload = function () {
   }, 500);
 }
 
-
 topBurger = windowInnerWidth > 868 ? -34 : 0
 
 // tl - animations for header
 var tl = gsap.timeline();
-
 if (windowInnerWidth > 868) {
   tl.from(
     '.title',
@@ -138,15 +134,11 @@ let viewHeight = Math.min(
 const menuBtn = document.querySelector('.menu__btn');
 const menu = document.querySelector('#burger__menu');
 const menuArr = document.querySelector('#menu');
-
-
 const openBurger = () => {
   menuBtn.classList.toggle('active');
 	menu.classList.toggle('active');
 }
-
 menuBtn.addEventListener('click', openBurger)
-
 // массив с сыками
 const links = Array.from(menuArr.children);
 // при клике  на любую ссылку вызываем функцию
@@ -406,8 +398,6 @@ if (windowInnerWidth > 868) {
 }
 
 
-
-
 // Поезд, космонафт и  текст
 
 ScrollTrigger.create({
@@ -417,7 +407,6 @@ ScrollTrigger.create({
   end: '+=3000',  
   pin: true,
 });
-
 
 let scrollWord  = gsap.timeline({
     scrollTrigger: {
@@ -464,7 +453,6 @@ let scrollWord  = gsap.timeline({
     // markers: true,
     trigger: '.how__we__work__scroll',
     start: 'top top',
-    // end: '+=100px ',
     scrub: true,
     duration: 1,
   },
@@ -512,7 +500,6 @@ let scrollWord  = gsap.timeline({
     invalidateOnRefresh: true,
     scrub: 1,
   },
-    // y:  -300,
     opacity: 0,    
 })
 .to('.text__2', {
@@ -524,7 +511,6 @@ let scrollWord  = gsap.timeline({
     invalidateOnRefresh: true,
     scrub: 1,
   },
-    // y:  -300,
     opacity: 0,    
 })
 .from('.text__3', {
@@ -568,7 +554,6 @@ let scrollWord  = gsap.timeline({
     scrub: 1,
     invalidateOnRefresh: true,
   },
-    // y:  -500,
     opacity: 0,    
   })
 .to('.text__4', {
@@ -580,7 +565,6 @@ let scrollWord  = gsap.timeline({
     scrub: 1,
     invalidateOnRefresh: true,
   },
-  // y:  -300,
   opacity: 0,    
 })
 .from('.text__5', {
@@ -612,7 +596,6 @@ let scrollWord  = gsap.timeline({
     start: '1700 top',
     end: '+=400px',
     scrub: 2,
-    // invalidateOnRefresh: true,
   },
     x: '100vw',
     opacity: 0,    
@@ -624,7 +607,6 @@ let scrollWord  = gsap.timeline({
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
-    // invalidateOnRefresh: true,
   },
     opacity: 0,    
 })
@@ -662,14 +644,11 @@ let scrollWord  = gsap.timeline({
     y: 500,   
 });
 
-
 gsap.utils.toArray(".call__my__box").forEach(h1 => {
   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
   h1.addEventListener("mouseenter", () => hover.play());
   h1.addEventListener("mouseleave", () => hover.reverse());
 });
-
-
 
 const reviewsSection = gsap.timeline({
   scrollTrigger: {
@@ -701,7 +680,6 @@ const reviewsSection = gsap.timeline({
   },
   x: '-100vw',
 })
-
 
 const educationSection = gsap.timeline({
   scrollTrigger: {
@@ -736,13 +714,10 @@ const educationSection = gsap.timeline({
   opacity: 0,
 })
 
-
 var body = document.querySelector('.body');
-
 var diplom = document.querySelectorAll('.diplom');
 var blackBG = document.querySelector('.black__bg');
 var kye = document.querySelector('.kye__box');
-
 var diplomBel = document.querySelector('.diplom__belorus');
 var diplomCoach = document.querySelector('.diplom__coach');
 var diplomClinic = document.querySelector('.diplom__clinic');
@@ -787,9 +762,7 @@ retraining.addEventListener('click',  letDiplom2);
 retrainingCourse.addEventListener('click',  letDiplom3);
 thinking.addEventListener('click',  letDiplom4);
 
-
 let xPercentWidth 
-
 if (windowInnerWidth > 1200) {
   xPercentWidth  = -20
 } else {
@@ -809,7 +782,6 @@ diplom.forEach(function (item, idx) {
     item.classList.toggle('off')
   });
 });
-
 } else {
   diplom.forEach(function (item, idx) {
     item.addEventListener('click', function () {
@@ -1013,7 +985,6 @@ let observer = new IntersectionObserver(function (entries) {
 let el = document.querySelector('.education__foto');
 // Прикрепляем его к «наблюдателю»
 observer.observe(el);
-
 
 Fancybox.bind('[data-fancybox="gallery-1"]', {
 //
