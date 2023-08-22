@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/index.css">
-  <title>Document</title>
+  <link type="image/x-icon" href="./images/Favicon.svg" rel="shortcut icon">
+  <link rel="stylesheet" href="./styles/index.css?v=5">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <title>Irina Radyno</title>
 </head>
 <body class="body">
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
   <header class="header z10" id="header">
     <div class="wrapper__for__img">
       <div class="wrapper">
@@ -41,8 +50,8 @@
           </div>
             <div class="title">
               <h1>Тебе не нужно быть</h1> 
-              <h2>кем-то&hairsp;-&hairsp;ты уже есть</h2>
-              <h3 class="subtitle">Краткосрочные психологические консультации с Ириной Радыно</h3>
+              <h2>кем-то<span class="spase"></span>-<span class="spase"></span>ты уже есть</h2>
+              <h3 class="subtitle">Краткосрочные психологические<br>консультации с Ириной Радыно</h3>
             </div>
           </div>
           <div class="header__right__blok">
@@ -144,10 +153,10 @@
           </div>
           <div class="if__you__want__buttom">
             <div class="if__you__want__buttom__text">
-              <h4 class="if__you__want__buttom__one">Наладить коммуникацию, убрать недоговоренности в отношениях с людьми и с собой.</h4>
-              <h4 class="if__you__want__buttom__two">Укрепить самооценку, почувствовать то самое «со мной все в порядке» и больше никому не доказывать, что ты не верблюд.</h4>
-              <h4 class="if__you__want__buttom__three">Найти предназначение, осознать свои сильные и слабые стороны, выбрать стратегию действий на пути к своим истинным потребностям.</h4>
-              <h4 class="if__you__want__buttom__four">Проявить любовь к себе, ведь если ты любишь себя, то тебе легко быть расслабленным и, как следствие, радостным и здоровым, заниматься тем, что нравится и не терпеть в своем окружении людей, которые ведут себя не бережно по отношению к тебе.</h4>
+              <div class="if__you__want__buttom__one"><h4>Наладить коммуникацию, убрать недоговоренности в отношениях с людьми и с собой.</h4></div>
+              <div class="if__you__want__buttom__two"><h4>Укрепить самооценку, почувствовать то самое «со мной все в порядке» и больше никому не доказывать, что ты не верблюд.</h4></div>
+              <div class="if__you__want__buttom__three"><h4>Найти предназначение, осознать свои сильные и слабые стороны, выбрать стратегию действий на пути к своим истинным потребностям.</h4></div>
+              <div class="if__you__want__buttom__four"><h4>Проявить любовь к себе, ведь если ты любишь себя, то тебе легко быть расслабленным и, как следствие, радостным и здоровым, заниматься тем, что нравится и не терпеть в своем окружении людей, которые ведут себя не бережно по отношению к тебе.</h4></div>
             </div>
             <img class="eyes eyes__one eyes__off" src="./images/eyes_left.png" alt="eyes">
             <img class="eyes eyes__two " src="./images/eyes.png" alt="eyes">
@@ -161,7 +170,7 @@
       </div>
     </section>
     <section class="how__we__work" id="how__we__work">
-      <div class="wrapper">
+      <div class="wrapper how__we__work__scroll">
         <h2 class="how__we__work__title content" data-speed="0.4">Как будет проходить работа? Вы<br>будете говорить мне что делать?</h2>
         <h2 class="how__we__work__title tablet" data-speed="0.4">Как будет проходить работа?<br>Вы будете говорить мне<br>что делать?</h2>
         <div class="how__we__work__content">
@@ -226,10 +235,85 @@
             <h3>Тогда я закончила еще один <span class="retraining_course">курс переквалификации</span> и посмотрела на мир глазами клинического психолога. На фоне этих событий шло мое путешествие в тему <span class="thinking">мышления</span> длиною в три года. Через все это, и не только это, я проявила себя, потому что не могла представить, что не пройду этот путь.</h3>
           </div>
           <div class="education__foto">
-            <img class="diplom diplom__belorus right_0 off" src="./images/diplom Belarus.jpg" alt="diplom">
-            <img class="diplom diplom__coach center_diplom off" src="./images/EMDR_1.jpeg" alt="diplom">
-            <img class="diplom diplom__clinic center_diplom off" src="./images/page-0001.jpg" alt="diplom">
-            <img class="diplom diplom__kurpatov right_0 off" src="./images/Kurpatov.jpg" alt="diplom">
+            <a class="diplom diplom__belorus right_0 off" data-fancybox="gallery-1" href="./images/diploms/Diplom PED.avif">
+              <img alt="diplom" src="./images/diploms/Diplom PED.avif" width="90%"/>
+            </a>
+            <a class="diplom diplom__coach right_0 off" data-fancybox="gallery-2" href="./images/diploms/Diplom IK.avif">
+              <img alt="diplom" src="./images/diploms/Diplom IK.avif" width="90%"/>
+            </a>
+            <div style="display:none">
+              <a data-fancybox="gallery-2" href="./images/diploms/3 curse IK.avif">
+                <img alt="diplom" src="./images/diplom prev/3 curse IK._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_1 ступень.avif">
+                <img alt="diplom" src="./images/diplom prev/EMDR_1 ступень._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_2 ступень.avif">
+                <img alt="diplom" src="./images/diplom prev/EMDR_2 ступень._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_2.0_дек22.avif">
+                <img alt="diplom" src="./images/diplom prev/EMDR_2.0_дек22._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_ПА.avif">
+                <img alt="diplom" src="./images/diplom prev/EMDR_ПА._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_РПП.avif">
+                <img alt="diplom" src="./images/diplom prev/EMDR_РПП._photo-resizer.ru.avif" />
+              </a>
+            </div>
+            <a class="diplom diplom__clinic center_diplom off" data-fancybox="gallery-3" href="./images/diploms/2021 03-04 22-11 КП 01 Радыно ИМ_page-0001.avif">
+              <img alt="diplom" src="./images/diploms/2021 03-04 22-11 КП 01 Радыно ИМ_page-0001.avif"  alt="diplom" />
+            </a>
+            <div style="display:none">
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 04-05 12-09 КП 02 Радыно ИМ_page-0002.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 04-05 12-09 КП 02 Радыно ИМ_page-0002._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 05 11-30 КП 03 Радыно ИМ_page-0003.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 05 11-30 КП 03 Радыно ИМ_page-0003._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 05-06 31-27 КП 04 Радыно ИМ_page-0004.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 05-06 31-27 КП 04 Радыно ИМ_page-0004._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 09 06-26 КП 05 Радыно ИМ_page-0005.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 09 06-26 КП 05 Радыно ИМ_page-0005._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 09-10 27-17 КП 06 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 09-10 27-17 КП 06 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 10-11 18-14 КП 07 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 10-11 18-14 КП 07 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2021 11-12 15-05 КП 08 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2021 11-12 15-05 КП 08 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 01 10-30 КП 09 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 01 10-30 КП 09 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 01 31 - 02 13 КП 10 Радыно И.М._page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 01 31 - 02 13 КП 10 Радыно И.М._page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 02 14-27 КП 11 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 02 14-27 КП 11 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 02-03 28-20 КП 12 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 02-03 28-20 КП 12 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 03-04 21-10 КП 13 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 03-04 21-10 КП 13 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 04-05 11-01 КП 14 Радыно ИМ_page-0001.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 04-05 11-01 КП 14 Радыно ИМ_page-0001._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 05 10-29 КП 15 Радыно ИМ.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 05 10-29 КП 15 Радыно ИМ._photo-resizer.ru.avif" />
+              </a>
+              <a data-fancybox="gallery-3" href="./images/diploms/2022 05-06 30-19 КП 16 Радыно ИМ.avif">
+                <img alt="diplom" src="./images/diplom prev/2022 05-06 30-19 КП 16 Радыно ИМ._photo-resizer.ru.avif" />
+              </a>
+            </div>
+            <a class="diplom diplom__kurpatov right_0 off" data-fancybox="gallery-4" href="./images/diploms/ТР setifikat diplom АС.avif">
+              <img src="./images/diploms/ТР setifikat diplom АС.avif" width="90%" alt="diplom" />
+            </a>       
           </div>
           <img class="education__star" src="./images/Star big vector.png" alt="stars">
         </div>
@@ -246,10 +330,10 @@
         </div>
         <div class="footer__right">
           <div class="footer__media">
-            <a target="_blank" href="https://t.me/almeris"><img class="footer__media__logo" src="./images/Vector TG.png" alt="telegram"></a>
-            <a target="_blank" href="https://vk.com/irina.radyno"><img class="footer__media__logo" src="./images/Vector VK.png" alt="VKontakte"></a>
-            <a target="_blank" href="https://www.instagram.com/irina.radyno/"><img class="footer__media__logo" src="./images/Vector INST.png" alt="instagram"></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCxa4JOC7NhGLVU8xj7RK3_Q"><img class="footer__media__logo" src="./images/Vector YT.png" alt="YouTube"></a>
+            <a target="_blank" href="https://t.me/almeris"><img class="footer__media__logo" src="./images/Vector TG.svg" alt="telegram"></a>
+            <a target="_blank" href="https://vk.com/irina.radyno"><img class="footer__media__logo" src="./images/Vector VK.svg" alt="VKontakte"></a>
+            <a target="_blank" href="https://www.instagram.com/irina.radyno/"><img class="footer__media__logo" src="./images/Vector INST.svg" alt="instagram"></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCxa4JOC7NhGLVU8xj7RK3_Q"><img class="footer__media__logo" src="./images/Vector YT.svg" alt="YouTube"></a>
           </div>
           <img class="footer__logo" src="images/footer logo.png" alt="logo">
           <h3 class="fooret__for__mobile">© 2023. Психолог Ирина Радыно. Все права защищены.<br>Информация на сайте не является публичной офертой.</h3>
@@ -257,9 +341,10 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/CustomEase.min.js"></script>
   <script src="./src/gsap.min.js"></script>
   <script src="./src/ScrollTrigger.min.js"></script>
-  <script src="./src/index.js"></script>
+  <script src="./src/index.js?v=5"></script>
 </body>
 </html>

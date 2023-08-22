@@ -39,6 +39,7 @@
 
 .footer__left {
   h2 {
+    // white-space: nowrap;
     font-size: 48px;
     line-height: 48px;
 
@@ -93,6 +94,7 @@
 }
 
 .footer__media__logo {
+  height: 55px;
   @include min-content-width {
     max-height: 42px;
   }

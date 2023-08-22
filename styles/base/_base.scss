@@ -16,6 +16,10 @@
   // border: 1px solid #f0f;
 }
 
+section {
+  scroll-padding-top: 80px;
+}
+
 // /* Hide scrollbar for Chrome, Safari and Opera */
 // body::-webkit-scrollbar {
 //   display: none;
@@ -114,6 +118,6 @@ h3, h4 {
 
 .wrapper__for__img {
   position: relative;
-  max-width: 1440px;
+  max-width: 1800px;
   margin: 0 auto;
 }

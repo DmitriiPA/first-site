@@ -26,10 +26,19 @@ if (windowInnerWidth > 868) {
   scrubSpeed = 'none'
 }
 
+// Preloader 
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+}
 
 
 topBurger = windowInnerWidth > 868 ? -34 : 0
 
+// tl - animations for header
 var tl = gsap.timeline();
 
 if (windowInnerWidth > 868) {
@@ -106,7 +115,6 @@ tl.to(
     rotate: 20,
     duration: 2.8,
     ease: CustomEase.create("custom", "M0,0 C0.004,0.06 0.17,0.234 0.244,0.234 0.356,0.234 0.344,-0.13 0.434,-0.13 0.508,-0.13 0.492,0.076 0.566,0.076 0.608,0.076 0.617,-0.046 0.66,-0.046 0.699,-0.046 0.721,0.034 0.77,0.034 0.806,0.034 0.817,-0.021 0.868,-0.022 0.89,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
-    // ease: Elastic.easeOut,
   },
   2
 )
@@ -119,19 +127,14 @@ tl.to(
 )
 
 
-
-
 let viewHeight = Math.min(
   document.body.scrollHeight, document.documentElement.scrollHeight,
   document.body.offsetHeight, document.documentElement.offsetHeight,
   document.body.clientHeight, document.documentElement.clientHeight
 );
 
-// console.log(viewHeight);
-
 
 //BUrger
-
 const menuBtn = document.querySelector('.menu__btn');
 const menu = document.querySelector('#burger__menu');
 const menuArr = document.querySelector('#menu');
@@ -200,7 +203,7 @@ ifYouWantText
   },
   opacity: 0,
 })
-.to ('.if__you__want__buttom__two', {
+.from ('.if__you__want__buttom__two', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
@@ -208,50 +211,50 @@ ifYouWantText
     end: '+=200',
     scrub: scrubSpeed,
   },
-  opacity: 1,
-  y: -60,
+  opacity: 0,
+  y: 60,
 })
 .to ('.if__you__want__buttom__two', {
   scrollTrigger: {
     // markers: true,
     trigger: '.who__what__three__text',
-    start: '2200 center',
+    start: '2000 center',
     end: '+=20',
     scrub: scrubSpeed,
   },
   opacity: 0,
 })
-.to ('.if__you__want__buttom__three', {
+.from ('.if__you__want__buttom__three', {
   scrollTrigger: {
     // markers: true,
     trigger: '.who__what__three__text',
-    start: '2300 center',
+    start: '2100 center',
     end: '+=200',
     scrub: scrubSpeed,
   },
-  opacity: 1,
-  y: -145,
+  opacity: 0,
+  y: 60,
 })
 .to ('.if__you__want__buttom__three', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '2900 center',
+    start: '2600 center',
     end: '+=20',
     scrub: scrubSpeed,
   },
   opacity: 0,
 })
-.to ('.if__you__want__buttom__four', {
+.from ('.if__you__want__buttom__four', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '3000 center',
+    start: '2700 center',
     end: '+=200',
     scrub: scrubSpeed,
   },
-  opacity: 1,
-  y: -245,
+  opacity: 0,
+  y: 60,
 })
 
 
@@ -308,15 +311,6 @@ ifYouWantImg
   },
 opacity: 0,
 })
-// .to('.eyes', {
-//   scrollTrigger: {
-//     // markers: true,  
-//     trigger: '.who__what__three__text',
-//     start: '1400 center',
-//     scrub: scrubSpeed,
-//   },
-//   attr: { src: './images/eyes.png' },
-// })
 .to ('.vector__moon', {
   scrollTrigger: {
     // markers:true,
@@ -327,15 +321,6 @@ opacity: 0,
   },
   x: 1100,
 })
-// .to('.eyes', {
-//   scrollTrigger: {
-//     // markers: true,  
-//     trigger: '.who__what__three__text',
-//     start: '2100 center',
-//     scrub: scrubSpeed,
-//   },
-//   attr: { src: './images/eyes_left.png' },
-// })
 .to ('.vector__moon', {
   scrollTrigger: {
     // markers:true,
@@ -346,34 +331,40 @@ opacity: 0,
   },
 opacity: 0,
 })
-// .to('.eyes', {
-//   scrollTrigger: {
-//     // markers: true,  
-//     trigger: '.who__what__three__text',
-//     start: '2500 center',
-//     scrub: scrubSpeed,
-//   },
-//   attr: { src: './images/eyes.png' },
-// })
 .to('.if__you__want__buttom', {
   scrollTrigger: {
     // markers:true,
     trigger: '.who__what__three__text',
-    start: '3400 center',
+    start: '3100 center',
     end: '+=200',
     scrub: scrubSpeed,
   },
   opacity: 0,
 })
 
+ScrollTrigger.create({
+  // markers: true,
+  trigger: '.section__if__you__want',
+  pin: '.section__if__you__want',
+  start: 'top top',
+  end: '+=2600',
+});
+
 
 if (windowInnerWidth > 868) {
+  ScrollTrigger.create({
+  // markers: true,
+  trigger: '.section__if__you__want',
+  pin: '.section__if__you__want',
+  start: 'bottom bottom',
+  end: '+=600',
+});
   ifYouWantImg
   .from('.it__is__me__foto', {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '3600 center',
+      start: '3300 center',
       end: '+=150',
       scrub: 1,
     },
@@ -383,7 +374,7 @@ if (windowInnerWidth > 868) {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '3600 center',
+      start: '3300 center',
       end: '+=200',
       scrub: 1.5,
     },
@@ -393,7 +384,7 @@ if (windowInnerWidth > 868) {
     scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '3600 center',
+      start: '3300 center',
       end: '+=200',
       scrub: scrubSpeed,
     },
@@ -415,70 +406,75 @@ if (windowInnerWidth > 868) {
 }
 
 
-ScrollTrigger.create({
-    // markers: true,
-    trigger: '.section__if__you__want',
-    pin: '.section__if__you__want',
-    start: 'top top',
-    end: '+=2800',
-});
-ScrollTrigger.create({
-  // markers: true,
-  trigger: '.section__if__you__want',
-  pin: '.section__if__you__want',
-  start: 'bottom bottom',
-  end: '+=700',
-});
 
 
 // Поезд, космонафт и  текст
 
-const work = gsap.timeline({
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work',
-    start: 'top top', 
-    end: '+=3000',  
-    scrub: 'true',
-    pin: '.how__we__work',
-  },
-})
+ScrollTrigger.create({
+  // markers: true,
+  trigger: '.how__we__work',
+  start: 'top top', 
+  end: '+=3000',  
+  pin: true,
+});
+
+
+let scrollWord  = gsap.timeline({
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: 'top top', 
+    }
+  })
 .from('.how__we__work__title', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work',
+    trigger: '.how__we__work__scroll',
     start: 'top center',
     end: '+=300',
     scrub: 1.5,
+    invalidateOnRefresh: true,
   },
   y: 300
 })
 .from('.how__we__work__not', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work',
+    trigger: '.how__we__work__scroll',
     start: 'top center',
     end: '+=300',
     scrub: 1.5,
+    invalidateOnRefresh: true,
   },
   y: 700
 })
-.to('[data-speed]', {
+.to('.how__we__work__title', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
-    start: '200 top',
-    end: '+=200px ',
-    invalidateOnRefresh: true,
-    scrub: scrubSpeed,
+    trigger: '.how__we__work__scroll',
+    start: 'top top',
+    scrub: true,
+    duration: 2,
   },
-    y:  (i, el) => parseFloat(el.getAttribute('data-speed')) * -700,
+    y: '-400%',
+    opacity: 0,    
+})
+.to('.how__we__work__not', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work__scroll',
+    start: 'top top',
+    // end: '+=100px ',
+    scrub: true,
+    duration: 1,
+  },
+    y: '-400%',
     opacity: 0,    
 })
 .from('.astronaut', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '200 top',
     end: '+=200px ',
     scrub: scrubSpeed,
@@ -488,7 +484,7 @@ const work = gsap.timeline({
 .from('.text__1', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '200 top',
     end: '+=200px ',
     scrub: 1,
@@ -499,7 +495,7 @@ const work = gsap.timeline({
 .from('.text__2', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '200 top',
     end: '+=200px ',
     scrub: 1,
@@ -510,7 +506,7 @@ const work = gsap.timeline({
 .to('.text__1', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '800 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
@@ -522,7 +518,7 @@ const work = gsap.timeline({
 .to('.text__2', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '800 top',
     end: '+=300px ',
     invalidateOnRefresh: true,
@@ -534,7 +530,7 @@ const work = gsap.timeline({
 .from('.text__3', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '900 top',
     end: '+=200px ',
     scrub: 1,
@@ -545,7 +541,7 @@ const work = gsap.timeline({
 .from('.text__4', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '900 top',
     end: '+=200px ',
     scrub: 1,
@@ -556,7 +552,7 @@ const work = gsap.timeline({
 .from('.stars__the__end', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '900 top',
     end: '+=200px ',
     scrub: 2,
@@ -566,7 +562,7 @@ const work = gsap.timeline({
 .to('.text__3', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1500 top',
     end: '+=200px ',
     scrub: 1,
@@ -578,7 +574,7 @@ const work = gsap.timeline({
 .to('.text__4', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1500 top',
     end: '+=200px ',
     scrub: 1,
@@ -590,7 +586,7 @@ const work = gsap.timeline({
 .from('.text__5', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1600 top',
     end: '+=200px ',
     scrub: 1,
@@ -601,7 +597,7 @@ const work = gsap.timeline({
 .from('.text__6', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1600 top',
     end: '+=200px ',
     scrub: 1,
@@ -612,7 +608,7 @@ const work = gsap.timeline({
 .to(['.astronaut, .train'], {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1700 top',
     end: '+=400px',
     scrub: 2,
@@ -624,7 +620,7 @@ const work = gsap.timeline({
 .to('.stars__the__end', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
@@ -635,7 +631,7 @@ const work = gsap.timeline({
 .from('.blue__planet', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
@@ -646,7 +642,7 @@ const work = gsap.timeline({
 .from('.call__my__box', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
@@ -657,7 +653,7 @@ const work = gsap.timeline({
 .from('.price', {
   scrollTrigger: {
     // markers: true,
-    trigger: '.how__we__work__content',
+    trigger: '.how__we__work__scroll',
     start: '1800 top',
     end: '+=200px ',
     scrub: 2,
@@ -665,6 +661,7 @@ const work = gsap.timeline({
     opacity: 0, 
     y: 500,   
 });
+
 
 gsap.utils.toArray(".call__my__box").forEach(h1 => {
   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
@@ -679,7 +676,7 @@ const reviewsSection = gsap.timeline({
     // markers: true,
     trigger: '.reviews',
     start: 'top top', 
-    end: '+=1000',  
+    end: '+=800',  
     scrub: 'true',
     pin: '.reviews',
   },
@@ -704,9 +701,6 @@ const reviewsSection = gsap.timeline({
   },
   x: '-100vw',
 })
-
-
-
 
 
 const educationSection = gsap.timeline({
@@ -741,7 +735,6 @@ const educationSection = gsap.timeline({
   y: '20vw',
   opacity: 0,
 })
-
 
 
 var body = document.querySelector('.body');
@@ -812,40 +805,20 @@ diplom.forEach(function (item, idx) {
   item.addEventListener('mouseleave', function () {
       blackBG.classList.add('off')
   });
+  item.addEventListener('click', function () {
+    item.classList.toggle('off')
+  });
 });
 
-gsap.utils.toArray(".diplom.right_0").forEach(img => {
-  let hover = gsap
-  .to(img, {
-    xPercent: xPercentWidth,
-    yPercent: -20,
-    scale: scaleProsent,
-    duration: .5, 
-    paused: true, 
-    ease: "sine",
-  });
-  img.addEventListener("mouseenter", () => hover.play());
-  img.addEventListener("mouseleave", () => hover.reverse());
-});
-
-gsap.utils.toArray(".diplom.center_diplom").forEach(img => {
-  let hover = gsap
-  .to(img, {
-    xPercent: xPercentWidth,
-    yPercent: -20,
-    scale: 1.5,
-    duration: .5, 
-    paused: true, 
-    ease: "sine" 
-  });
-  img.addEventListener("mouseenter", () => hover.play());
-  img.addEventListener("mouseleave", () => hover.reverse());
-});
 } else {
   diplom.forEach(function (item, idx) {
     item.addEventListener('click', function () {
       item.classList.toggle('off')
       blackBG.classList.toggle('on__mobile')
+    });
+    blackBG.addEventListener('click', function () {
+      item.classList.add('off')
+      blackBG.classList.remove('on__mobile')
     });
   });
 }
@@ -869,7 +842,7 @@ let cellMeWhite = windowInnerWidth > 868 ? 90 : 10;
 if (windowInnerWidth > 460) {
 gsap.timeline({
   scrollTrigger: {
-    // markers: true,f
+    // markers: true,
     trigger: '.left__panel__burger',
     start: `${topBurger} top`,
     endTrigger: ".education",
@@ -984,7 +957,6 @@ gsap.timeline({
 }
 
 
-
 if (windowInnerWidth > 868) {
   gsap.to('.cell__me__left',{
     scrollTrigger: {
@@ -1018,7 +990,6 @@ if (windowInnerWidth > 868) {
   })
 }
 
-
 let eyesLeft = document.querySelector('.eyes__one')
 let eyesRight = document.querySelector('.eyes__two')
 
@@ -1026,3 +997,33 @@ setInterval (function(){
   eyesLeft.classList.toggle('eyes__off')
   eyesRight.classList.toggle('eyes__off')
 }, 2000)
+
+// Создаем новый observer (наблюдатель)
+let observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+      if (!entry.isIntersecting) {
+        [...document.getElementsByClassName('diplom')].forEach(i => i.classList.add("off"));
+        blackBG.classList.add('off');
+        blackBG.classList.remove('on__mobile');
+      };
+  });
+});
+
+// Задаем элемент для наблюдения
+let el = document.querySelector('.education__foto');
+// Прикрепляем его к «наблюдателю»
+observer.observe(el);
+
+
+Fancybox.bind('[data-fancybox="gallery-1"]', {
+//
+});  
+Fancybox.bind('[data-fancybox="gallery-2"]', {
+//
+});  
+Fancybox.bind('[data-fancybox="gallery-3"]', {
+//
+});  
+Fancybox.bind('[data-fancybox="gallery-4"]', {
+//
+});
