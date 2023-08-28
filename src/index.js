@@ -7,6 +7,7 @@ let xProsentTitle
 let yProsent
 let topBurger
 let scrubSpeed
+var body = document.querySelector('.body');
 
 if (windowInnerWidth > 1200) {
   scaleProsent = 1.5
@@ -27,100 +28,101 @@ if (windowInnerWidth > 868) {
 // Preloader 
 window.onload = function () {
   document.body.classList.add('loaded_hiding');
+}
   window.setTimeout(function () {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
-  }, 500);
-}
+    console.log('lol');
+  }, 1500);
 
 topBurger = windowInnerWidth > 868 ? -34 : 0
 
 // tl - animations for header
-var tl = gsap.timeline();
-if (windowInnerWidth > 868) {
-  tl.from(
-    '.title',
-    {
-      x: windowInnerHeight/xProsentTitle,
-      y: -windowInnerHeight/4,
-      duration: 0.8
-    },
-    1
-  )
-} else {
-  tl.from(
-    '.title',
-    {
-      opacity: 0,
-      scale: 0,
-      duration: 0.8
-    },
-    1
-  )
-}
+// var tl = gsap.timeline();
+// if (windowInnerWidth > 868) {
+//   tl.from(
+//     '.title',
+//     {
+//       x: windowInnerHeight/xProsentTitle,
+//       y: -windowInnerHeight/4,
+//       duration: 0.8
+//     },
+//     1
+//   )
+// } else {
+//   tl.from(
+//     '.title',
+//     {
+//       opacity: 0,
+//       scale: 0,
+//       duration: 0.8
+//     },
+//     1
+//   )
+// }
 
-tl.to(
-  '.stars',  {
-    opacity: 1, 
-    delay: 0.7, 
-    stagger: 0.04,
-  }
-)
-.from(
-  '.women', {y: -900},
-  1.2
-)
-.from(
-  '.field', {
-    y: 400,
-    opacity: 0,
-  },
-  1.2
-)
-.from(
-  '.moon', {
-    scale: 0,
-    duration: 2,
-   },
-  1.5
-)
-.from(
-  '.women', {
-    rotate: 15,
-    duration: 1.3,
-    ease: 'bounce.out',
-  },
-  1.6
-)
-.from(
-  '.subtitle',
-  {
-    opacity: 0
-  },
-  1.8
-)
-.from(
-  '.kye__box', {
-    y: '-100vh',
-    duration: 1.4,
-  },
-  2
-)
-.to(
-  '.kye__box', {
-    rotate: 20,
-    duration: 2.8,
-    ease: CustomEase.create("custom", "M0,0 C0.004,0.06 0.17,0.234 0.244,0.234 0.356,0.234 0.344,-0.13 0.434,-0.13 0.508,-0.13 0.492,0.076 0.566,0.076 0.608,0.076 0.617,-0.046 0.66,-0.046 0.699,-0.046 0.721,0.034 0.77,0.034 0.806,0.034 0.817,-0.021 0.868,-0.022 0.89,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
-  },
-  2
-)
-.from(
-  '.nav__ul li', {
-    x: '-100vw',
-    stagger: 0.1
-  }, 
-  '-=1'
-)
+// tl.to(
+//   '.stars',  {
+//     opacity: 1, 
+//     delay: 0.7, 
+//     stagger: 0.04,
+//   }
+// )
+// .from(
+//   '.women', {y: -900},
+//   1.2
+// )
+// .from(
+//   '.field', {
+//     y: 400,
+//     opacity: 0,
+//   },
+//   1.2
+// )
+// .from(
+//   '.moon', {
+//     scale: 0,
+//     duration: 2,
+//    },
+//   1.5
+// )
+// .from(
+//   '.women', {
+//     rotate: 15,
+//     duration: 1.3,
+//     ease: 'bounce.out',
+//   },
+//   1.6
+// )
+// .from(
+//   '.subtitle',
+//   {
+//     opacity: 0
+//   },
+//   1.8
+// )
+// .from(
+//   '.kye__box', {
+//     y: '-100vh',
+//     duration: 1.4,
+//   },
+//   2
+// )
+// .to(
+//   '.kye__box', {
+//     rotate: 20,
+//     duration: 2.8,
+//     ease: CustomEase.create("custom", "M0,0 C0.004,0.06 0.17,0.234 0.244,0.234 0.356,0.234 0.344,-0.13 0.434,-0.13 0.508,-0.13 0.492,0.076 0.566,0.076 0.608,0.076 0.617,-0.046 0.66,-0.046 0.699,-0.046 0.721,0.034 0.77,0.034 0.806,0.034 0.817,-0.021 0.868,-0.022 0.89,-0.023 0.904,0.011 0.938,0.016 0.968,0.016 1,0 1,0 "),
+//   },
+//   2
+// )
+// .from(
+//   '.nav__ul li', {
+//     x: '-100vw',
+//     stagger: 0.1
+//   }, 
+//   '-=1'
+// )
 
 
 let viewHeight = Math.min(
@@ -181,8 +183,8 @@ gsap.timeline()
 })
 
 
-const ifYouWantText = gsap.timeline()
-const ifYouWantImg = gsap.timeline()
+var ifYouWantText = gsap.timeline()
+var ifYouWantImg = gsap.timeline()
 
 ifYouWantText
 .to ('.if__you__want__buttom__one', {
@@ -349,300 +351,519 @@ if (windowInnerWidth > 868) {
   trigger: '.section__if__you__want',
   pin: '.section__if__you__want',
   start: 'bottom bottom',
-  end: '+=600',
+  end: '+=400',
 });
-  ifYouWantImg
-  .from('.it__is__me__foto', {
-    scrollTrigger: {
+
+
+ifYouWantImg
+.from('.it__is__me__star', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.who__what__three__text',
+    start: '4000 center',
+    end: '+=200',
+    scrub: scrubSpeed,
+  },
+  x: 900,
+  y: -300,
+  opacity: 0,
+})
+.from('.it__is__me__title', {
+  scrollTrigger: {
       // markers: true,
       trigger: '.who__what__three__text',
-      start: '3300 center',
-      end: '+=150',
-      scrub: 1,
-    },
-    scaleY: 0
-  })
-  .from('.it__is__me__title', {
-    scrollTrigger: {
-      // markers: true,
-      trigger: '.who__what__three__text',
-      start: '3300 center',
+      start: '4100 center',
       end: '+=200',
       scrub: 1.5,
     },
     opacity: 0
   })
-  .from('.it__is__me__star', {
-    scrollTrigger: {
-      // markers: true,
-      trigger: '.who__what__three__text',
-      start: '3300 center',
-      end: '+=200',
-      scrub: scrubSpeed,
-    },
-    x: 900,
-    y: -300,
-    opacity: 0,
-  })
-  .from('.train', {
-    scrollTrigger: {
-      // markers: true,
-      trigger: '.how__we__work',
-      start: '300 center',
-      end: '+=300',
-      scrub: scrubSpeed,
-    },
-    ease: 'power3.out',
-    scale: 0
-  })
+.from('.it__is__me__foto', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.who__what__three__text',
+    start: '4200 center',
+    end: '+=100',
+    scrub: 1,
+  },
+  scaleY: 0
+})
 }
 
 
 // Поезд, космонафт и  текст
 
-ScrollTrigger.create({
-  // markers: true,
-  trigger: '.how__we__work',
-  start: 'top top', 
-  end: '+=3000',  
-  pin: true,
-});
 
-let scrollWord  = gsap.timeline({
+// ScrollTrigger.create({
+//   // markers: true,
+//   trigger: '.how__we__work',
+//   start: 'bottom bottom', 
+//   // end: '+=2000',  
+//   pin: true,
+// });
+
+var scrollTrain = gsap.timeline()
+.from('.how__we__work', {
+  scrollTrigger: {
+    // markers: true,
+    trigger: '.how__we__work',
+    start: 'top top',
+    end: '+=2000',
+    scrub: true,
+    pin: true,
+  }
+})
+.from(['.how__we__work__title , .how__we__work__not'], {
     scrollTrigger: {
       // markers: true,
       trigger: '.how__we__work__scroll',
-      start: 'top top', 
-    }
+      start: '100 top',
+      end: '+=50',
+      scrub: 1,
+    },
+    y: 300,
+    opacity: 0,
   })
-.from('.how__we__work__title', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: 'top center',
-    end: '+=300',
-    scrub: 1.5,
-    invalidateOnRefresh: true,
-  },
-  y: 300
-})
-.from('.how__we__work__not', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: 'top center',
-    end: '+=300',
-    scrub: 1.5,
-    invalidateOnRefresh: true,
-  },
-  y: 700
-})
-.to('.how__we__work__title', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: 'top top',
-    scrub: true,
-    duration: 2,
-  },
-    y: '-400%',
-    opacity: 0,    
-})
-.to('.how__we__work__not', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: 'top top',
-    scrub: true,
-    duration: 1,
-  },
-    y: '-400%',
-    opacity: 0,    
-})
-.from('.astronaut', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '200 top',
-    end: '+=200px ',
-    scrub: scrubSpeed,
-  },
-    y:  600    
-})
-.from('.text__1', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '200 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  300,
-    opacity: 0,    
-})
-.from('.text__2', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '200 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  700,
-    opacity: 0,    
-})
-.to('.text__1', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '800 top',
-    end: '+=300px ',
-    invalidateOnRefresh: true,
-    scrub: 1,
-  },
-    opacity: 0,    
-})
-.to('.text__2', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '800 top',
-    end: '+=300px ',
-    invalidateOnRefresh: true,
-    scrub: 1,
-  },
-    opacity: 0,    
-})
-.from('.text__3', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '900 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  300,
-    opacity: 0,    
-})
-.from('.text__4', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '900 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  700,
-    opacity: 0,    
-})
-.from('.stars__the__end', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '900 top',
-    end: '+=200px ',
-    scrub: 2,
-  },
-    opacity: 0,    
-})
-.to('.text__3', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1500 top',
-    end: '+=200px ',
-    scrub: 1,
-    invalidateOnRefresh: true,
-  },
-    opacity: 0,    
-  })
-.to('.text__4', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1500 top',
-    end: '+=200px ',
-    scrub: 1,
-    invalidateOnRefresh: true,
-  },
-  opacity: 0,    
-})
-.from('.text__5', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1600 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  200,
-    opacity: 0,    
-})
-.from('.text__6', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1600 top',
-    end: '+=200px ',
-    scrub: 1,
-  },
-    y:  400,
-    opacity: 0,    
-})
-.to(['.astronaut, .train'], {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1700 top',
-    end: '+=400px',
-    scrub: 2,
-  },
+  .from('.train', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '100 top',
+      end: '+=100',
+      scrub: 1,
+    },
     x: '100vw',
-    opacity: 0,    
-})
-.to('.stars__the__end', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1800 top',
-    end: '+=200px ',
-    scrub: 2,
-  },
-    opacity: 0,    
-})
-.from('.blue__planet', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1800 top',
-    end: '+=200px ',
-    scrub: 2,
-  },
-    opacity: 0, 
-    y: 700,   
-})
-.from('.call__my__box', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1800 top',
-    end: '+=200px ',
-    scrub: 2,
-  },
-  x: '50vw',
-  opacity: 0, 
-})
-.from('.price', {
-  scrollTrigger: {
-    // markers: true,
-    trigger: '.how__we__work__scroll',
-    start: '1800 top',
-    end: '+=200px ',
-    scrub: 2,
-  },
-    opacity: 0, 
-    y: 500,   
-});
+  })
+.to(['.how__we__work__title , .how__we__work__not'], {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '400 top',
+      end: '+=50',
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+    y: '-100vh',
+  })
+  .from('.text_grid_row_1', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '500 top',
+      end: '+=100',
+      scrub: 1,
+    },
+    y: 300,
+    opacity: 0,
+  })
+  .from('.astronaut', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '500 top',
+      end: '+=150',
+      scrub: 1.5,
+    },
+    y: '100%',
+  })
+  .to('.text_grid_row_1', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '800 top',
+      end: '+=100',
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+    y: '-50vh',
+    opacity: 0,
+  })
+  .from('.text_grid_row_2', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1000 top',
+      end: '+=100',
+      scrub: 1,
+    },
+    y: 300,
+    opacity: 0,
+  })
+  .from('.stars__the__end', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1000 top',
+      end: '+=150',
+      scrub: 1.5,
+    },
+    opacity: 0,
+  })
+  .to('.text_grid_row_2', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1300 top',
+      end: '+=100',
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+    y: '-50vh',
+    opacity: 0,
+  })
+  .to('.stars__the__end', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1300 top',
+      end: '+=150',
+      scrub: 1.5,
+      invalidateOnRefresh: true,
+    },
+    opacity: 0,
+  })
+  .to('.astronaut', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1350 top',
+      end: '+=150',
+      scrub: 1.5,
+      invalidateOnRefresh: true,
+    },
+    x: '100vw',
+  })
+  .to('.train', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1350 top',
+      end: '+=150',
+      scrub: 1.5,
+      invalidateOnRefresh: true,
+    },
+    x: '100vw',
+  })
+
+gsap.timeline()
+  .from('.text_grid_row_3_top', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1400 top',
+      end: '+=100',
+      scrub: 1,
+    },
+    y: 300,
+    opacity: 0,
+  })
+  .from('.price', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1500 top',
+      end: '+=150',
+      scrub: 1.5,
+    },
+    y: '50vh',
+    opacity: 0,
+  })
+  .from('.blue__planet', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1500 top',
+      end: '+=150',
+      scrub: 1.5,
+    },
+    y: 300,
+    opacity: 0,
+  })
+  .from('.call__my__box', {
+    scrollTrigger: {
+      // markers: true,
+      trigger: '.how__we__work__scroll',
+      start: '1500 top',
+      end: '+=150',
+      scrub: 1.5,
+    },
+    x: '100vw'
+  })
+
+
+
+
+
+
+
+// gsap.timeline()
+// .from('.it__is__me__foto', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.who__what__three__text',
+//     start: '3300 center',
+//     end: '+=150',
+//     scrub: 1,
+//   },
+//   scaleY: 0
+// })
+
+
+
+
+
+
+
+
+
+
+// var scrollWord  = gsap
+// .timeline()
+//     .from('.train', {
+//     scrollTrigger: {
+//       // markers: true,
+//       trigger: '.how__we__work',
+//       start: '300 center',
+//       end: '+=300',
+//       scrub: scrubSpeed,
+//     },
+//     ease: 'power3.out',
+//     scale: 0
+//   })
+// .from('.how__we__work__title', {
+//   scrollTrigger: {
+//     markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: 'top top',
+//     end: '+=300',
+//     scrub: 1.5,
+//     invalidateOnRefresh: true,
+//   },
+//   y: 300,
+// })
+// .from('.how__we__work__not', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: 'top center',
+//     end: '+=300',
+//     scrub: 1.5,
+//     invalidateOnRefresh: true,
+//   },
+//   y: 700,
+// })
+// .to('.how__we__work__title', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: 'top top',
+//     scrub: true,
+//     duration: 2,
+//   },
+//     y: '-400%',
+//     opacity: 0,    
+// })
+// .to('.how__we__work__not', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: 'top top',
+//     scrub: true,
+//     duration: 1,
+//   },
+//     y: '-400%',
+//     opacity: 0,    
+// })
+// .from('.astronaut', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '200 top',
+//     end: '+=200px ',
+//     scrub: scrubSpeed,
+//   },
+//     y:  600    
+// })
+// .from('.text_grid_row_1', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '200 top',
+//     end: '+=200px ',
+//     scrub: 1,
+//   },
+//     y:  300,
+//     opacity: 0,    
+// })
+// // .from('.text__2', {
+// //   scrollTrigger: {
+// //     // markers: true,
+// //     trigger: '.how__we__work__scroll',
+// //     start: '200 top',
+// //     end: '+=200px ',
+// //     scrub: 1,
+// //   },
+// //     y:  700,
+// //     opacity: 0,    
+// // })
+// .to('.text_grid_row_1', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '800 top',
+//     end: '+=300px ',
+//     invalidateOnRefresh: true,
+//     scrub: 1,
+//   },
+//     opacity: 0,    
+// })
+// // .to('.text__2', {
+// //   scrollTrigger: {
+// //     // markers: true,
+// //     trigger: '.how__we__work__scroll',
+// //     start: '800 top',
+// //     end: '+=300px ',
+// //     invalidateOnRefresh: true,
+// //     scrub: 1,
+// //   },
+// //     opacity: 0,    
+// // })
+// .from('.text_grid_row_2', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '900 top',
+//     end: '+=200px ',
+//     scrub: 1,
+//   },
+//     y:  300,
+//     opacity: 0,    
+// })
+// // .from('.text__4', {
+// //   scrollTrigger: {
+// //     // markers: true,
+// //     trigger: '.how__we__work__scroll',
+// //     start: '900 top',
+// //     end: '+=200px ',
+// //     scrub: 1,
+// //   },
+// //     y:  700,
+// //     opacity: 0,    
+// // })
+// .from('.stars__the__end', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '900 top',
+//     end: '+=200px ',
+//     scrub: 2,
+//   },
+//     opacity: 0,    
+// })
+// .to('.text_grid_row_2', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1500 top',
+//     end: '+=200px ',
+//     scrub: 1,
+//     invalidateOnRefresh: true,
+//   },
+//     opacity: 0,    
+//   })
+// // .to('.text__4', {
+// //   scrollTrigger: {
+// //     // markers: true,
+// //     trigger: '.how__we__work__scroll',
+// //     start: '1500 top',
+// //     end: '+=200px ',
+// //     scrub: 1,
+// //     invalidateOnRefresh: true,
+// //   },
+// //   opacity: 0,    
+// // })
+// .from('.text_grid_row_3', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1600 top',
+//     end: '+=200px ',
+//     scrub: 1,
+//   },
+//     y:  200,
+//     opacity: 0,    
+// })
+// // .from('.text__6', {
+// //   scrollTrigger: {
+// //     // markers: true,
+// //     trigger: '.how__we__work__scroll',
+// //     start: '1600 top',
+// //     end: '+=200px ',
+// //     scrub: 1,
+// //   },
+// //     y:  400,
+// //     opacity: 0,    
+// // })
+// .to(['.astronaut, .train'], {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1700 top',
+//     end: '+=400px',
+//     scrub: 2,
+//   },
+//     x: '100vw',
+//     opacity: 0,    
+// })
+// .to('.stars__the__end', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1800 top',
+//     end: '+=200px ',
+//     scrub: 2,
+//   },
+//     opacity: 0,    
+// })
+// .from('.blue__planet', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1800 top',
+//     end: '+=200px ',
+//     scrub: 2,
+//   },
+//     opacity: 0, 
+//     y: 700,   
+// })
+// .from('.call__my__box', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1800 top',
+//     end: '+=200px ',
+//     scrub: 2,
+//   },
+//   x: '50vw',
+//   opacity: 0, 
+// })
+// .from('.price', {
+//   scrollTrigger: {
+//     // markers: true,
+//     trigger: '.how__we__work__scroll',
+//     start: '1800 top',
+//     end: '+=200px ',
+//     scrub: 2,
+//   },
+//     opacity: 0, 
+//     y: 500,   
+// });
+
+window.setTimeout(function () {
+  scrollWord.restart();
+  ifYouWantImg.restart();
+}, 2000);
+
 
 gsap.utils.toArray(".call__my__box").forEach(h1 => {
   let hover = gsap.to(h1, {scale: 1.02, color: "blue", duration: .3, paused: true,});
@@ -675,7 +896,7 @@ const reviewsSection = gsap.timeline({
     // markers: true,
     trigger: '.reviews',
     start: 'top top',
-    end: '+=100px ',
+    end: '+=100px',
     scrub: 2,
   },
   x: '-100vw',
@@ -714,7 +935,6 @@ const educationSection = gsap.timeline({
   opacity: 0,
 })
 
-var body = document.querySelector('.body');
 var diplom = document.querySelectorAll('.diplom');
 var blackBG = document.querySelector('.black__bg');
 var kye = document.querySelector('.kye__box');
@@ -829,7 +1049,7 @@ gsap.timeline({
     trigger: '.how__we__work',
     // markers: true,
     start:'-60',
-    end: '+=3914',
+    end: '+=2650',
     onEnter: () => gsap.to('.menu__btn span', {backgroundColor: 'white'}), 
     onLeave: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 
     onLeaveBack: () => gsap.to('.menu__btn span', {backgroundColor:'black'}), 

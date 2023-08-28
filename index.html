@@ -8,9 +8,16 @@
   <link rel="stylesheet" href="./styles/index.css?v=6">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/CustomEase.min.js"></script>
+  <script src="./src/gsap.min.js"></script>
+  <script src="./src/ScrollTrigger.min.js"></script>
+
   <title>Irina Radyno</title>
 </head>
+
 <body class="body">
+  
   <div class="preloader">
     <div class="preloader__row">
       <div class="preloader__item"></div>
@@ -50,7 +57,7 @@
           </div>
             <div class="title">
               <h1>Тебе не нужно быть</h1> 
-              <h2>кем-то<span class="spase"></span>-<span class="spase"></span>ты уже есть</h2>
+              <h2>кем-то<span class="spase"></span>&ndash;<span class="spase"></span>ты уже есть</h2>
               <h3 class="subtitle">Краткосрочные психологические<br>консультации с Ириной Радыно</h3>
             </div>
           </div>
@@ -116,12 +123,12 @@
               <h2 class="who__what__first__top__left_title">Кто я такая? Чем вам полезна?</h2>
               <h2 class="who__what__first__top__left_title_mobile">Кто я такая? Чем полезна?</h2>
               <h4>Я интегральный коуч, клинический психолог, 
-                EMDR- терапевт, являюсь сторонником мультимодального подхода в 
+                EMDR-терапевт, являюсь сторонником мультимодального подхода в 
                 консультировании, то есть использую методы разных направлений, 
                 главная цель – это должно работать.</h4>
             </div>
             <div class="who__what__first__top__right">
-              <h2>Формат работы со мной.</h2>
+              <h2>Формат работы со мной</h2>
               <h4>Краткосрочное психологическое консультирование, т.е. мы с вами 
                 фокусируемся на каждой встрече, достигая завершённости и результата 
                 как в конкретной сессии, так и в серии встреч.</h4>
@@ -171,32 +178,36 @@
     </section>
     <section class="how__we__work" id="how__we__work">
       <div class="wrapper how__we__work__scroll">
-        <h2 class="how__we__work__title content">Как будет проходить работа? Вы<br>будете говорить мне что делать?</h2>
-        <h2 class="how__we__work__title tablet">Как будет проходить работа?<br>Вы будете говорить мне<br>что делать?</h2>
         <div class="how__we__work__content">
-          <h2 class="how__we__work__not">нет</h2>s
           <div class="how__we__work__text">
             <div class="text_grid_row">
+              <h2 class="how__we__work__title content">Как будет проходить работа? Вы<br>будете говорить мне что делать?</h2>
+              <h2 class="how__we__work__title tablet">Как будет проходить работа?<br>Вы будете говорить мне<br>что делать?</h2>
+              <h2 class="how__we__work__not">нет</h2>
+            </div>
+            <div class="text_grid_row text_grid_row_1">
               <h4 class="text__1">Мы будет говорить, обсуждать эмоции и чувства, двигаться по логическим и ассоциативным цепочкам, заходить с разных сторон в ситуацию и создавать описания вашей жизни, как в 3D-фильме.</h4>
               <h4 class="text_margin text__2">Картинка будет состоять из трёх параметров: ощущения, эмоции и мысли. Все это вы сможете созерцать из позиции внутреннего наблюдателя. Это сделает вас более цельным, смягчит противоречия, но не будет являться волшебной таблеткой.</h4>
             </div>
-            <div class="text_grid_row">
+            <div class="text_grid_row text_grid_row_2">
               <h4 class="text__3">Я буду предлагать вам гипотезы о ситуации. Не каждая из них откликнется у вас, но мне важно, что через это вы станете ближе к тому что для вас правильно.</h4>
-              <h4 class="text_margin text__4">Мы с вами используем технологию EMDR, подтверждённую научными экспериментами, это будет разряжать болезненные воспоминания и ассоциации, тем самым облегчая ваш взгляд на ситуацию из прошлого и настоящего, и помогая продвинутьсяв решениях.</h4>
+              <h4 class="text_margin text__4">Мы с вами используем технологию EMDR, подтверждённую научными экспериментами, это будет разряжать болезненные воспоминания и ассоциации, тем самым облегчая ваш взгляд на ситуацию из прошлого и настоящего, и помогая продвинуться в решениях.</h4>
             </div>
-            <div class="text_grid_row">
-              <h4 class="text__5">Я буду разговаривать с вами так, чтобы внутри этого разговора вы ощущали себя свободным в выражении себя, чтобы вы могли сказать то, что до этого не было озвучено даже самому себе.</h4>
-              <h4 class="text_margin text__6">Для начала работы нам необходимо договориться об удобном для всех времени встреч и основном запросе, с которого начнём. Буду рада знакомству!</h4>
-            </div>
-            <div class="price">
-              <div class="price__sum">
-                <h2>Разовая сессия</h2>
-                <h2>9 000 руб</h2>
+            <div class="text_grid_row text_grid_row_3">
+              <div class="text_grid_row_3_top">
+                <h4 class="text__5">Я буду разговаривать с вами так, чтобы внутри этого разговора вы ощущали себя свободным в выражении себя, чтобы вы могли сказать то, что до этого не было озвучено даже самому себе.</h4>
+                <h4 class="text_margin text__6">Для начала работы нам необходимо договориться об удобном для всех времени встреч и основном запросе, с которого начнём. Буду рада знакомству!</h4>
               </div>
+              <div class="price">
+                <div class="price__sum">
+                  <h2>Разовая сессия</h2>
+                  <h2>9 000 руб</h2>
+                </div>
                 <div class="price__sum">
                   <h2>Пакет от 3-х сессий</h2>
                   <h2>– 10%</h2>
                 </div>
+              </div>
             </div>
           </div>
           <div class="how__we__work__img">
@@ -235,84 +246,87 @@
             <h3>Тогда я закончила еще один <span class="retraining_course">курс переквалификации</span> и посмотрела на мир глазами клинического психолога. На фоне этих событий шло мое путешествие в тему <span class="thinking">мышления</span> длиною в три года. Через все это, и не только это, я проявила себя, потому что не могла представить, что не пройду этот путь.</h3>
           </div>
           <div class="education__foto">
-            <a class="diplom diplom__belorus right_0 off" data-fancybox="gallery-1" href="./images/diploms/Diplom PED.avif">
-              <img alt="diplom" src="./images/diploms/Diplom PED.avif" width="90%"/>
+            <a class="diplom diplom__belorus right_0 off" data-fancybox="gallery-1" href="/images/diploms/Diplom PED.webp">
+              <img alt="diplom" src="/images/diploms/Diplom PED.webp" width="90%"/>
             </a>
-            <a class="diplom diplom__coach right_0 off" data-fancybox="gallery-2" href="./images/diploms/Diplom IK.avif">
-              <img alt="diplom" src="./images/diploms/Diplom IK.avif" width="90%"/>
-            </a>
-            <div style="display:none">
-              <a data-fancybox="gallery-2" href="./images/diploms/3 curse IK.avif">
-                <img alt="diplom" src="./images/diplom prev/3 curse IK._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_1.avif">
-                <img alt="diplom" src="./images/diplom prev/EMDR_1._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_2.avif">
-                <img alt="diplom" src="./images/diplom prev/EMDR_2._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_2.0_22.avif">
-                <img alt="diplom" src="./images/diplom prev/EMDR_2.0_22._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_PA.avif">
-                <img alt="diplom" src="./images/diplom prev/EMDR_PA._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-2" href="./images/diploms/EMDR_RPP.avif">
-                <img alt="diplom" src="./images/diplom prev/EMDR_RPP._photo-resizer.avif" />
-              </a>
-            </div>
-            <a class="diplom diplom__clinic center_diplom off" data-fancybox="gallery-3" href="./images/diploms/2021 03-04 22-11_page-0001.avif">
-              <img alt="diplom" src="./images/diploms/2021 03-04 22-11_page-0001.avif"  alt="diplom" />
+            <a class="diplom diplom__coach right_0 off" data-fancybox="gallery-2" href="/images/diploms/Diplom IK.webp">
+              <img alt="diplom" src="/images/diploms/Diplom IK.webp" width="90%"/>
             </a>
             <div style="display:none">
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 04-05 12-09_page-0002.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 04-05 12-09_page-0002._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/3 curse IK.webp">
+                <img alt="diplom" src="/images/diplom prev/3 curse IK._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 05 11-30_page-0003.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 05 11-30_page-0003._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/EMDR_1.webp">
+                <img alt="diplom" src="/images/diplom prev/EMDR_1._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 05-06 31-27_page-0004.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 05-06 31-27_page-0004._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/EMDR_2.webp">
+                <img alt="diplom" src="/images/diplom prev/EMDR_2._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 09 06-26_page-0005.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 09 06-26_page-0005._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/EMDR_2.0_22.webp">
+                <img alt="diplom" src="/images/diplom prev/EMDR_2.0_22._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 09-10 27-17_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 09-10 27-17_page-0001._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/EMDR_PA.webp">
+                <img alt="diplom" src="/images/diplom prev/EMDR_PA._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 10-11 18-14_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 10-11 18-14_page-0001._photo-resizer.avif" />
+              <a data-fancybox="gallery-2" href="/images/diploms/EMDR_RPP.webp">
+                <img alt="diplom" src="/images/diplom prev/EMDR_RPP._photo-resizer.webp" />
               </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2021 11-12 15-05_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2021 11-12 15-05_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 01 10-30_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 01 10-30_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 01 31 - 02 13_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 01 31 - 02 13_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 02 14-27_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 02 14-27_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 02-03 28-20_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 02-03 28-20_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 03-04 21-10_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 03-04 21-10_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 04-05 11-01_page-0001.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 04-05 11-01_page-0001._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 05 10-29.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 05 10-29._photo-resizer.avif" />
-              </a>
-              <a data-fancybox="gallery-3" href="./images/diploms/2022 05-06 30-19.avif">
-                <img alt="diplom" src="./images/diplom prev/2022 05-06 30-19._photo-resizer.avif" />
+              <a data-fancybox="gallery-3" href="/images/diploms/Irina Radyno_FSAP.webp">
+                <img alt="diplom" src="/images/diplom prev/Irina Radyno_FSAP_mini.webp" />
               </a>
             </div>
-            <a class="diplom diplom__kurpatov right_0 off" data-fancybox="gallery-4" href="images/diploms/ТР setifikat diplom АС.avif">
-              <img src="./images/diploms/ТР setifikat diplom АС.avif" width="90%" alt="diplom" />
+            <a class="diplom diplom__clinic center_diplom off" data-fancybox="gallery-3" href="/images/diploms/2021 03-04 22-11_page-0001.webp">
+              <img alt="diplom" src="/images/diploms/2021 03-04 22-11_page-0001.webp"  alt="diplom" />
+            </a>
+            <div style="display:none">
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 04-05 12-09_page-0002.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 04-05 12-09_page-0002._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 05 11-30_page-0003.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 05 11-30_page-0003._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 05-06 31-27_page-0004.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 05-06 31-27_page-0004._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 09 06-26 _page-0005.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 09 06-26_page-0005._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 09-10 27-17_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 09-10 27-17_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 10-11 18-14_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 10-11 18-14_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2021 11-12 15-05_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2021 11-12 15-05_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 01 10-30_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 01 10-30_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 01 31 - 02 13_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 01 31 - 02 13_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 02 14-27_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 02 14-27_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 02-03 28-20_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 02-03 28-20_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 03-04 21-10_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 03-04 21-10_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 04-05 11-01_page-0001.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 04-05 11-01_page-0001._photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 05 10-29.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 05 10-29_photo-resizer.webp" />
+              </a>
+              <a data-fancybox="gallery-3" href="/images/diploms/2022 05-06 30-19.webp">
+                <img alt="diplom" src="/images/diplom prev/2022 05-06 30-19_photo-resizer.webp" />
+              </a>
+            </div>
+            <a class="diplom diplom__kurpatov right_0 off" data-fancybox="gallery-4" href="/images/diploms/TP setifikat diplom AC.webp">
+              <img src="/images/diploms/TP setifikat diplom AC.webp" width="90%" alt="diplom" />
             </a>       
           </div>
           <img class="education__star" src="./images/Star big vector.png" alt="stars">
@@ -341,10 +355,6 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/CustomEase.min.js"></script>
-  <script src="./src/gsap.min.js"></script>
-  <script src="./src/ScrollTrigger.min.js"></script>
   <script src="./src/index.js?v=6"></script>
 </body>
 </html>

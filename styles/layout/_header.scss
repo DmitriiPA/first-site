@@ -1,14 +1,10 @@
 .preloader {
-  /*фиксированное позиционирование*/
   position: fixed;
-  /* координаты положения */
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  /* фоновый цвет элемента */
   background: $color_text;
-  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
   z-index: 1001;
 }
 
@@ -149,9 +145,10 @@
     }
     @include media-tablet  {
       font-size: 46px;
+      text-align: center;
     }
     @include mobile-width {
-      font-size: 44px;
+      font-size: 42px;
     } 
   }
 
@@ -177,9 +174,11 @@
     }
 
     @include media-tablet  {
-      min-width: 350px;
+      width: auto;
+      min-width: auto;
       font-size: 16px;
       line-height: 21px;
+      text-align: center;
     }
   }
 }

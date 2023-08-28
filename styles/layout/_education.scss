@@ -68,9 +68,11 @@
   position: absolute;
   right: 0;
   top: 0;
+  max-width: 550px;
   
   @include min-content-width {
     height: calc(var(--index)*22);
+    max-width: none;
   }
   @include media-tablet {
     height: auto;
@@ -84,14 +86,9 @@
 
 .diplom {
   position: absolute;
-  // right: 10vw;
   cursor: pointer;
   transition: .5s;
   z-index: 15;
-
-  // @include min-content-width {
-  //   right: 7vw;
-  // }
 }
 
 .teacher_education,
