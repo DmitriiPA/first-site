@@ -3,78 +3,88 @@
   min-height: 650px;
   background-color: $color_text;
   overflow: hidden;
-  
+
   .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
 .price__stars {
+  position: absolute;
   height: 22vw;
   max-height: 300px;
   margin-top: calc(var(--index)*2);
-  
+
   @include media-content {
     transform-origin: top;
     right: 10px;
   }
 }
 
-.price__stars__right{
-@include mobile-width {
-  display: none;
-}
+.price__stars__right {
+  right: 25px;
+  @include mobile-width {
+    display: none;
+  }
 }
 
 .price__stars_top {
-  position: relative;
+  left: 70px;
   top: calc(var(--index)*1);
 
   @include mobile-width {
-    position: absolute;
-    top: auto;    
+    top: auto;
     height: 26vh;
     left: 20px;
   }
 }
 
 .reviews__content {
-  position: relative; 
-  width: 50%;
-  padding-top: 10vh;
-  left: 20px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // position: absolute;
+  // width: 70%;
+  padding-top: 12vh;
+  // right: 13%;
+  // right: 13vw;
+  z-index: 100;
+
   @include min-content-width {
-    padding-top: 5vh;
+    // padding-top: 5vh;
   }
+
   @include media-tablet {
     padding-top: 6vh;
-    width: 100%;
+    // width: 100%;
   }
+
   @include mobile-width {
     padding-top: 25vh;
     left: auto;
     width: 88vw;
   }
-  
+
   h2 {
     text-align: center;
 
     @include media-content {
       font-size: 55px;
     }
+
     @include media-tablet {
       font-size: 32px;
     }
   }
-  
+
   h4 {
     width: 90%;
-    
+
     @include media-content {
       line-height: 27px;
     }
+
     @include media-tablet {
       font-size: 16px;
       line-height: normal;
@@ -93,37 +103,124 @@
 }
 
 
-.line {
-  content: '';
+.carusel__wrapper {
   display: block;
-  height: 2px;
-  background-color: black; 
-  margin: 24px 0;
-
-  @include min-content-width {
-    margin: 15px 0;
-  }
+  align-items: center;
+  gap: 90px;
+  margin-top: 44px;
+  max-width: 1186px;
 }
 
-.reviews__text_blok {
-  margin-top: 10vh;
-  
-  @include min-content-width {
-    margin-top: calc(var(--index)*3);
-  }
-  @include media-tablet {
-    margin-top: calc(var(--index)*7);
-  }
-  @include mobile-width {
-    margin-top: auto;
-  }
+.main-slider {
+  position: relative;
+  display: flex;
 }
 
-.reviews__text {
-  margin: 0 30px;
+.card {
+  position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 442px;
+  max-width: 220px;
+  // padding-left: 32px;
+  background-image: url(../../images/otzov/phone_14_01.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  text-align: center;
+
+  & :hover {
+    // scale: 1.1;
+    // box-shadow: 10px 5px 5px red;
+  }
   
   @include media-content {
-    margin: 0 10px;
+    height: 400px;
+    max-width: 200px;
   }
 }
 
+.card__screen {
+  display: block;
+  height: 90%;
+  width: 90%;
+  overflow: hidden;
+  padding-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.slick-slide div {
+text-align: center;
+}
+
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+  width: 974px;
+
+  @include media-content {
+    width: 722px;
+  }
+  @include min-content-width {
+    width: 430px;
+  }
+  @include mobile-width {
+    width: 200px;
+  }
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+
+
+/* Стрелка */
+.slick-arrow{
+  position:absolute;
+  top: calc(50% - 40px);
+  // margin-top: 7px;
+  z-index: 10;
+  font-size: 0;
+  width: 19px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+  left: -111px;
+  background:url(../../images/Arrow1.svg) 0 0 / 100% no-repeat;
+
+  @include min-content-width {
+    left: -60px;
+  }
+  @include media-tablet {
+    left: -40px;
+  }
+}
+
+.slick-sr-only {
+  font-size: 0;
+}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+  right: -111px;
+  background:url(../../images/Arrow.svg) 0 0 / 100% no-repeat;
+
+  @include min-content-width {
+    right: -60px;
+  }
+  @include media-tablet {
+    right: -40px;
+  }
+}
+/* Стрелка не активная */
+// .slick-arrow.slick-disabled{}

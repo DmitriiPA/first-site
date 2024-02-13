@@ -3,23 +3,25 @@
   top: 14px;
   color: $color_text;
   width: 504px;
-  
 
-  @include media-content{
-  width: 50vw;
-}
+
+  @include media-content {
+    width: 50vw;
+  }
+
   @include mobile-width {
     display: none;
   }
 }
 
-.nav__li, .nav__li_burger {
+.nav__li,
+.nav__li_burger {
   height: 45px;
   position: relative;
   cursor: pointer;
   padding: 12px 0;
   list-style-type: none;
-  
+
   a {
     display: inline-block;
     width: 100%;
@@ -61,7 +63,8 @@
   width: 260px;
 }
 
-.nav__li:hover, .nav__li_burger:hover {
+.nav__li:hover,
+.nav__li_burger:hover {
   a {
     transition: .5s;
     font-size: 19px;

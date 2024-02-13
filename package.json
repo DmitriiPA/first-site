@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/DmitriiPA/first-site#readme",
   "dependencies": {
+    "@accessible360/accessible-slick": "^1.0.1",
     "@fancyapps/ui": "^5.0.20",
-    "gsap": "^3.11.5",
-    "pixi.js": "^7.2.4"
+    "@splidejs/splide": "^4.1.4",
+    "gsap": "^3.11.5"
   }
 }

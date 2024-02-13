@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
-  
+
   text-decoration: none;
   color: currentColor;
 
@@ -55,26 +55,28 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px 0 96px;
-  
+
   @include media-content {
     padding: 0 24px 0 77px;
-}
+  }
 
   @include media-tablet {
     max-width: 100vw;
     padding: 0 8px 0 24px;
-}
+  }
 
-//   @include mobile-large-width {
-//     padding: 0 8px 0 12px;
-// }
+  //   @include mobile-large-width {
+  //     padding: 0 8px 0 12px;
+  // }
 }
 
 .z10 {
   z-index: 10;
 }
-  
-h1, h2, h5 {
+
+h1,
+h2,
+h5 {
   font-family: 'Yanone-Kaffeesatz-ExtraLight';
   font-style: normal;
   font-weight: 700;
@@ -85,17 +87,20 @@ h1, h2, h5 {
   @include min-content-width {
     font-size: 55px;
   }
+
   @include media-tablet {
     font-size: 34px;
     line-height: normal;
   }
+
   @include mobile-width {
     font-size: 33px;
   }
 }
 
 
-h3, h4 {
+h3,
+h4 {
   font-family: 'Roboto-Slab';
   font-style: normal;
   font-weight: 400;

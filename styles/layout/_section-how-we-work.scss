@@ -22,7 +22,7 @@
   text-align: center;
   color: $color_white;
   white-space: nowrap;
-  
+
   @include media-4k {
     left: 50%;
     margin-left: -320px;
@@ -31,10 +31,12 @@
   @include min-content-width {
     top: 60px;
   }
+
   @include media-tablet {
     margin-left: -170px;
 
   }
+
   @include mobile-width {
     top: 20vh;
     font-size: 30px;
@@ -52,11 +54,12 @@
     top: calc(var(--index) * 12);
     left: calc(var(--index) * 12);
   }
-  
+
   @include media-tablet {
     top: calc(var(--index) * 22);
     font-size: 50px;
   }
+
   @include mobile-width {
     top: 40vh;
   }
@@ -64,6 +67,7 @@
 
 .tablet {
   display: none;
+
   @include media-tablet {
     display: block;
   }
@@ -106,6 +110,7 @@
   @include min-content-width {
     max-width: 450px;
   }
+
   @include mobile-width {
     height: 100%;
     max-width: 100%;
@@ -141,16 +146,20 @@
 
   @include min-content-width {
     bottom: 50px;
+
     h2 {
       font-size: 50px;
     }
   }
+
   @include media-tablet {
     min-width: 302px;
+
     h2 {
       font-size: 38px;
     }
   }
+
   @include mobile-width {
     bottom: -17vh;
     min-width: auto;
@@ -173,7 +182,7 @@
 
 .text_margin {
   margin-top: 64px;
-  
+
   @include mobile-width {
     margin-top: 16px;
   }
@@ -228,13 +237,13 @@
     right: 13vw;
     width: 30vw;
   }
-  
-  @include min-content-width {
-  }
+
+  @include min-content-width {}
 
   @include media-tablet {
     right: 50px;
   }
+
   @include mobile-width {
     width: 60vw;
     right: 30vw;
@@ -246,14 +255,16 @@
   grid-column: 1/1;
   position: relative;
   top: -41vh;
-  
+
   @include media-content {
     width: 40vw;
     transform-origin: top right;
   }
+
   @include media-tablet {
     top: -191px;
   }
+
   @include mobile-width {
     right: auto;
     left: 33px;
@@ -267,16 +278,18 @@
   position: relative;
   top: -30vh;
   justify-self: center;
-  
+
   @include min-content-width {
     width: auto;
   }
+
   @include media-tablet {
     width: 38vw;
     bottom: 115px;
     top: auto;
     align-self: center;
   }
+
   @include mobile-width {
     left: auto;
     left: 30%;
@@ -315,18 +328,19 @@
   text-align: center;
   text-decoration: none;
   z-index: 150;
-    
+
   h2 {
     color: $color_yellow;
     margin: 25px 0 18px;
-    
+
     @include media-tablet {
       margin: 25px 0 9px;
-      }
+    }
   }
 }
 
-.call__my:after, .call__my:before {
+.call__my:after,
+.call__my:before {
   align-items: center;
   position: absolute;
   content: "";
@@ -335,4 +349,3 @@
   height: 2px;
   background-color: $color_yellow;
 }
-

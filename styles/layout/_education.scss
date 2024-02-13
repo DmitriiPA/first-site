@@ -5,13 +5,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden ;
-  
+  overflow: hidden;
+
   h2 {
     padding-top: calc(var(--index)*3);
     text-align: center;
     color: $color_white;
-    }
+  }
 }
 
 .education__content {
@@ -25,8 +25,9 @@
   position: relative;
   margin-top: 7vh;
   max-width: 624px;
-  
-  h3, span {
+
+  h3,
+  span {
     position: relative;
     margin-top: 6vh;
     font-weight: 400;
@@ -37,17 +38,20 @@
       font-size: 14px;
       line-height: normal;
     }
+
     @include mobile-width {
       font-size: 12px;
     }
   }
-  
+
   @include media-content {
     max-width: 568px;
   }
+
   @include min-content-width {
     max-width: 48vw;
   }
+
   @include mobile-width {
     max-width: none;
   }
@@ -60,7 +64,7 @@
   top: 10vh;
 
   @include mobile-width {
-   position: absolute;
+    position: absolute;
   }
 }
 
@@ -69,15 +73,17 @@
   right: 0;
   top: 0;
   max-width: 550px;
-  
+
   @include min-content-width {
     height: calc(var(--index)*22);
     max-width: none;
   }
+
   @include media-tablet {
     height: auto;
     left: 60vw;
   }
+
   @include mobile-width {
     display: none;
   }
@@ -124,6 +130,7 @@
     bottom: 25vh;
     max-height: 40vh;
   }
+
   @include mobile-width {
     left: 4%;
     width: 89vw;
@@ -137,10 +144,11 @@
 .center_diplom {
   width: 100%;
   text-align: center;
-  
+
   img {
     width: 33%;
   }
+
   @include min-content-width {
     top: 10%;
 
@@ -154,7 +162,7 @@
     max-width: none;
     // right: 2vw;
   }
-  
+
 }
 
 .black__bg {
